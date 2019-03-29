@@ -5,9 +5,11 @@
 	<title>Qual a Microarea</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="stylesheet" href="reset.css"> -->
 	<link rel="stylesheet" href="index.css">
   	<script type="text/javascript" src="index.js"></script>
+	<!--[if lt IE 9]> 
+	<script> document.createElement("contrast"); </script>
+	<![endif]-->
 </head>
 
 <body>
@@ -21,21 +23,26 @@
 					<div class="post_title">
 						Busca Por Rua
 					</div>
-					<div class="post_body">
-						Cidade:
-						<select class="interactionbox" id="cb_cidade">
-							<option value="petropolis">Petrópolis</option>
-						</select>
-						<br>
-						Unidade:
-						<select class="interactionbox" id="cb_unidade">
-							<option value="boavista">Boa Vista</option>
-						</select>
-						<br>
-						Digite uma rua:
-						<br>
-						<input class="interactionbox maininput roundedinput autocomplete" type="text" id="tf_nomedarua">
-						<br>
+					<div class="post_body" id="microarea_body">
+						<div class="input_section">
+							Cidade:
+							<select class="interactionbox selectfield" id="cb_cidade">
+								<option value="petropolis">Petrópolis</option>
+							</select>
+						</div>
+						<div class="input_section">
+							Unidade:
+							<select class="interactionbox selectfield" id="cb_unidade">
+								<option value="boavista">Boa Vista</option>
+							</select>
+						</div>
+						<div class="input_section search_div">
+							Digite uma rua:
+							<br>
+							<input class="interactionbox maininput roundedinput autocomplete" type="text" id="tf_nomedarua" list="datalist_ruas">
+							<datalist id="datalist_ruas">
+							</datalist>
+						</div>
 					</div>
 				</div>
 			</div>
