@@ -53,13 +53,14 @@ a {
 
 .post_title {
     font-weight: bold;
-    font-size: 130%;
+    font-size: 140%;
     padding: 10px;
     border-bottom: 2px solid gray;
 }
 
 .post_body {
     padding: 5px;
+    font-size: 110%;
 }
 
 .interactionbox {
@@ -73,33 +74,35 @@ a {
 
 .roundedinput {
     border-radius: 20px;
+    height: 35px;
 }
 
-.autocomplete {
-    position: relative;
-    display: inline-block;
+.input_section {
+    padding: 6px;
 }
 
-.autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-
-    top: 100%;
-    left: 0;
-    right: 0;
+.search_div {
+    padding-top: 15px;
 }
 
-.autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #1C1C1C;
-    border-bottom: 1px solid #d4d4d4; 
+.selectfield {
+    border: 3px solid rgb(136, 136, 136);
 }
 
-.autocomplete-items div:hover,
-.autocomplete-active {
-    background-color: rgb(105, 170, 235) !important;
+.microarea_result {
+    font-size: 110%;
+    padding: 20px;
+    border-top: 1px solid gray;
+}
+
+contrast {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 110%;
+	font: inherit;
+    vertical-align: baseline;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
 }
