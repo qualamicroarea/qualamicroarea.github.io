@@ -80,13 +80,25 @@ function ResetMicroarea() {
 
 
 
-function MostrarMicroarea(rua, microarea) {
-    var div = document.createElement("div");
-    div.className = "microarea_result"
-    div.id = "microarea_div"
-    div.innerHTML = "A rua <contrast>" + rua + "</contrast> pertence à microárea <contrast>" + microarea + "</contrast>.";
-    
-    document.getElementById("microarea_body").appendChild(div);
+function HTMLForRua(rua, ruainfo) {
+    var html = "<p class=\"info_rua_nome\">" + rua + "</p>";
+    html += "<table class=\"info_rua_table\"> <tr>";
+    html += "<td>Microárea</td> <td>" + ruainfo.microarea + "</td>"
+    html += "</tr> </table>";
+
+    return html;
+}
+
+
+function MostrarMicroarea(rua, ruainfo) {
+    if (ruainfo) {
+        var div = document.createElement("div");
+        div.className = "microarea_result"
+        div.id = "microarea_div"
+        div.innerHTML = HTMLForRua(rua, ruainfo);
+
+        document.getElementById("microarea_body").appendChild(div);
+    }
 }
 
 
@@ -96,10 +108,7 @@ function VerificaMicroarea(rua) {
 
     const ruas = GetRuasDict();
     if (ruas && rua in ruas) {
-        const microarea = ruas[rua];
-        if (microarea) {
-            MostrarMicroarea(rua, microarea);
-        }
+        MostrarMicroarea(rua, ruas[rua]);
     }
 }
 
@@ -112,12 +121,10 @@ function OnRuaInput(keys) {
 
 
 
-function LinkHandlers() {
+function OnWindowLoad() {
     document.getElementById("tf_nomedarua").oninput = OnRuaInput;
 }
 
 
 
-window.onload = (function() {
-    LinkHandlers();
-});
+window.onload = OnWindowLoad;

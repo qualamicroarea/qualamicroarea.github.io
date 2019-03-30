@@ -1,13 +1,39 @@
 DATABASE = {
     "ruas": {
-        "Rua Exemplo Assis" : 1,
-        "Rua Exemplo Pimentel" : 2,
-        "Rua Exemplo Andrade" : 3,
-        "Rua Exemplo Gonzaga" : 4,
-        "Rua Exemplo Araújo" : 5,
-        "Rua Exemplo Facioli" : 1,
-        "Rua Exemplo Duarte" : 2,
-        "Rua Exemplo Schwarz" : 3,
-        "Rua Exemplo Castello" : 4,
+        "Rua Exemplo Assis" : {
+            "microarea" : 1
+        },
+
+        "Rua Exemplo Pimentel" : {
+            "microarea" : 2
+        },
+
+        "Rua Exemplo Andrade" : {
+            "microarea" : 3
+        },
+
+        "Rua Exemplo Gonzaga" : {
+            "microarea" : 4
+        },
+
+        "Rua Exemplo Araújo" : {
+            "microarea" : 5
+        },
+
+        "Rua Exemplo Facioli" : {
+            "microarea" : 1
+        },
+
+        "Rua Exemplo Duarte" : {
+            "microarea" : 2
+        },
+
+        "Rua Exemplo Schwarz" : {
+            "microarea" : 3
+        },
+
+        "Rua Exemplo Castello" : {
+            "microarea" : 4
+        },
     }
 }

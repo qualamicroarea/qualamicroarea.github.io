@@ -95,14 +95,19 @@ a {
     border-top: 1px solid gray;
 }
 
-contrast {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 110%;
-	font: inherit;
-    vertical-align: baseline;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    text-decoration: underline;
+.info_rua_nome {
+    font-size: 120%;
+    padding: 5px;
+}
+
+.info_rua_table {
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+td {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
 }
