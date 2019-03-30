@@ -121,12 +121,10 @@ function OnRuaInput(keys) {
 
 
 
-function LinkHandlers() {
+function OnWindowLoad() {
     document.getElementById("tf_nomedarua").oninput = OnRuaInput;
 }
 
 
 
-window.onload = (function() {
-    LinkHandlers();
-});
+window.onload = OnWindowLoad;
