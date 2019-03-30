@@ -96,9 +96,12 @@ function VerificaMicroarea(rua) {
 
     const ruas = GetRuasDict();
     if (ruas && rua in ruas) {
-        const microarea = ruas[rua];
-        if (microarea) {
-            MostrarMicroarea(rua, microarea);
+        const ruainfo = ruas[rua];
+        if (ruainfo) {
+            const microarea = ruainfo.microarea;
+            if (microarea) {
+                MostrarMicroarea(rua, microarea);
+            }
         }
     }
 }
