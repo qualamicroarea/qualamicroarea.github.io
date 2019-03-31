@@ -90,6 +90,7 @@ function HTMLForRua(rua, ruainfo) {
 }
 
 
+
 function MostrarMicroarea(rua, ruainfo) {
     if (ruainfo) {
         var div = document.createElement("div");
