@@ -15,11 +15,11 @@ function RemoveIfExists(elem) {
 
 
 
-function GetRuasDict() {
+function GetMicroareasDict() {
     if (DATABASE) {
-        const ruas = DATABASE["ruas"];
-        if (ruas) {
-            return ruas;
+        const microareas = DATABASE["microareas"];
+        if (microareas) {
+            return microareas;
         }
     }
     return null;
