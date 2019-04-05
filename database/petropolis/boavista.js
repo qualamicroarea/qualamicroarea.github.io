@@ -1,10 +1,36 @@
 DATABASE = {
     "microareas" : {
         "1" : {
+            "agua_encanada" : "-",
+            "luz_eletrica" : "-",
+            "esgoto_encanado" : "-",
+            "lazer" : "-",
+            "onibus_atende" : "-",
+            "animais_de_rua" : "-",
 
+            "lixeira" : "-",
+            "lixo_na_rua" : "-",
+
+            "igrejas" : "-",            
+            "bares" : "-",
+
+            "observacoes" : "-"
         },
         "2" : {
+            "agua_encanada" : "-",
+            "luz_eletrica" : "-",
+            "esgoto_encanado" : "-",
+            "lazer" : "-",
+            "onibus_atende" : "-",
+            "animais_de_rua" : "-",
 
+            "lixeira" : "-",
+            "lixo_na_rua" : "-",
+
+            "igrejas" : "-",            
+            "bares" : "-",
+
+            "observacoes" : "-"
         },
         "3" : {
             "agua_encanada" : "Sim",
@@ -23,7 +49,20 @@ DATABASE = {
             "observacoes" : "A microárea 3 sofre com o manancial contaminado por metais pesados e coliformes fecais, poucas lixeiras na região."
         },
         "4" : {
+            "agua_encanada" : "-",
+            "luz_eletrica" : "-",
+            "esgoto_encanado" : "-",
+            "lazer" : "-",
+            "onibus_atende" : "-",
+            "animais_de_rua" : "-",
 
+            "lixeira" : "-",
+            "lixo_na_rua" : "-",
+
+            "igrejas" : "-",            
+            "bares" : "-",
+
+            "observacoes" : "-"
         },
         "5" : {
             "agua_encanada" : "Sim",

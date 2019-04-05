@@ -72,8 +72,9 @@ function CheckCidadeUnidade() {
         const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js";
 
         LoadScript(database_name, function() {
-            const microareas = GetMicroareasDict();
+            var microareas = GetMicroareasDict();
             if (microareas) {
+                microareas["0"] = null;
                 Object.keys(microareas).forEach(function(microarea) {
                     var option = document.createElement("option");
                     option.value = microarea;
