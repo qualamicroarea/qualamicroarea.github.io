@@ -7,32 +7,38 @@ DATABASE = {
 
         },
         "3" : {
-            "agua_encanada" : true,
-            "animais_de_rua" : true,
-            "bares" : 1,
-            "esgoto_encanado" : true,
-            "igrejas" : 2,
-            "lazer" : false,
-            "lixeira" : true,
-            "lixo_na_rua" : false,
-            "luz_eletrica" : true,
-            "onibus_atende" : true,
+            "agua_encanada" : "Sim",
+            "luz_eletrica" : "Sim",
+            "esgoto_encanado" : "Sim",
+            "lazer" : "Não",
+            "onibus_atende" : "Sim",
+            "animais_de_rua" : "Sim",
+
+            "lixeira" : "Sim",
+            "lixo_na_rua" : "Não",
+
+            "igrejas" : "2",            
+            "bares" : "1",
+
             "observacoes" : "A microárea 3 sofre com o manancial contaminado por metais pesados e coliformes fecais, poucas lixeiras na região."
         },
         "4" : {
 
         },
         "5" : {
-            "agua_encanada" : true,
-            "animais_de_rua" : true,
-            "bares" : 1,
-            "esgoto_encanado" : true,
-            "igrejas" : 1,
-            "lazer" : false,
-            "lixeira" : false,
-            "lixo_na_rua" : false,
-            "luz_eletrica" : true,
-            "onibus_atende" : true,
+            "agua_encanada" : "Sim",
+            "luz_eletrica" : "Sim",
+            "esgoto_encanado" : "Sim",
+            "lazer" : "Não",
+            "onibus_atende" : "Sim",
+            "animais_de_rua" : "Sim",
+            
+            "lixeira" : "Não",
+            "lixo_na_rua" : "Não",
+        
+            "igrejas" : "1",
+            "bares" : "1",
+
             "observacoes" : "O relevo da microárea 5 é um dos fatores que dificulta o acesso."
         }
     },

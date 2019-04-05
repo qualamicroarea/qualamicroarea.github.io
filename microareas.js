@@ -1,15 +1,27 @@
 
 var DATABASE = null;
 
-var CIDADE_ATUAL = ""
+var CIDADE_ATUAL = "";
 
-var UNIDADE_ATUAL = ""
+var UNIDADE_ATUAL = "";
 
 
 
 function RemoveIfExists(elem) {
     if (elem) {
         elem.parentNode.removeChild(elem);
+    }
+}
+
+
+function RemoveIfExistsId(id) {
+    RemoveIfExists(document.getElementById(id));
+}
+
+
+function RemoveChildrens(elem) {
+    while (elem.firstChild) {
+        elem.removeChild(elem.firstChild);
     }
 }
 
@@ -49,22 +61,25 @@ function LoadScript(url, callback) {
 function CheckCidadeUnidade() {
     const cidade_sel = document.getElementById("cb_cidade").value;
     const unidade_sel = document.getElementById("cb_unidade").value;
-    const datalist_ruas = document.getElementById("datalist_ruas");
+    const cb_microarea = document.getElementById("cb_microarea");
 
     if (cidade_sel !== CIDADE_ATUAL || unidade_sel !== UNIDADE_ATUAL) {
         CIDADE_ATUAL = cidade_sel;
         UNIDADE_ATUAL = unidade_sel;
 
-        const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js"
+        RemoveChildrens(cb_microarea);
+
+        const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js";
 
         LoadScript(database_name, function() {
-            const ruas = GetRuasDict();
-            if (ruas) {
-                Object.keys(ruas).forEach(function(rua) {
+            const microareas = GetMicroareasDict();
+            if (microareas) {
+                Object.keys(microareas).forEach(function(microarea) {
                     var option = document.createElement("option");
-                    option.value = rua;
+                    option.value = microarea;
+                    option.text = microarea;
 
-                    datalist_ruas.appendChild(option);
+                    cb_microarea.appendChild(option);
                 });
             }
         });
@@ -73,30 +88,47 @@ function CheckCidadeUnidade() {
 
 
 
-function ResetMicroarea() {
-    var microarea_div = document.getElementById("microarea_div");
-    RemoveIfExists(microarea_div);
-}
+function HTMLForMicroarea(microarea, microareainfo) {
+    function MergeHTMLInfo(infos, pre, key) {
+        var value = infos[key];
+        if (value) {
+            return "<tr> <td>" + pre + "</td> <td>" + value + "</td></tr>";
+        }
+        return "";
+    }
 
+    var html = "<p class=\"info_microarea_nome\">Microárea " + microarea + "</p>";
+    html += "<table class=\"info_microarea_table\">";
 
+    html += MergeHTMLInfo(microareainfo, "Água Encanada", "agua_encanada");
+    html += MergeHTMLInfo(microareainfo, "Luz Elétrica", "luz_eletrica");
+    html += MergeHTMLInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado");
+    html += MergeHTMLInfo(microareainfo, "Pontos de Lazer", "lazer");
+    html += MergeHTMLInfo(microareainfo, "Pontos de Ônibus", "onibus_atende");
+    html += MergeHTMLInfo(microareainfo, "Animais de Rua", "animais_de_rua");
 
-function HTMLForRua(rua, ruainfo) {
-    var html = "<p class=\"info_rua_nome\">" + rua + "</p>";
-    html += "<table class=\"info_rua_table\"> <tr>";
-    html += "<td>Microárea</td> <td>" + ruainfo.microarea + "</td>"
-    html += "</tr> </table>";
+    html += MergeHTMLInfo(microareainfo, "Lixeiras", "lixeira");
+    html += MergeHTMLInfo(microareainfo, "Lixo na Rua", "lixo_na_rua");
+
+    html += MergeHTMLInfo(microareainfo, "Igrejas", "igrejas");
+    html += MergeHTMLInfo(microareainfo, "Bares", "bares");
+
+    html += "</table>";
+
+    html += "<p>Observações:</p>";
+    html += "<p>" + microareainfo["observacoes"] + "</p>";
 
     return html;
 }
 
 
 
-function MostrarMicroarea(rua, ruainfo) {
-    if (ruainfo) {
+function MostrarMicroarea(microarea, microareainfo) {
+    if (microareainfo) {
         var div = document.createElement("div");
         div.className = "microarea_result"
         div.id = "microarea_div"
-        div.innerHTML = HTMLForRua(rua, ruainfo);
+        div.innerHTML = HTMLForMicroarea(microarea, microareainfo);
 
         document.getElementById("microarea_body").appendChild(div);
     }
@@ -104,26 +136,26 @@ function MostrarMicroarea(rua, ruainfo) {
 
 
 
-function PesquisaMicroarea(rua) {
-    ResetMicroarea();
+function PesquisaMicroarea(microarea) {
+    RemoveIfExistsId("microarea_div");
 
-    const ruas = GetRuasDict();
-    if (ruas && rua in ruas) {
-        MostrarMicroarea(rua, ruas[rua]);
+    const microareas = GetMicroareasDict();
+    if (microareas && microarea in microareas) {
+        MostrarMicroarea(microarea, microareas[microarea]);
     }
 }
 
 
 
-function OnMicroareaChange(keys) {
-    CheckCidadeUnidade();
-    PesquisaMicroarea(keys.target.value);
-}
-
-
-
 function OnWindowLoad() {
-    document.getElementById("cb_microarea").onchange = OnMicroareaChange;
+    CheckCidadeUnidade();
+
+    document.getElementById("cb_cidade").onchange = CheckCidadeUnidade;
+    document.getElementById("cb_unidade").onchange = CheckCidadeUnidade;
+
+    document.getElementById("cb_microarea").onchange = function(keys) {
+        PesquisaMicroarea(keys.target.value); 
+    };
 }
 
 
