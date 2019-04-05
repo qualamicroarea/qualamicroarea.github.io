@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Language" content="pt-br">
 	<link rel="stylesheet" href="shared.css">
-	<link rel="stylesheet" href="index.css">
-  	<script type="text/javascript" src="index.js"></script>
+	<link rel="stylesheet" href="microareas.css">
+  	<script type="text/javascript" src="microareas.js"></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 			<div class="content">
 				<div class="post">
 					<div class="post_title">
-						Busca Por Rua
+						Pesquisar Microárea
 					</div>
 					<div class="post_body" id="microarea_body">
 						<div class="input_section">
@@ -35,12 +35,11 @@
 								<option value="boavista">Boa Vista</option>
 							</select>
 						</div>
-						<div class="input_section search_div">
-							Digite uma rua:
-							<br>
-							<input class="interactionbox maininput roundedinput autocomplete" type="text" id="tf_nomedarua" list="datalist_ruas">
-							<datalist id="datalist_ruas">
-							</datalist>
+						<div class="input_section">
+							Microárea:
+							<select class="interactionbox selectfield" id="cb_microarea">
+								<option value="0">0</option>
+							</select>
 						</div>
 					</div>
 				</div>
