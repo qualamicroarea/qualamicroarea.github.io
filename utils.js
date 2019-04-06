@@ -35,6 +35,19 @@ function RemoveChildren(elem) {
 
 
 /**
+ * Function that returns a key if the dict is not null.
+ * @param {*} dict the dict, can be null.
+ * @param {*} key the key.
+ */
+function KeyIfNotNull(dict, key) {
+    if (dict) {
+        return dict[key];
+    }
+    return null;
+}
+
+
+/**
  * Function that loads a new JS script. After loading, calls the callback.
  * @param {string} url the url of the script to load.
  * @param {Function} callback the callback that will be called after loading.

@@ -4,13 +4,7 @@ var DATABASE = null;
 
 
 function GetMicroareasDict() {
-    if (DATABASE) {
-        const microareas = DATABASE["microareas"];
-        if (microareas) {
-            return microareas;
-        }
-    }
-    return null;
+    return KeyIfNotNull(DATABASE, "microareas");
 }
 
 

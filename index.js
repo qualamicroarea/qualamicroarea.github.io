@@ -4,13 +4,7 @@ var DATABASE = null;
 
 
 function GetRuasDict() {
-    if (DATABASE) {
-        const ruas = DATABASE["ruas"];
-        if (ruas) {
-            return ruas;
-        }
-    }
-    return null;
+    return KeyIfNotNull(DATABASE, "ruas");
 }
 
 
