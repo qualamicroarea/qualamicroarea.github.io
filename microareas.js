@@ -1,30 +1,6 @@
 
 var DATABASE = null;
 
-var CIDADE_ATUAL = "";
-
-var UNIDADE_ATUAL = "";
-
-
-
-function RemoveIfExists(elem) {
-    if (elem) {
-        elem.parentNode.removeChild(elem);
-    }
-}
-
-
-function RemoveIfExistsId(id) {
-    RemoveIfExists(document.getElementById(id));
-}
-
-
-function RemoveChildrens(elem) {
-    while (elem.firstChild) {
-        elem.removeChild(elem.firstChild);
-    }
-}
-
 
 
 function GetMicroareasDict() {
@@ -39,35 +15,13 @@ function GetMicroareasDict() {
 
 
 
-function LoadScript(url, callback) {
-    const new_id = "loadscript_" + url;
-
-    var script_tag = document.getElementById(new_id);
-    RemoveIfExists(script_tag);
-
-    var new_script = document.createElement("script");
-    new_script.type = "text/javascript";
-    new_script.id = new_id;
-    new_script.src = url;
-
-    new_script.onreadystatechange = callback;
-    new_script.onload = callback;
-
-    document.head.appendChild(new_script);
-}
-
-
-
 function CheckCidadeUnidade() {
     const cidade_sel = document.getElementById("cb_cidade").value;
     const unidade_sel = document.getElementById("cb_unidade").value;
-    const cb_microarea = document.getElementById("cb_microarea");
 
-    if (cidade_sel !== CIDADE_ATUAL || unidade_sel !== UNIDADE_ATUAL) {
-        CIDADE_ATUAL = cidade_sel;
-        UNIDADE_ATUAL = unidade_sel;
-
-        RemoveChildrens(cb_microarea);
+    if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
+        const cb_microarea = document.getElementById("cb_microarea");
+        RemoveChildren(cb_microarea);
 
         const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js";
 

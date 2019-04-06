@@ -1,4 +1,7 @@
 DATABASE = {
+    "cidade" : "petropolis",
+    "unidade" : "boavista",
+
     "microareas" : {
         "1" : {
             "agua_encanada" : "-",
