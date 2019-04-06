@@ -36,15 +36,15 @@ DATABASE = {
             "observacoes" : "-"
         },
         "3" : {
-            "agua_encanada" : "Sim",
-            "luz_eletrica" : "Sim",
-            "esgoto_encanado" : "Sim",
-            "lazer" : "Não",
-            "onibus_atende" : "Sim",
-            "animais_de_rua" : "Sim",
+            "agua_encanada" : true,
+            "luz_eletrica" : true,
+            "esgoto_encanado" : true,
+            "lazer" : false,
+            "onibus_atende" : true,
+            "animais_de_rua" : true,
 
-            "lixeira" : "Sim",
-            "lixo_na_rua" : "Não",
+            "lixeira" : true,
+            "lixo_na_rua" : false,
 
             "igrejas" : "2",            
             "bares" : "1",
@@ -68,15 +68,15 @@ DATABASE = {
             "observacoes" : "-"
         },
         "5" : {
-            "agua_encanada" : "Sim",
-            "luz_eletrica" : "Sim",
-            "esgoto_encanado" : "Sim",
-            "lazer" : "Não",
-            "onibus_atende" : "Sim",
-            "animais_de_rua" : "Sim",
+            "agua_encanada" : true,
+            "luz_eletrica" : true,
+            "esgoto_encanado" : true,
+            "lazer" : false,
+            "onibus_atende" : true,
+            "animais_de_rua" : true,
             
-            "lixeira" : "Não",
-            "lixo_na_rua" : "Não",
+            "lixeira" : false,
+            "lixo_na_rua" : false,
         
             "igrejas" : "1",
             "bares" : "1",
