@@ -92,8 +92,8 @@ function HTMLForMicroarea(microarea, microareainfo) {
 function MostrarMicroarea(microarea, microareainfo) {
     if (microareainfo) {
         var div = document.createElement("div");
-        div.className = "microarea_result"
-        div.id = "microarea_div"
+        div.className = "microarea_result";
+        div.id = "microarea_div";
         div.innerHTML = HTMLForMicroarea(microarea, microareainfo);
 
         document.getElementById("microarea_body").appendChild(div);

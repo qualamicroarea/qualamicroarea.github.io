@@ -14,7 +14,7 @@ function CheckCidadeUnidade() {
     const unidade_sel = document.getElementById("cb_unidade").value;
 
     if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
-        const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js"
+        const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js";
 
         LoadScript(database_name, function() {
             const ruas = GetRuasDict();
@@ -37,7 +37,7 @@ function CheckCidadeUnidade() {
 function HTMLForRua(rua, ruainfo) {
     var html = "<p class=\"info_rua_nome\">" + rua + "</p>";
     html += "<table class=\"info_rua_table\"> <tr>";
-    html += "<td>Microárea</td> <td>" + ruainfo.microarea + "</td>"
+    html += "<td>Microárea</td> <td>" + ruainfo.microarea + "</td>";
     html += "</tr> </table>";
 
     return html;
@@ -48,8 +48,8 @@ function HTMLForRua(rua, ruainfo) {
 function MostrarMicroarea(rua, ruainfo) {
     if (ruainfo) {
         var div = document.createElement("div");
-        div.className = "microarea_result"
-        div.id = "microarea_div"
+        div.className = "microarea_result";
+        div.id = "microarea_div";
         div.innerHTML = HTMLForRua(rua, ruainfo);
 
         document.getElementById("microarea_body").appendChild(div);
