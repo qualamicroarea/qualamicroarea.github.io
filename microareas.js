@@ -61,7 +61,7 @@ function HTMLForMicroarea(microarea, microareainfo) {
     }
 
     var html = "<p class=\"info_microarea_nome\">Microárea " + microarea + "</p>";
-    html += "<div class=\"side_by_side_container\">";
+    html += "<div" + IfMobile("class=\"side_by_side_container\"", "") + ">";
     html += "<table class=\"info_microarea_table width_50\">";
 
     html += MergeHTMLInfo(microareainfo, "Água Encanada", "agua_encanada");
@@ -79,8 +79,10 @@ function HTMLForMicroarea(microarea, microareainfo) {
 
     html += "</table>";
 
-    html += "<div class=\"flex_item width_50\">";
+    html += "<div" + IfMobile("class=\"flex_item width_50\"", "") + ">";
+    html += "<div class=\"width_85 center\">";
     html += "<p>" + microareainfo["observacoes"] + "</p>";
+    html += "</div>";
     html += "</div>";
     html += "</div>";
 

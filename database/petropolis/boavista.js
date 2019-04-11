@@ -43,7 +43,7 @@ DATABASE = {
             "onibus_atende" : true,
             "animais_de_rua" : true,
 
-            "lixeira" : true,
+            "lixeira" : 1,
             "lixo_na_rua" : false,
 
             "igrejas" : "2",            
@@ -52,20 +52,20 @@ DATABASE = {
             "observacoes" : "A microárea 3 sofre com o manancial contaminado por metais pesados e coliformes fecais, poucas lixeiras na região."
         },
         "4" : {
-            "agua_encanada" : "-",
-            "luz_eletrica" : "-",
-            "esgoto_encanado" : "-",
-            "lazer" : "-",
-            "onibus_atende" : "-",
-            "animais_de_rua" : "-",
+            "agua_encanada" : true,
+            "luz_eletrica" : true,
+            "esgoto_encanado" : true,
+            "lazer" : false,
+            "onibus_atende" : true,
+            "animais_de_rua" : true,
 
-            "lixeira" : "-",
-            "lixo_na_rua" : "-",
+            "lixeira" : 2,
+            "lixo_na_rua" : true,
 
-            "igrejas" : "-",            
-            "bares" : "-",
+            "igrejas" : 2,            
+            "bares" : 3,
 
-            "observacoes" : "-"
+            "observacoes" : "A microárea 4 possui um relevo acentuado e alguns pequenos comércios. Diversos moradores deixam os cachorros soltos na rua, que reviram o lixo e sujam as ruas."
         },
         "5" : {
             "agua_encanada" : true,

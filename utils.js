@@ -78,3 +78,29 @@ function LoadScript(url, callback) {
 function IsCorrectDatabaseLoaded(database, cidade, unidade) {
     return database && database["cidade"] === cidade && database["unidade"] === unidade;
 }
+
+
+/**
+ * Returns if the useragent is mobile or not.
+ */
+function IsMobile() {
+    const agent = navigator.userAgent;
+    return (agent.match(/Android/i) ||
+            agent.match(/webOS/i) ||
+            agent.match(/iPhone/i) ||
+            agent.match(/iPad/i) ||
+            agent.match(/iPod/i) ||
+            agent.match(/BlackBerry/i) ||
+            agent.match(/Windows Phone/i)
+        )
+}
+
+
+/**
+ * Returns yes if is mobile, no otherwise.
+ * @param {string} yes if yes.
+ * @param {string} no if no.
+ */
+function IfMobile(yes, no) {
+    return IsMobile() ? yes : no;
+}
