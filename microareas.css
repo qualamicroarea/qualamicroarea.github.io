@@ -1,9 +1,10 @@
-.info_rua_nome {
+
+.info_microarea_nome {
     font-size: 120%;
     padding: 5px;
 }
 
-.info_rua_table {
+.info_microarea_table {
     margin: auto;
     border-radius: 5px;
     border: 1px solid white;
