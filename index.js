@@ -104,13 +104,21 @@ function OnWindowLoad() {
         for (let i = 0; i < ruas.length; i++) {
             let rua = ruas[i];
 
-            if (rua.substr(0, text.length).toUpperCase() == text.toUpperCase()) {
+            const index = rua.toLowerCase().indexOf(text.toLowerCase());
+
+            if (index !== -1) {
+                var inner = "";
+
+                if (index > 0) {
+                    inner += rua.substring(0, index);
+                }
+
+                inner += "<strong>" + rua.substring(index, index + text.length) + "</strong>";
+                inner += rua.substring(index + text.length);
+                inner += "<input type='hidden' value='" + rua + "'>";
+
                 var sub_div = document.createElement("DIV");
-
-                sub_div.innerHTML = "<strong>" + rua.substr(0, text.length) + "</strong>";
-                sub_div.innerHTML += rua.substr(text.length);
-
-                sub_div.innerHTML += "<input type='hidden' value='" + rua + "'>";
+                sub_div.innerHTML = inner;
 
                 sub_div.addEventListener("click", function(e) {
                     input.value = this.getElementsByTagName("input")[0].value;
