@@ -67,10 +67,6 @@ function VerificaMicroarea() {
 
 
 
-window.onload = OnWindowLoad;
-
-
-
 function OnWindowLoad() {
     var currentFocus;
 
@@ -187,3 +183,7 @@ function OnWindowLoad() {
         CloseAllLists(e.target);
     });
 }
+
+
+
+window.onload = OnWindowLoad;
