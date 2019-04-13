@@ -66,13 +66,6 @@ function VerificaMicroarea(rua) {
 
 
 
-function OnRuaInput(keys) {
-    CheckCidadeUnidade();
-    VerificaMicroarea(keys.target.value);
-}
-
-
-
 window.onload = OnWindowLoad;
 
 
