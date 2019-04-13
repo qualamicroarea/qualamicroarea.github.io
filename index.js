@@ -160,7 +160,9 @@ function OnWindowLoad() {
             currentFocus = (elements.length - 1);
         }
 
-        elements[currentFocus].classList.add("autocomplete_active");
+        var new_focused = elements[currentFocus];
+        new_focused.scrollIntoView({behavior: "smooth", block: "end"});
+        new_focused.classList.add("autocomplete_active");
     }
 
     function RemoveActive(elements) {
