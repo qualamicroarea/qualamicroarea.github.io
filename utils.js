@@ -24,6 +24,18 @@ function RemoveIfExistsId(id) {
 
 
 /**
+ * Function that removes ALL element with given class.
+ * @param {string} class_name the class of the elements to be removed.
+ */
+function RemoveIfExistsClass(class_name) {
+    var elems = document.getElementsByClassName(class_name);
+    for (let i = 0; i < elems.length; i++) {
+        RemoveIfExists(elems[i]);
+    }
+}
+
+
+/**
  * Function that removes all children from a given node.
  * @param {Node} elem the node to remove all children from.
  */
@@ -69,6 +81,7 @@ function LoadScript(url, callback) {
 }
 
 
+
 /**
  * Returns if the correct database is loaded.
  * @param {JSON} database the loaded database. 
@@ -77,4 +90,30 @@ function LoadScript(url, callback) {
  */
 function IsCorrectDatabaseLoaded(database, cidade, unidade) {
     return database && database["cidade"] === cidade && database["unidade"] === unidade;
+}
+
+
+/**
+ * Returns if the useragent is mobile or not.
+ */
+function IsMobile() {
+    const agent = navigator.userAgent;
+    return (agent.match(/Android/i) ||
+            agent.match(/webOS/i) ||
+            agent.match(/iPhone/i) ||
+            agent.match(/iPad/i) ||
+            agent.match(/iPod/i) ||
+            agent.match(/BlackBerry/i) ||
+            agent.match(/Windows Phone/i)
+        )
+}
+
+
+/**
+ * Returns yes if is mobile, no otherwise.
+ * @param {string} yes if yes.
+ * @param {string} no if no.
+ */
+function IfMobile(yes, no) {
+    return IsMobile() ? yes : no;
 }

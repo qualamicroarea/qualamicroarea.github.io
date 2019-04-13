@@ -8,3 +8,35 @@
     border-radius: 5px;
     border: 1px solid white;
 }
+
+.autocomplete_div {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.autocomplete_items {
+    position: absolute;
+    z-index: 99;
+}
+
+.autocomplete_items div {
+    padding: 15px;
+    cursor: pointer;
+    border: 2px solid darkgray;
+    background-color: rgb(120, 120, 120);
+    text-align: left;
+}
+
+.autocomplete_items div:hover {
+    background-color: #0000ff;
+}
+
+.autocomplete_active {
+    background-color: #5555ff !important;
+}
