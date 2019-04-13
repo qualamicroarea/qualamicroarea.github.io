@@ -97,7 +97,7 @@ function OnWindowLoad() {
 
         var parent_div = document.createElement("DIV");
         parent_div.setAttribute("id", this.id + "autocomplete-list");
-        parent_div.setAttribute("class", "autocomplete-items");
+        parent_div.setAttribute("class", "autocomplete_items");
 
         padding_div.appendChild(parent_div);
 
@@ -160,12 +160,12 @@ function OnWindowLoad() {
             currentFocus = (elements.length - 1);
         }
 
-        elements[currentFocus].classList.add("autocomplete-active");
+        elements[currentFocus].classList.add("autocomplete_active");
     }
 
     function RemoveActive(elements) {
         for (let i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("autocomplete-active");
+            elements[i].classList.remove("autocomplete_active");
         }
     }
 
