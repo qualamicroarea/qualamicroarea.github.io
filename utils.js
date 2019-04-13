@@ -70,6 +70,22 @@ function LoadScript(url, callback) {
 
 
 /**
+ * Function that loads a new JS script and WAITS for it to complete.
+ * @param {string} url the url of the script to load.
+ */
+async function WaitLoadScript(url) {
+    const promise = new Promise(function(resolve, reject) {
+        LoadScript(url, function() {
+            console.log("LOADED");
+            resolve(true);
+        });
+    });
+
+    return await promise;
+}
+
+
+/**
  * Returns if the correct database is loaded.
  * @param {JSON} database the loaded database. 
  * @param {string} cidade the cidade selected.
