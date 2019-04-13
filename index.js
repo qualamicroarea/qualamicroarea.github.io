@@ -3,6 +3,16 @@ var DATABASE = null;
 
 
 
+function GetRuas() {
+    const ruasDict = KeyIfNotNull(DATABASE, "ruas");
+    if (ruasDict) {
+        return Object.keys(ruasDict);
+    }
+    return null;
+}
+
+
+
 function GetRuasDict() {
     return KeyIfNotNull(DATABASE, "ruas");
 }
@@ -15,7 +25,7 @@ function CheckCidadeUnidade() {
 
     if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
         const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js";
-        WaitLoadScript(database_name);
+        LoadScript(database_name, function() {});
     }
 }
 
@@ -75,7 +85,7 @@ function OnWindowLoad() {
     input.addEventListener("input", function(e) {
         CheckCidadeUnidade();
 
-        const ruas = GetRuasDict();
+        const ruas = GetRuas();
         const text = this.value;
 
         CloseAllLists();
