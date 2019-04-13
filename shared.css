@@ -17,6 +17,10 @@ a {
     width: 50%;
 }
 
+.width_70 {
+    width: 70%;
+}
+
 .width_85 {
     width: 85%;
 }
@@ -77,7 +81,7 @@ a {
 }
 
 .maininput {
-    width: 70%;
+    width: 100%;
 }
 
 .roundedinput {

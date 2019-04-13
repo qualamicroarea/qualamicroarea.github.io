@@ -55,9 +55,10 @@ function MostrarMicroarea(rua, ruainfo) {
 
 
 
-function VerificaMicroarea(rua) {
+function VerificaMicroarea() {
     RemoveIfExistsId("microarea_div");
 
+    const rua = document.getElementById("tf_nomedarua").value;
     const ruas = GetRuasDict();
     if (ruas && rua in ruas) {
         MostrarMicroarea(rua, ruas[rua]);
@@ -89,11 +90,16 @@ function OnWindowLoad() {
 
         currentFocus = -1;
 
+        var padding_div = document.createElement("DIV");
+        padding_div.setAttribute("class", "autocomplete_div");
+
+        this.parentNode.appendChild(padding_div);
+
         var parent_div = document.createElement("DIV");
         parent_div.setAttribute("id", this.id + "autocomplete-list");
         parent_div.setAttribute("class", "autocomplete-items");
 
-        this.parentNode.appendChild(parent_div);
+        padding_div.appendChild(parent_div);
 
         for (let i = 0; i < ruas.length; i++) {
             let rua = ruas[i];
@@ -109,13 +115,14 @@ function OnWindowLoad() {
                 sub_div.addEventListener("click", function(e) {
                     input.value = this.getElementsByTagName("input")[0].value;
                     CloseAllLists();
+                    VerificaMicroarea();
                 });
 
                 parent_div.appendChild(sub_div);
             }
         }
 
-        VerificaMicroarea(text);
+        VerificaMicroarea();
     });
 
     input.addEventListener("keydown", function(keys) {
@@ -163,12 +170,7 @@ function OnWindowLoad() {
     }
 
     function CloseAllLists(element) {
-        var x = document.getElementsByClassName("autocomplete-items");
-        for (let i = 0; i < x.length; i++) {
-            if (element != x[i] && element != input) {
-                x[i].parentNode.removeChild(x[i]);
-            }
-        }
+        RemoveIfExistsClass("autocomplete_div");
     }
 
     document.addEventListener("click", function (e) {

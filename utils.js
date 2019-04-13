@@ -24,6 +24,18 @@ function RemoveIfExistsId(id) {
 
 
 /**
+ * Function that removes ALL element with given class.
+ * @param {string} class_name the class of the elements to be removed.
+ */
+function RemoveIfExistsClass(class_name) {
+    var elems = document.getElementsByClassName(class_name);
+    for (let i = 0; i < elems.length; i++) {
+        RemoveIfExists(elems[i]);
+    }
+}
+
+
+/**
  * Function that removes all children from a given node.
  * @param {Node} elem the node to remove all children from.
  */
