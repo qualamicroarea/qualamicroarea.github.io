@@ -30,6 +30,12 @@ function CheckCidadeUnidade() {
 
                     cb_microarea.appendChild(option);
                 });
+
+                const microarea_get = GetURLParam("microarea");
+                if (microareas[microarea_get]) {
+                    cb_microarea.value = microarea_get;
+                    PesquisaMicroarea(microarea_get);
+                }
             }
         });
     }

@@ -131,3 +131,16 @@ function Span(text, color) {
         "</span>"
     ].join("");
 }
+
+
+function GetURLParam(key) {
+    var url_params = window.location.search.substring(1);
+    var params = url_params.split("&");
+    for (let i = 0; i < params.length; i++) {
+        var pair = params[i].split("=");
+        if(pair[0] == key) {
+            return pair[1];
+        }
+    }
+    return null;
+}
