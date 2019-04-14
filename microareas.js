@@ -66,31 +66,33 @@ function HTMLForMicroarea(microarea, microareainfo) {
         return "";
     }
 
-    var html = "<p class=\"info_microarea_nome\">Microárea " + microarea + "</p>";
-    html += "<div" + IfMobile("class=\"side_by_side_container\"", "") + ">";
-    html += "<table class=\"info_microarea_table width_50\">";
+    var html = [
+        "<p class=\"info_microarea_nome\">Microárea ", microarea, "</p>",
+        "<div", IfMobile("class=\"side_by_side_container\"", ""), ">",
+            "<table class=\"info_microarea_table width_50\">",
 
-    html += MergeHTMLInfo(microareainfo, "Água Encanada", "agua_encanada");
-    html += MergeHTMLInfo(microareainfo, "Luz Elétrica", "luz_eletrica");
-    html += MergeHTMLInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado");
-    html += MergeHTMLInfo(microareainfo, "Pontos de Lazer", "lazer");
-    html += MergeHTMLInfo(microareainfo, "Pontos de Ônibus", "onibus_atende");
-    html += MergeHTMLInfo(microareainfo, "Animais de Rua", "animais_de_rua");
+                MergeHTMLInfo(microareainfo, "Água Encanada", "agua_encanada"),
+                MergeHTMLInfo(microareainfo, "Luz Elétrica", "luz_eletrica"),
+                MergeHTMLInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado"),
+                MergeHTMLInfo(microareainfo, "Pontos de Lazer", "lazer"),
+                MergeHTMLInfo(microareainfo, "Pontos de Ônibus", "onibus_atende"),
+                MergeHTMLInfo(microareainfo, "Animais de Rua", "animais_de_rua"),
 
-    html += MergeHTMLInfo(microareainfo, "Lixeiras", "lixeira");
-    html += MergeHTMLInfo(microareainfo, "Lixo na Rua", "lixo_na_rua");
+                MergeHTMLInfo(microareainfo, "Lixeiras", "lixeira"),
+                MergeHTMLInfo(microareainfo, "Lixo na Rua", "lixo_na_rua"),
 
-    html += MergeHTMLInfo(microareainfo, "Igrejas", "igrejas");
-    html += MergeHTMLInfo(microareainfo, "Bares", "bares");
+                MergeHTMLInfo(microareainfo, "Igrejas", "igrejas"),
+                MergeHTMLInfo(microareainfo, "Bares", "bares"),
 
-    html += "</table>";
+            "</table>",
 
-    html += "<div" + IfMobile("class=\"flex_item width_50\"", "") + ">";
-    html += "<div class=\"width_85 center\">";
-    html += "<p>" + microareainfo["observacoes"] + "</p>";
-    html += "</div>";
-    html += "</div>";
-    html += "</div>";
+            "<div", IfMobile("class=\"flex_item width_50\"", ""), ">",
+                "<div class=\"width_85 center\">",
+                    "<p>", microareainfo["observacoes"], "</p>",
+                "</div>",
+            "</div>",
+        "</div>"
+    ].join("");
 
     return html;
 }
