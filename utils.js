@@ -117,3 +117,17 @@ function IsMobile() {
 function IfMobile(yes, no) {
     return IsMobile() ? yes : no;
 }
+
+
+/**
+ * Returns a string of a Span tag with given text and color.
+ * @param {string} text 
+ * @param {string} color 
+ */
+function Span(text, color) {
+    return [
+        "<span style=\"color:", color, "\">",
+            text,
+        "</span>"
+    ].join("");
+}

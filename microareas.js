@@ -40,14 +40,20 @@ function CheckCidadeUnidade() {
 function HTMLForMicroarea(microarea, microareainfo) {
     function MergeHTMLInfo(infos, pre, key) {
         function Concat(a, b) {
-            return "<tr> <td>" + a + "</td> <td>" + b + "</td></tr>";
-        }
-        function Span(text, color) {
-            return "<span style=\"color:" + color + "\">" + text + "</span>";
+            return [
+                "<tr>",
+                    "<td>",
+                        a,
+                    "</td>",
+                    "<td>",
+                        b,
+                    "</td>",
+                "</tr>"
+            ].join("");
         }
 
         var value = infos[key];
-        if (value != null) {
+        if (value !== null) {
             if (value === true) {
                 value = Span("Sim", "#00ff00");
             }
@@ -122,7 +128,7 @@ function OnWindowLoad() {
     document.getElementById("cb_unidade").onchange = CheckCidadeUnidade;
 
     document.getElementById("cb_microarea").onchange = function(keys) {
-        PesquisaMicroarea(keys.target.value); 
+        PesquisaMicroarea(keys.target.value);
     };
 }
 
