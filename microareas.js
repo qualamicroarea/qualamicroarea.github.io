@@ -39,29 +39,24 @@ function CheckCidadeUnidade() {
 
 function HTMLForMicroarea(microarea, microareainfo) {
     function MergeHTMLInfo(infos, pre, key) {
-        function Concat(a, b) {
-            return [
-                "<tr>",
-                    "<td>",
-                        a,
-                    "</td>",
-                    "<td>",
-                        b,
-                    "</td>",
-                "</tr>"
-            ].join("");
-        }
-
         var value = infos[key];
         if (value !== null) {
             if (value === true) {
                 value = Span("Sim", "#00ff00");
-            }
-            if (value === false) {
+            } else if (value === false) {
                 value = Span("Não", "#ff0000");
             }
 
-            return Concat(pre, value);
+            return [
+                "<tr>",
+                    "<td>",
+                        pre,
+                    "</td>",
+                    "<td>",
+                        value,
+                    "</td>",
+                "</tr>"
+            ].join("");
         }
         return "";
     }
