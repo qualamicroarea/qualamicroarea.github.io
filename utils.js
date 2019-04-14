@@ -133,6 +133,10 @@ function Span(text, color) {
 }
 
 
+/**
+ * Returns the URL GET Param for the given key.
+ * @param {string} key 
+ */
 function GetURLParam(key) {
     var url_params = window.location.search.substring(1);
     var params = url_params.split("&");
