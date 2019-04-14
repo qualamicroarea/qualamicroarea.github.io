@@ -106,18 +106,18 @@ function OnWindowLoad() {
             const index = rua.toLowerCase().indexOf(text.toLowerCase());
 
             if (index !== -1) {
-                var inner = "";
+                var inner = [
+                    "<strong>", rua.substring(index, index + text.length), "</strong>",
+                    rua.substring(index + text.length),
+                    "<input type='hidden' value='", rua, "'>",
+                ];
 
                 if (index > 0) {
-                    inner += rua.substring(0, index);
+                    inner.unshift(rua.substring(0, index));
                 }
 
-                inner += "<strong>" + rua.substring(index, index + text.length) + "</strong>";
-                inner += rua.substring(index + text.length);
-                inner += "<input type='hidden' value='" + rua + "'>";
-
                 var sub_div = document.createElement("DIV");
-                sub_div.innerHTML = inner;
+                sub_div.innerHTML = inner.join("");
 
                 sub_div.addEventListener("click", function(e) {
                     input.value = this.getElementsByTagName("input")[0].value;
