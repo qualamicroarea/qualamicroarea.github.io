@@ -150,6 +150,30 @@ function GetURLParam(key) {
 }
 
 
+
+/**
+ * Builds a HTML table row with the given info.
+ * @param {string} left string that will be on the left.
+ * @param {string} right string that will be on the right.
+ */
+function MergeTable(left, right) {
+    if (left !== null && right !== null) {
+        return [
+            "<tr>",
+                "<td>",
+                    left,
+                "</td>",
+                "<td>",
+                    right,
+                "</td>",
+            "</tr>"
+        ].join("");
+    }
+    return "";
+}
+
+
+
 /**
  * Builds a HTML table row with the given info.
  * @param {*} infos the dict with the info.
@@ -165,16 +189,7 @@ function MergeTableInfo(infos, pre, key) {
             value = Span("Não", "#ff0000");
         }
 
-        return [
-            "<tr>",
-                "<td>",
-                    pre,
-                "</td>",
-                "<td>",
-                    value,
-                "</td>",
-            "</tr>"
-        ].join("");
+        return MergeTable(pre, value);
     }
     return "";
 }
