@@ -32,12 +32,15 @@ function CheckCidadeUnidade() {
 
 
 function HTMLForRua(rua, ruainfo) {
-    var html = "<p class=\"info_rua_nome\">" + rua + "</p>";
-    html += "<table class=\"info_rua_table\"> <tr>";
-    html += "<td>Microárea</td> <td>" + ruainfo.microarea + "</td>";
-    html += "</tr> </table>";
-
-    return html;
+    return [
+        "<p class=\"info_rua_nome\">", rua, "</p>",
+        "<table class=\"info_rua_table\">",
+            "<tr>",
+                "<td>Microárea</td>",
+                "<td>", ruainfo.microarea, "</td>",
+            "</tr>",
+        "</table>"
+    ].join("");
 }
 
 
