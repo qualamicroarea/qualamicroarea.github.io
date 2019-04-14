@@ -148,3 +148,33 @@ function GetURLParam(key) {
     }
     return null;
 }
+
+
+/**
+ * Builds a HTML table row with the given info.
+ * @param {*} infos the dict with the info.
+ * @param {*} pre the string to show.
+ * @param {*} key the key to search on infos.
+ */
+function MergeTableInfo(infos, pre, key) {
+    var value = infos[key];
+    if (value !== null) {
+        if (value === true) {
+            value = Span("Sim", "#00ff00");
+        } else if (value === false) {
+            value = Span("Não", "#ff0000");
+        }
+
+        return [
+            "<tr>",
+                "<td>",
+                    pre,
+                "</td>",
+                "<td>",
+                    value,
+                "</td>",
+            "</tr>"
+        ].join("");
+    }
+    return "";
+}

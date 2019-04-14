@@ -44,46 +44,23 @@ function CheckCidadeUnidade() {
 
 
 function HTMLForMicroarea(microarea, microareainfo) {
-    function MergeHTMLInfo(infos, pre, key) {
-        var value = infos[key];
-        if (value !== null) {
-            if (value === true) {
-                value = Span("Sim", "#00ff00");
-            } else if (value === false) {
-                value = Span("Não", "#ff0000");
-            }
-
-            return [
-                "<tr>",
-                    "<td>",
-                        pre,
-                    "</td>",
-                    "<td>",
-                        value,
-                    "</td>",
-                "</tr>"
-            ].join("");
-        }
-        return "";
-    }
-
     var html = [
         "<p class=\"info_microarea_nome\">Microárea ", microarea, "</p>",
         "<div", IfMobile("class=\"side_by_side_container\"", ""), ">",
             "<table class=\"info_microarea_table width_50\">",
 
-                MergeHTMLInfo(microareainfo, "Água Encanada", "agua_encanada"),
-                MergeHTMLInfo(microareainfo, "Luz Elétrica", "luz_eletrica"),
-                MergeHTMLInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado"),
-                MergeHTMLInfo(microareainfo, "Pontos de Lazer", "lazer"),
-                MergeHTMLInfo(microareainfo, "Pontos de Ônibus", "onibus_atende"),
-                MergeHTMLInfo(microareainfo, "Animais de Rua", "animais_de_rua"),
+                MergeTableInfo(microareainfo, "Água Encanada", "agua_encanada"),
+                MergeTableInfo(microareainfo, "Luz Elétrica", "luz_eletrica"),
+                MergeTableInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado"),
+                MergeTableInfo(microareainfo, "Pontos de Lazer", "lazer"),
+                MergeTableInfo(microareainfo, "Pontos de Ônibus", "onibus_atende"),
+                MergeTableInfo(microareainfo, "Animais de Rua", "animais_de_rua"),
 
-                MergeHTMLInfo(microareainfo, "Lixeiras", "lixeira"),
-                MergeHTMLInfo(microareainfo, "Lixo na Rua", "lixo_na_rua"),
+                MergeTableInfo(microareainfo, "Lixeiras", "lixeira"),
+                MergeTableInfo(microareainfo, "Lixo na Rua", "lixo_na_rua"),
 
-                MergeHTMLInfo(microareainfo, "Igrejas", "igrejas"),
-                MergeHTMLInfo(microareainfo, "Bares", "bares"),
+                MergeTableInfo(microareainfo, "Igrejas", "igrejas"),
+                MergeTableInfo(microareainfo, "Bares", "bares"),
 
             "</table>",
 
