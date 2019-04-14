@@ -43,6 +43,12 @@ function HTMLForRua(rua, ruainfo) {
                     "</a>"
                 ].join("")
             ),
+            MergeTableInfo(ruainfo, "Água Encanada", "agua_encanada"),
+            MergeTableInfo(ruainfo, "Luz Elétrica", "luz_eletrica"),
+            MergeTableInfo(ruainfo, "Esgoto Encanado", "esgoto_encanado"),
+            MergeTableInfo(ruainfo, "Entulho na Rua", "entulho"),
+            MergeTableInfo(ruainfo, "Lixo na Rua", "lixo_na_rua"),
+            MergeTableInfo(ruainfo, "Animais de Rua", "animais_de_rua"),
         "</table>"
     ].join("");
 }
