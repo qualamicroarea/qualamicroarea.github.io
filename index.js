@@ -35,14 +35,14 @@ function HTMLForRua(rua, ruainfo) {
     return [
         "<p class=\"info_rua_nome\">", rua, "</p>",
         "<table class=\"info_rua_table\">",
-            "<tr>",
-                "<td>Microárea</td>",
-                "<td>",
+            MergeTable(
+                "Microárea",
+                [
                     "<a href=\"microareas.html?microarea=", ruainfo.microarea, "\">",
-                    ruainfo.microarea,
-                    "</a>",
-                "</td>",
-            "</tr>",
+                        ruainfo.microarea,
+                    "</a>"
+                ].join("")
+            ),
         "</table>"
     ].join("");
 }
