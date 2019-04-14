@@ -121,5 +121,28 @@ DATABASE = {
         "Rua Exemplo Castello" : {
             "microarea" : "4"
         },
+
+        "Rua Cândido Borsato" : {
+            "microarea" : "3",
+            "agua_encanada" : true,
+            "luz_eletrica" : true,
+            "esgoto_encanado" : true,
+            "entulho" : true,
+            "lixo_na_rua" : true,
+            "animais_de_rua" : true,
+            "caracteristicas" : [
+                "Bar",
+                "Igreja",
+                "Lixeira",
+                "Pequenos comércios",
+                "Ponto de ônibus",
+            ],
+            "referencia" : "",
+            "adjacentes" : [
+                "Rua Boa Vista",
+                "Rua Valentino Osório da Silva",
+            ],
+            "observacoes" : "",
+        },
     }
 }
