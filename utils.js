@@ -121,8 +121,8 @@ function IfMobile(yes, no) {
 
 /**
  * Returns a string of a Span tag with given text and color.
- * @param {string} text 
- * @param {string} color 
+ * @param {string} text the text.
+ * @param {string} color the color.
  */
 function Span(text, color) {
     return [
@@ -135,7 +135,7 @@ function Span(text, color) {
 
 /**
  * Returns the URL GET Param for the given key.
- * @param {string} key 
+ * @param {string} key the key.
  */
 function GetURLParam(key) {
     var url_params = window.location.search.substring(1);
