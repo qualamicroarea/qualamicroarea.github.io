@@ -37,7 +37,11 @@ function HTMLForRua(rua, ruainfo) {
         "<table class=\"info_rua_table\">",
             "<tr>",
                 "<td>Microárea</td>",
-                "<td>", ruainfo.microarea, "</td>",
+                "<td>",
+                    "<a href=\"microareas.html?microarea=", ruainfo.microarea, "\">",
+                    ruainfo.microarea,
+                    "</a>",
+                "</td>",
             "</tr>",
         "</table>"
     ].join("");
