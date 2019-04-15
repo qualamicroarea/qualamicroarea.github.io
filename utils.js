@@ -84,7 +84,7 @@ function LoadScript(url, callback) {
 
 /**
  * Returns if the correct database is loaded.
- * @param {JSON} database the loaded database. 
+ * @param {JSON} database the loaded database.
  * @param {string} cidade the cidade selected.
  * @param {string} unidade the unidade selected.
  */
@@ -116,4 +116,96 @@ function IsMobile() {
  */
 function IfMobile(yes, no) {
     return IsMobile() ? yes : no;
+}
+
+
+/**
+ * Returns a string of a Span tag with given text and color.
+ * @param {string} text the text.
+ * @param {string} color the color.
+ */
+function Span(text, color) {
+    return [
+        "<span style=\"color:", color, "\">",
+            text,
+        "</span>"
+    ].join("");
+}
+
+
+/**
+ * Returns the URL GET Param for the given key.
+ * @param {string} key the key.
+ */
+function GetURLParam(key) {
+    var url_params = window.location.search.substring(1);
+    var params = url_params.split("&");
+    for (let i = 0; i < params.length; i++) {
+        var pair = params[i].split("=");
+        if(pair[0] == key) {
+            return pair[1];
+        }
+    }
+    return null;
+}
+
+
+
+/**
+ * Builds a HTML table row with the given info.
+ * @param {string} left string that will be on the left.
+ * @param {string} right string that will be on the right.
+ */
+function MergeTable(left, right) {
+    if (left !== null && right !== null) {
+        return [
+            "<tr>",
+                "<td>",
+                    left,
+                "</td>",
+                "<td>",
+                    right,
+                "</td>",
+            "</tr>"
+        ].join("");
+    }
+    return "";
+}
+
+
+
+/**
+ * Builds a HTML table row with the given info.
+ * @param {*} infos the dict with the info.
+ * @param {*} pre the string to show.
+ * @param {*} key the key to search on infos.
+ */
+function MergeTableInfo(infos, pre, key) {
+    var value = infos[key];
+    if (value !== null) {
+        if (value === true) {
+            value = Span("Sim", "#00ff00");
+        } else if (value === false) {
+            value = Span("Não", "#ff0000");
+        }
+
+        return MergeTable(pre, value);
+    }
+    return "";
+}
+
+
+
+/**
+ * Normalizes the given text, to compare.
+ * @param {string} text the text to be normalized.
+ */
+function NormalizedText(text) {
+    return text.toLowerCase()
+        .replace(new RegExp('[ÁÀÂÃ]','gi'), 'a')
+        .replace(new RegExp('[ÉÈÊ]','gi'), 'e')
+        .replace(new RegExp('[ÍÌÎ]','gi'), 'i')
+        .replace(new RegExp('[ÓÒÔÕ]','gi'), 'o')
+        .replace(new RegExp('[ÚÙÛ]','gi'), 'u')
+        .replace(new RegExp('[Ç]','gi'), 'c');
 }

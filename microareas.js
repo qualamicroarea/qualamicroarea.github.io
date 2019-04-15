@@ -30,6 +30,12 @@ function CheckCidadeUnidade() {
 
                     cb_microarea.appendChild(option);
                 });
+
+                const microarea_get = GetURLParam("microarea");
+                if (microareas[microarea_get]) {
+                    cb_microarea.value = microarea_get;
+                    PesquisaMicroarea(microarea_get);
+                }
             }
         });
     }
@@ -38,53 +44,33 @@ function CheckCidadeUnidade() {
 
 
 function HTMLForMicroarea(microarea, microareainfo) {
-    function MergeHTMLInfo(infos, pre, key) {
-        function Concat(a, b) {
-            return "<tr> <td>" + a + "</td> <td>" + b + "</td></tr>";
-        }
-        function Span(text, color) {
-            return "<span style=\"color:" + color + "\">" + text + "</span>";
-        }
+    var html = [
+        "<p class=\"info_microarea_nome\">Microárea ", microarea, "</p>",
+        "<div", IfMobile("class=\"side_by_side_container\"", ""), ">",
+            "<table class=\"info_microarea_table width_50\">",
 
-        var value = infos[key];
-        if (value != null) {
-            if (value === true) {
-                value = Span("Sim", "#00ff00");
-            }
-            if (value === false) {
-                value = Span("Não", "#ff0000");
-            }
+                MergeTableInfo(microareainfo, "Água Encanada", "agua_encanada"),
+                MergeTableInfo(microareainfo, "Luz Elétrica", "luz_eletrica"),
+                MergeTableInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado"),
+                MergeTableInfo(microareainfo, "Pontos de Lazer", "lazer"),
+                MergeTableInfo(microareainfo, "Pontos de Ônibus", "onibus_atende"),
+                MergeTableInfo(microareainfo, "Animais de Rua", "animais_de_rua"),
 
-            return Concat(pre, value);
-        }
-        return "";
-    }
+                MergeTableInfo(microareainfo, "Lixeiras", "lixeira"),
+                MergeTableInfo(microareainfo, "Lixo na Rua", "lixo_na_rua"),
 
-    var html = "<p class=\"info_microarea_nome\">Microárea " + microarea + "</p>";
-    html += "<div" + IfMobile("class=\"side_by_side_container\"", "") + ">";
-    html += "<table class=\"info_microarea_table width_50\">";
+                MergeTableInfo(microareainfo, "Igrejas", "igrejas"),
+                MergeTableInfo(microareainfo, "Bares", "bares"),
 
-    html += MergeHTMLInfo(microareainfo, "Água Encanada", "agua_encanada");
-    html += MergeHTMLInfo(microareainfo, "Luz Elétrica", "luz_eletrica");
-    html += MergeHTMLInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado");
-    html += MergeHTMLInfo(microareainfo, "Pontos de Lazer", "lazer");
-    html += MergeHTMLInfo(microareainfo, "Pontos de Ônibus", "onibus_atende");
-    html += MergeHTMLInfo(microareainfo, "Animais de Rua", "animais_de_rua");
+            "</table>",
 
-    html += MergeHTMLInfo(microareainfo, "Lixeiras", "lixeira");
-    html += MergeHTMLInfo(microareainfo, "Lixo na Rua", "lixo_na_rua");
-
-    html += MergeHTMLInfo(microareainfo, "Igrejas", "igrejas");
-    html += MergeHTMLInfo(microareainfo, "Bares", "bares");
-
-    html += "</table>";
-
-    html += "<div" + IfMobile("class=\"flex_item width_50\"", "") + ">";
-    html += "<div class=\"width_85 center\">";
-    html += "<p>" + microareainfo["observacoes"] + "</p>";
-    html += "</div>";
-    html += "</div>";
-    html += "</div>";
+            "<div", IfMobile("class=\"flex_item width_50\"", ""), ">",
+                "<div class=\"width_85 center\">",
+                    "<p>", microareainfo["observacoes"], "</p>",
+                "</div>",
+            "</div>",
+        "</div>"
+    ].join("");
 
     return html;
 }
@@ -122,7 +108,7 @@ function OnWindowLoad() {
     document.getElementById("cb_unidade").onchange = CheckCidadeUnidade;
 
     document.getElementById("cb_microarea").onchange = function(keys) {
-        PesquisaMicroarea(keys.target.value); 
+        PesquisaMicroarea(keys.target.value);
     };
 }
 

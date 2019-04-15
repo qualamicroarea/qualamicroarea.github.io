@@ -31,13 +31,109 @@ function CheckCidadeUnidade() {
 
 
 
-function HTMLForRua(rua, ruainfo) {
-    var html = "<p class=\"info_rua_nome\">" + rua + "</p>";
-    html += "<table class=\"info_rua_table\"> <tr>";
-    html += "<td>Microárea</td> <td>" + ruainfo.microarea + "</td>";
-    html += "</tr> </table>";
+function HTMLCaracteristicasForRua(rua, ruainfo) {
+    const caracteristicas = ruainfo.caracteristicas;
 
-    return html;
+    if (caracteristicas.length > 0) {
+        var html_parts = [
+            "<p class=\"info_rua_caracteristicas\">Características da Rua:</p>",
+            "<table class=\"info_rua_table\">",
+        ]
+
+        for (let i = 0; i < caracteristicas.length; i++) {
+            const caracteristica = caracteristicas[i];
+            
+            html_parts.push([
+                "<tr>",
+                    "<td>",
+                        caracteristica,
+                    "</td>",
+                "</tr>"
+            ].join(""));
+        }
+
+        html_parts.push("</table>")
+
+        return html_parts.join("");
+    }
+    return "";
+}
+
+
+
+function HTMLAdjacentesForRua(rua, ruainfo) {
+    const adjacentes = ruainfo.adjacentes;
+
+    if (adjacentes.length > 0) {
+        var html_parts = [
+            "<p class=\"info_rua_adjacentes\">Ruas Adjacentes:</p>",
+            "<table class=\"info_rua_table\">",
+        ]
+
+        for (let i = 0; i < adjacentes.length; i++) {
+            const adjacente = adjacentes[i];
+            
+            html_parts.push([
+                "<tr>",
+                    "<td>",
+                        "<span class=\"rua_adjacente clickable\">",
+                            adjacente,
+                        "</span>",
+                    "</td>",
+                "</tr>"
+            ].join(""));
+        }
+
+        html_parts.push("</table>")
+
+        return html_parts.join("");
+    }
+    return "";
+}
+
+
+
+function HTMLForRua(rua, ruainfo) {
+    return [
+        "<p class=\"info_rua_nome\">", rua, "</p>",
+        "<table class=\"info_rua_table\">",
+            MergeTable(
+                "Microárea",
+                [
+                    "<a href=\"microareas.html?microarea=", ruainfo.microarea, "\">",
+                        ruainfo.microarea,
+                    "</a>"
+                ].join("")
+            ),
+            MergeTableInfo(ruainfo, "Água Encanada", "agua_encanada"),
+            MergeTableInfo(ruainfo, "Luz Elétrica", "luz_eletrica"),
+            MergeTableInfo(ruainfo, "Esgoto Encanado", "esgoto_encanado"),
+            MergeTableInfo(ruainfo, "Entulho na Rua", "entulho"),
+            MergeTableInfo(ruainfo, "Lixo na Rua", "lixo_na_rua"),
+            MergeTableInfo(ruainfo, "Animais de Rua", "animais_de_rua"),
+        "</table>",
+        HTMLCaracteristicasForRua(rua, ruainfo),
+        HTMLAdjacentesForRua(rua, ruainfo),
+    ].join("");
+}
+
+
+
+function LinkRuaHandles() {
+    var adjacentes = document.getElementsByClassName("rua_adjacente");
+
+    for (let i = 0; i < adjacentes.length; i++) {
+        const adjacente = adjacentes[i];
+        adjacente.onclick = function(keys) {
+            const adjacente_name = this.textContent;
+
+            var tf_nomedarua = document.getElementById("tf_nomedarua");
+            tf_nomedarua.value = adjacente_name;
+            VerificaMicroareaDaRua(adjacente_name);
+
+            tf_nomedarua.scrollIntoView();
+        }
+    }
 }
 
 
@@ -50,19 +146,25 @@ function MostrarMicroarea(rua, ruainfo) {
         div.innerHTML = HTMLForRua(rua, ruainfo);
 
         document.getElementById("microarea_body").appendChild(div);
+
+        LinkRuaHandles();
     }
 }
 
 
-
-function VerificaMicroarea() {
+function VerificaMicroareaDaRua(rua) {
     RemoveIfExistsId("microarea_div");
 
-    const rua = document.getElementById("tf_nomedarua").value;
     const ruas = GetRuasDict();
     if (ruas && rua in ruas) {
         MostrarMicroarea(rua, ruas[rua]);
     }
+}
+
+
+function VerificaMicroarea() {
+    const rua = document.getElementById("tf_nomedarua").value;
+    VerificaMicroareaDaRua(rua);
 }
 
 
@@ -100,21 +202,21 @@ function OnWindowLoad() {
         for (let i = 0; i < ruas.length; i++) {
             let rua = ruas[i];
 
-            const index = rua.toLowerCase().indexOf(text.toLowerCase());
+            const index = NormalizedText(rua).indexOf(NormalizedText(text));
 
             if (index !== -1) {
-                var inner = "";
+                var inner = [
+                    "<strong>", rua.substring(index, index + text.length), "</strong>",
+                    rua.substring(index + text.length),
+                    "<input type='hidden' value='", rua, "'>",
+                ];
 
                 if (index > 0) {
-                    inner += rua.substring(0, index);
+                    inner.unshift(rua.substring(0, index));
                 }
 
-                inner += "<strong>" + rua.substring(index, index + text.length) + "</strong>";
-                inner += rua.substring(index + text.length);
-                inner += "<input type='hidden' value='" + rua + "'>";
-
                 var sub_div = document.createElement("DIV");
-                sub_div.innerHTML = inner;
+                sub_div.innerHTML = inner.join("");
 
                 sub_div.addEventListener("click", function(e) {
                     input.value = this.getElementsByTagName("input")[0].value;
