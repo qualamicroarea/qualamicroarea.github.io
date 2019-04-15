@@ -31,6 +31,11 @@ function CheckCidadeUnidade() {
 
 
 
+function HTMLCaracteristicasForRua(rua, ruainfo) {
+    
+}
+
+
 function HTMLForRua(rua, ruainfo) {
     return [
         "<p class=\"info_rua_nome\">", rua, "</p>",
@@ -49,7 +54,8 @@ function HTMLForRua(rua, ruainfo) {
             MergeTableInfo(ruainfo, "Entulho na Rua", "entulho"),
             MergeTableInfo(ruainfo, "Lixo na Rua", "lixo_na_rua"),
             MergeTableInfo(ruainfo, "Animais de Rua", "animais_de_rua"),
-        "</table>"
+        "</table>",
+        HTMLCaracteristicasForRua(rua, ruainfo),
     ].join("");
 }
 
