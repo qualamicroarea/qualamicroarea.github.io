@@ -127,8 +127,11 @@ function LinkRuaHandles() {
         adjacente.onclick = function(keys) {
             const adjacente_name = this.textContent;
 
-            document.getElementById("tf_nomedarua").value = adjacente_name;
+            var tf_nomedarua = document.getElementById("tf_nomedarua");
+            tf_nomedarua.value = adjacente_name;
             VerificaMicroareaDaRua(adjacente_name);
+
+            tf_nomedarua.scrollIntoView();
         }
     }
 }
