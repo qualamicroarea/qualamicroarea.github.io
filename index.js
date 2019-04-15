@@ -119,7 +119,7 @@ function OnWindowLoad() {
         for (let i = 0; i < ruas.length; i++) {
             let rua = ruas[i];
 
-            const index = rua.toLowerCase().indexOf(text.toLowerCase());
+            const index = NormalizedText(rua).indexOf(NormalizedText(text));
 
             if (index !== -1) {
                 var inner = [

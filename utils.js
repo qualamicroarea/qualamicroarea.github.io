@@ -84,7 +84,7 @@ function LoadScript(url, callback) {
 
 /**
  * Returns if the correct database is loaded.
- * @param {JSON} database the loaded database. 
+ * @param {JSON} database the loaded database.
  * @param {string} cidade the cidade selected.
  * @param {string} unidade the unidade selected.
  */
@@ -192,4 +192,20 @@ function MergeTableInfo(infos, pre, key) {
         return MergeTable(pre, value);
     }
     return "";
+}
+
+
+
+/**
+ * Normalizes the given text, to compare.
+ * @param {string} text the text to be normalized.
+ */
+function NormalizedText(text) {
+    return text.toLowerCase()
+        .replace(new RegExp('[ÁÀÂÃ]','gi'), 'a')
+        .replace(new RegExp('[ÉÈÊ]','gi'), 'e')
+        .replace(new RegExp('[ÍÌÎ]','gi'), 'i')
+        .replace(new RegExp('[ÓÒÔÕ]','gi'), 'o')
+        .replace(new RegExp('[ÚÙÛ]','gi'), 'u')
+        .replace(new RegExp('[Ç]','gi'), 'c');
 }
