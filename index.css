@@ -52,3 +52,7 @@
 .autocomplete_active {
     background-color: #5555ff !important;
 }
+
+.clickable {
+    color: rgb(255, 100, 100);
+}

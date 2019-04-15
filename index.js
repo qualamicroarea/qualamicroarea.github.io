@@ -76,7 +76,9 @@ function HTMLAdjacentesForRua(rua, ruainfo) {
             html_parts.push([
                 "<tr>",
                     "<td>",
-                        adjacente,
+                        "<span class=\"rua_adjacente clickable\">",
+                            adjacente,
+                        "</span>",
                     "</td>",
                 "</tr>"
             ].join(""));
@@ -117,6 +119,22 @@ function HTMLForRua(rua, ruainfo) {
 
 
 
+function LinkRuaHandles() {
+    var adjacentes = document.getElementsByClassName("rua_adjacente");
+
+    for (let i = 0; i < adjacentes.length; i++) {
+        const adjacente = adjacentes[i];
+        adjacente.onclick = function(keys) {
+            const adjacente_name = this.textContent;
+
+            document.getElementById("tf_nomedarua").value = adjacente_name;
+            VerificaMicroareaDaRua(adjacente_name);
+        }
+    }
+}
+
+
+
 function MostrarMicroarea(rua, ruainfo) {
     if (ruainfo) {
         var div = document.createElement("div");
@@ -125,19 +143,25 @@ function MostrarMicroarea(rua, ruainfo) {
         div.innerHTML = HTMLForRua(rua, ruainfo);
 
         document.getElementById("microarea_body").appendChild(div);
+
+        LinkRuaHandles();
     }
 }
 
 
-
-function VerificaMicroarea() {
+function VerificaMicroareaDaRua(rua) {
     RemoveIfExistsId("microarea_div");
 
-    const rua = document.getElementById("tf_nomedarua").value;
     const ruas = GetRuasDict();
     if (ruas && rua in ruas) {
         MostrarMicroarea(rua, ruas[rua]);
     }
+}
+
+
+function VerificaMicroarea() {
+    const rua = document.getElementById("tf_nomedarua").value;
+    VerificaMicroareaDaRua(rua);
 }
 
 
