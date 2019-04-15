@@ -32,7 +32,29 @@ function CheckCidadeUnidade() {
 
 
 function HTMLCaracteristicasForRua(rua, ruainfo) {
-    
+    const caracteristicas = ruainfo.caracteristicas;
+
+    if (caracteristicas.length > 0) {
+        var html_parts = [
+            "<p class=\"info_rua_caracteristicas\">Características da Rua:</p>",
+            "<table class=\"info_rua_table\">",
+        ]
+
+        for (let i = 0; i < caracteristicas.length; i++) {
+            const caracteristica = caracteristicas[i];
+            
+            html_parts.push([
+                "<tr>",
+                    "<td>",
+                        caracteristica,
+                    "</td>",
+                "</tr>"
+            ].join(""));
+        }
+
+        return html_parts.join("");
+    }
+    return "";
 }
 
 

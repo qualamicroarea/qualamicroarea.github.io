@@ -9,6 +9,12 @@
     border: 1px solid white;
 }
 
+.info_rua_caracteristicas {
+    font-size: 110%;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
 .autocomplete_div {
     padding-left: 20px;
     padding-right: 20px;
