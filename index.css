@@ -1,5 +1,5 @@
 .info_rua_nome {
-    font-size: 120%;
+    font-size: 130%;
     padding: 5px;
 }
 
@@ -12,7 +12,13 @@
 .info_rua_caracteristicas {
     font-size: 110%;
     padding-bottom: 10px;
-    padding-top: 20px;
+    padding-top: 25px;
+}
+
+.info_rua_adjacentes {
+    font-size: 110%;
+    padding-bottom: 10px;
+    padding-top: 25px;
 }
 
 .autocomplete_div {

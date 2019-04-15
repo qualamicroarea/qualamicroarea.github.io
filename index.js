@@ -52,10 +52,43 @@ function HTMLCaracteristicasForRua(rua, ruainfo) {
             ].join(""));
         }
 
+        html_parts.push("</table>")
+
         return html_parts.join("");
     }
     return "";
 }
+
+
+
+function HTMLAdjacentesForRua(rua, ruainfo) {
+    const adjacentes = ruainfo.adjacentes;
+
+    if (adjacentes.length > 0) {
+        var html_parts = [
+            "<p class=\"info_rua_adjacentes\">Ruas Adjacentes:</p>",
+            "<table class=\"info_rua_table\">",
+        ]
+
+        for (let i = 0; i < adjacentes.length; i++) {
+            const adjacente = adjacentes[i];
+            
+            html_parts.push([
+                "<tr>",
+                    "<td>",
+                        adjacente,
+                    "</td>",
+                "</tr>"
+            ].join(""));
+        }
+
+        html_parts.push("</table>")
+
+        return html_parts.join("");
+    }
+    return "";
+}
+
 
 
 function HTMLForRua(rua, ruainfo) {
@@ -78,6 +111,7 @@ function HTMLForRua(rua, ruainfo) {
             MergeTableInfo(ruainfo, "Animais de Rua", "animais_de_rua"),
         "</table>",
         HTMLCaracteristicasForRua(rua, ruainfo),
+        HTMLAdjacentesForRua(rua, ruainfo),
     ].join("");
 }
 
