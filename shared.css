@@ -75,8 +75,14 @@ a {
     font-size: 110%;
 }
 
+.paddedchoicebox {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .interactionbox {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 90%;
 }
 
@@ -119,4 +125,23 @@ td {
 
 .flex_item {
     flex-grow: 1;
+}
+
+.pre_content {
+    width: 90%;
+}
+
+
+.redirect_button {
+    display: table-cell;
+    color: rgb(255, 100, 100);
+
+    background: rgb(230, 230, 230);
+    border-radius: 30px;
+
+    box-shadow: 5px 5px 3px rgb(150, 150, 150);
+}
+
+.redirect_button * {
+    padding: 15px;
 }

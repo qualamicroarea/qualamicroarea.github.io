@@ -168,8 +168,16 @@ function VerificaMicroarea() {
 }
 
 
+function LinkConstHandles() {
+    document.getElementById("button_ver_microareas").onclick = function() {
+        window.location.href = "microareas.html";
+    }
+}
+
 
 function OnWindowLoad() {
+    LinkConstHandles();
+
     var currentFocus;
 
     const input = document.getElementById("tf_nomedarua");
