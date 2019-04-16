@@ -46,7 +46,7 @@ function CheckCidadeUnidade() {
 function HTMLForMicroarea(microarea, microareainfo) {
     var html = [
         "<p class=\"info_microarea_nome\">Microárea ", microarea, "</p>",
-        "<div", IfMobile("class=\"side_by_side_container\"", ""), ">",
+        "<div", IfMobile("", " class=\"side_by_side_container\""), ">",
             "<table class=\"info_microarea_table width_50\">",
 
                 MergeTableInfo(microareainfo, "Água Encanada", "agua_encanada"),
@@ -64,7 +64,7 @@ function HTMLForMicroarea(microarea, microareainfo) {
 
             "</table>",
 
-            "<div", IfMobile("class=\"flex_item width_50\"", ""), ">",
+            "<div", IfMobile("", " class=\"flex_item width_50\""), ">",
                 "<div class=\"width_85 center\">",
                     "<p>", microareainfo["observacoes"], "</p>",
                 "</div>",
