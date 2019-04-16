@@ -17,7 +17,7 @@ function CheckCidadeUnidade() {
         const cb_microarea = document.getElementById("cb_microarea");
         RemoveChildren(cb_microarea);
 
-        const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js";
+        const database_name = ["database/", cidade_sel, "/", unidade_sel, ".js"].join("");
 
         LoadScript(database_name, function() {
             var microareas = GetMicroareasDict();
