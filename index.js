@@ -285,12 +285,12 @@ function OnWindowLoad() {
         }
     }
 
-    function CloseAllLists(element) {
+    function CloseAllLists() {
         RemoveIfExistsClass("autocomplete_div");
     }
 
-    document.addEventListener("click", function (e) {
-        CloseAllLists(e.target);
+    document.addEventListener("click", function() {
+        CloseAllLists();
     });
 }
 
