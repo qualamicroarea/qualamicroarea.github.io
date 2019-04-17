@@ -4,7 +4,7 @@ var DATABASE = null;
 
 
 function GetRuas() {
-    const ruasDict = KeyIfNotNull(DATABASE, "ruas");
+    const ruasDict = GetRuasDict();
     if (ruasDict) {
         return Object.keys(ruasDict);
     }
