@@ -74,8 +74,10 @@ function LoadScript(url, callback) {
     script_tag.id = script_id;
     script_tag.src = url;
 
-    script_tag.onreadystatechange = callback;
-    script_tag.onload = callback;
+    if (callback && typeof callback === "function") {
+        script_tag.onreadystatechange = callback;
+        script_tag.onload = callback;
+    }
 
     document.head.appendChild(script_tag);
 }
