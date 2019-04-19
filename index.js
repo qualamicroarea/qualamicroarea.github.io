@@ -25,7 +25,7 @@ function CheckCidadeUnidade() {
 
     if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
         const database_name = DatabasePath(cidade_sel, unidade_sel);
-        LoadScript(database_name, function() {});
+        LoadScript(database_name, null);
     }
 }
 
