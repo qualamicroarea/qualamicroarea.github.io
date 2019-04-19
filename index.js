@@ -24,7 +24,7 @@ function CheckCidadeUnidade() {
     const unidade_sel = document.getElementById("cb_unidade").value;
 
     if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
-        const database_name = ["database/", cidade_sel, "/", unidade_sel, ".js"].join("");
+        const database_name = DatabasePath(cidade_sel, unidade_sel);
         LoadScript(database_name, function() {});
     }
 }

@@ -235,3 +235,14 @@ function ReplaceWithDict(text, dict) {
 
     return replaced_text;
 }
+
+
+
+/**
+ * Returns the database path, given info.
+ * @param {string} cidade the cidade.
+ * @param {string} unidade the unidade.
+ */
+function DatabasePath(cidade, unidade) {
+    return ["database/", cidade, "/", unidade, ".js"].join("");
+}
