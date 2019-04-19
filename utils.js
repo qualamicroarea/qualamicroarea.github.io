@@ -209,3 +209,29 @@ function NormalizedText(text) {
         .replace(new RegExp('[ÚÙÛ]','gi'), 'u')
         .replace(new RegExp('[Ç]','gi'), 'c');
 }
+
+
+
+/**
+ * Given a string and a dict, replaces all occurrences of {{key}} with the value from the dict.
+ * @param {string} text the replace base.
+ * @param {dictionary} dict the replace dictionary.
+ */
+function ReplaceWithDict(text, dict) {
+    var replaced_text = text;
+
+    const keys = Object.keys(dict);
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        replaced_text = replaced_text.replace(
+            [
+                "{{",
+                key,
+                "}}"
+            ].join(""),
+            dict[key]
+        );
+    }
+
+    return replaced_text;
+}
