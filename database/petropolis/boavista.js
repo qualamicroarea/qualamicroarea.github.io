@@ -372,7 +372,7 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Rua Cândido Borsato",
-				"Rua da Repreza",
+				"Rua da Represa",
 			],
 			"observacoes" : "2 confecções de roupa",
 		},
