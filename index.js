@@ -54,7 +54,6 @@ function MostrarMicroarea(rua) {
     var div = document.createElement("div");
     div.className = "microarea_result";
     div.id = "microarea_div";
-    console.log(rua.HTML());
     div.innerHTML = rua.HTML();
 
     document.getElementById("microarea_body").appendChild(div);
