@@ -244,7 +244,9 @@ DATABASE = {
 			"lixo_na_rua" : true,
 			"animais_de_rua" : true,
 			"caracteristicas" : [
-				"",
+				"Bar",
+				"Pequenos comércios",
+				"Ponto de ônibus",
 			],
 			"referencia" : "",
 			"adjacentes" : [
@@ -286,7 +288,6 @@ DATABASE = {
 			"lixo_na_rua" : true,
 			"animais_de_rua" : true,
 			"caracteristicas" : [
-				"",
 			],
 			"referencia" : "",
 			"adjacentes" : [
@@ -347,7 +348,6 @@ DATABASE = {
 			"lixo_na_rua" : true,
 			"animais_de_rua" : true,
 			"caracteristicas" : [
-				"",
 			],
 			"referencia" : "",
 			"adjacentes" : [
