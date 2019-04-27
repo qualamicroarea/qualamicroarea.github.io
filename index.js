@@ -4,7 +4,7 @@ var DATABASE = null;
 
 
 function GetRuas() {
-    const ruasDict = KeyIfNotNull(DATABASE, "ruas");
+    const ruasDict = GetRuasDict();
     if (ruasDict) {
         return Object.keys(ruasDict);
     }
@@ -24,97 +24,9 @@ function CheckCidadeUnidade() {
     const unidade_sel = document.getElementById("cb_unidade").value;
 
     if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
-        const database_name = "database/" + cidade_sel + "/" + unidade_sel + ".js";
-        LoadScript(database_name, function() {});
+        const database_name = DatabasePath(cidade_sel, unidade_sel);
+        LoadScript(database_name, null);
     }
-}
-
-
-
-function HTMLCaracteristicasForRua(rua, ruainfo) {
-    const caracteristicas = ruainfo.caracteristicas;
-
-    if (caracteristicas.length > 0) {
-        var html_parts = [
-            "<p class=\"info_rua_caracteristicas\">Características da Rua:</p>",
-            "<table class=\"info_rua_table\">",
-        ]
-
-        for (let i = 0; i < caracteristicas.length; i++) {
-            const caracteristica = caracteristicas[i];
-            
-            html_parts.push([
-                "<tr>",
-                    "<td>",
-                        caracteristica,
-                    "</td>",
-                "</tr>"
-            ].join(""));
-        }
-
-        html_parts.push("</table>")
-
-        return html_parts.join("");
-    }
-    return "";
-}
-
-
-
-function HTMLAdjacentesForRua(rua, ruainfo) {
-    const adjacentes = ruainfo.adjacentes;
-
-    if (adjacentes.length > 0) {
-        var html_parts = [
-            "<p class=\"info_rua_adjacentes\">Ruas Adjacentes:</p>",
-            "<table class=\"info_rua_table\">",
-        ]
-
-        for (let i = 0; i < adjacentes.length; i++) {
-            const adjacente = adjacentes[i];
-            
-            html_parts.push([
-                "<tr>",
-                    "<td>",
-                        "<span class=\"rua_adjacente clickable\">",
-                            adjacente,
-                        "</span>",
-                    "</td>",
-                "</tr>"
-            ].join(""));
-        }
-
-        html_parts.push("</table>")
-
-        return html_parts.join("");
-    }
-    return "";
-}
-
-
-
-function HTMLForRua(rua, ruainfo) {
-    return [
-        "<p class=\"info_rua_nome\">", rua, "</p>",
-        "<table class=\"info_rua_table\">",
-            MergeTable(
-                "Microárea",
-                [
-                    "<a href=\"microareas.html?microarea=", ruainfo.microarea, "\">",
-                        ruainfo.microarea,
-                    "</a>"
-                ].join("")
-            ),
-            MergeTableInfo(ruainfo, "Água Encanada", "agua_encanada"),
-            MergeTableInfo(ruainfo, "Luz Elétrica", "luz_eletrica"),
-            MergeTableInfo(ruainfo, "Esgoto Encanado", "esgoto_encanado"),
-            MergeTableInfo(ruainfo, "Entulho na Rua", "entulho"),
-            MergeTableInfo(ruainfo, "Lixo na Rua", "lixo_na_rua"),
-            MergeTableInfo(ruainfo, "Animais de Rua", "animais_de_rua"),
-        "</table>",
-        HTMLCaracteristicasForRua(rua, ruainfo),
-        HTMLAdjacentesForRua(rua, ruainfo),
-    ].join("");
 }
 
 
@@ -138,18 +50,17 @@ function LinkRuaHandles() {
 
 
 
-function MostrarMicroarea(rua, ruainfo) {
-    if (ruainfo) {
-        var div = document.createElement("div");
-        div.className = "microarea_result";
-        div.id = "microarea_div";
-        div.innerHTML = HTMLForRua(rua, ruainfo);
+function MostrarMicroarea(rua) {
+    var div = document.createElement("div");
+    div.className = "microarea_result";
+    div.id = "microarea_div";
+    div.innerHTML = rua.HTML();
 
-        document.getElementById("microarea_body").appendChild(div);
+    document.getElementById("microarea_body").appendChild(div);
 
-        LinkRuaHandles();
-    }
+    LinkRuaHandles();
 }
+
 
 
 function VerificaMicroareaDaRua(rua) {
@@ -157,9 +68,11 @@ function VerificaMicroareaDaRua(rua) {
 
     const ruas = GetRuasDict();
     if (ruas && rua in ruas) {
-        MostrarMicroarea(rua, ruas[rua]);
+        const ruaObject = new Rua(rua, ruas[rua]);
+        MostrarMicroarea(ruaObject);
     }
 }
+
 
 
 function VerificaMicroarea() {
@@ -168,11 +81,13 @@ function VerificaMicroarea() {
 }
 
 
+
 function LinkConstHandles() {
     document.getElementById("button_ver_microareas").onclick = function() {
         window.location.href = "microareas.html";
     }
 }
+
 
 
 function OnWindowLoad() {
@@ -285,12 +200,12 @@ function OnWindowLoad() {
         }
     }
 
-    function CloseAllLists(element) {
+    function CloseAllLists() {
         RemoveIfExistsClass("autocomplete_div");
     }
 
-    document.addEventListener("click", function (e) {
-        CloseAllLists(e.target);
+    document.addEventListener("click", function() {
+        CloseAllLists();
     });
 }
 
