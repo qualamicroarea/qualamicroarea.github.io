@@ -87,7 +87,7 @@ class Rua {
      * Returns a HTML string with the microarea of this Rua.
      */
     microareaHTML() {
-        var parts = []
+        var parts = [];
 
         for (let i = 0; i < this.microarea.length; i++) {
             parts.push([
@@ -101,7 +101,7 @@ class Rua {
             // }
         }
 
-        return MergeTable("Microárea", parts.join(""))
+        return MergeTable("Microárea", parts.join(""));
     }
 
 
@@ -119,7 +119,7 @@ class Rua {
                 MergeTableInfo(this, "Lixo na Rua", "lixo_na_rua"),
                 MergeTableInfo(this, "Animais de Rua", "animais_de_rua"),
             "</table>",
-        ]
+        ].join("");
     }
 
 
