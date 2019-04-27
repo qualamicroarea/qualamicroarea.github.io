@@ -89,16 +89,18 @@ class Rua {
     microareaHTML() {
         var parts = [];
 
-        for (let i = 0; i < this.microarea.length; i++) {
+        const length = this.microarea.length;
+
+        for (let i = 0; i < length; i++) {
             parts.push([
                 "<a href=\"microareas.html?microarea=", this.microarea[i], "\">",
                     this.microarea[i],
                 "</a>"
             ].join(""));
 
-            // if (i > 1) {
-            //     parts.push(" ");
-            // }
+            if (i != length - 1) {
+                parts.push(", ");
+            }
         }
 
         return MergeTable("Microárea", parts.join(""));
