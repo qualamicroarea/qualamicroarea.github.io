@@ -49,11 +49,17 @@ function CheckCidadeUnidade() {
 }
 
 
+function Filtrar() {
+
+}
+
 
 function OnWindowLoad() {
     LinkStaticButtons();
     
     CheckCidadeUnidade();
+
+    document.getElementById("button_filtrar").onclick = Filtrar;
 }
 
 
