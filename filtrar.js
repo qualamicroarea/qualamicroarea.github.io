@@ -49,9 +49,99 @@ function CheckCidadeUnidade() {
 }
 
 
+
+function MostrarRuasHTML(rua_collection) {
+    const names = rua_collection.names();
+
+    if (names.length == 0) {
+        return "<i class=\"filtrar_nome\">Nenhuma Rua Encontrada</i>";
+    }
+
+    var parts = [
+        "<p class=\"filtrar_nome\">Ruas Encontradas:</p>",
+        "<table class=\"center\">",
+    ];
+
+    for (let i = 0; i < names.length; i++) {
+        parts.push([
+            "<tr>",
+            "<td>",
+            "<a href=\"index.html?rua=", names[i], "\">",
+                names[i],
+            "</a>",
+            "</td>",
+            "</tr>",
+        ].join(""));
+    }
+
+    parts.push("</table>");
+
+    return parts.join("");
+}
+
+
+
+function MostrarRuas(rua_collection) {
+    RemoveIfExistsId("filtrar_result_div");
+
+    var div = document.createElement("div");
+    div.className = "filtrar_result center";
+    div.id = "filtrar_result_div";
+    div.innerHTML = MostrarRuasHTML(rua_collection);
+
+    document.getElementById("filtrar_body").appendChild(div);
+}
+
+
+
 function Filtrar() {
 
+    function cb_value(id) {
+        const value = document.getElementById(id).value;
+    
+        if (value === "-") {
+            return null;
+        }
+        if (value === "sim") {
+            return true;
+        }
+        if (value === "nao") {
+            return false;
+        }
+    
+        return value;
+    }
+
+
+    const microarea = cb_value("cb_microarea");
+    const agua_encanada = cb_value("cb_agua_encanada");
+    const luz_eletrica = cb_value("cb_luz_eletrica");
+    const esgoto_encanado = cb_value("cb_esgoto_encanado");
+    const entulho = cb_value("cb_entulho");
+
+    var filter_dict = {};
+
+    if (microarea !== null) {
+        filter_dict["microarea"] = microarea;
+    }
+    if (agua_encanada !== null) {
+        filter_dict["agua_encanada"] = agua_encanada;
+    }
+    if (luz_eletrica !== null) {
+        filter_dict["luz_eletrica"] = luz_eletrica;
+    }
+    if (esgoto_encanado !== null) {
+        filter_dict["esgoto_encanado"] = esgoto_encanado;
+    }
+    if (entulho !== null) {
+        filter_dict["entulho"] = entulho;
+    }
+
+    const filtered = RuaCollectionFromDict(GetRuasDict()).filter(filter_dict);
+
+    MostrarRuas(filtered);
 }
+
 
 
 function OnWindowLoad() {

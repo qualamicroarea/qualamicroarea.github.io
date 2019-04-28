@@ -138,6 +138,18 @@ class Rua {
     }
 
 
+    comformsKey(rules, key) {
+        if (rules) {
+            if (rules[key] !== undefined) {
+                if (rules[key] !== this[key]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
     /**
      * Returns true if this Rua Object conforms to the given rules, false otherwise.
      * @param {dict} rules the rules to be checked, a dict where:
@@ -145,33 +157,40 @@ class Rua {
      *      The values the needed value to conform.
      */
     conforms(rules) {
-        function invalidKey(key) {
-            return rules[key] && rules[key] !== this[key]
-        }
+        if (rules) {
+            if (rules["microarea"] && !IsInArray(rules["microarea"], this.microarea)) {
+                return false;
+            }
 
-        if (rules.microarea && !IsInArray(rules.microarea)) {
-            return false;
-        }
+            if (!this.comformsKey(rules, "agua_encanada")) {
+                return false;
+            }
+            if (!this.comformsKey(rules, "luz_eletrica")) {
+                return false;
+            }
+            if (!this.comformsKey(rules, "esgoto_encanado")) {
+                return false;
+            }
+            if (!this.comformsKey(rules, "entulho")) {
+                return false;
+            }
+            if (!this.comformsKey(rules, "lixo_na_rua")) {
+                return false;
+            }
+            if (!this.comformsKey(rules, "animais_de_rua")) {
+                return false;
+            }
 
-        if (invalidKey("agua_encanada") ||
-            invalidKey("luz_eletrica") ||
-            invalidKey("esgoto_encanado") ||
-            invalidKey("entulho") ||
-            invalidKey("lixo_na_rua") ||
-            invalidKey("animais_de_rua")) {
-            return false;
-        }
+            if (rules.caracteristicas) {
+                for (let i = 0; i < rules.caracteristicas.length; i++) {
+                    const caracteristica = rules.caracteristicas[i];
 
-        if (rules.caracteristicas) {
-            for (let i = 0; i < rules.caracteristicas.length; i++) {
-                const caracteristica = rules.caracteristicas[i];
-
-                if (!IsInArray(caracteristica, rules.caracteristica)) {
-                    return false;
+                    if (!IsInArray(caracteristica, rules.caracteristica)) {
+                        return false;
+                    }
                 }
             }
-        } 
-
+        }
         return true;
     }
 }

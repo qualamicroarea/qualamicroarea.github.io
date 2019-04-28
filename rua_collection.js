@@ -87,4 +87,14 @@ class RuaCollection {
 
         return new RuaCollection(conforming);
     }
+
+
+    /**
+     * Returns an array with all ruas names.
+     */
+    names() {
+        return this.ruas.map(function(rua) {
+            return rua.nome;
+        });
+    }
 }
