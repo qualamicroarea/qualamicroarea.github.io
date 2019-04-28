@@ -255,12 +255,13 @@ function DatabasePath(cidade, unidade) {
  * Links the handle for all static buttons.
  */
 function LinkStaticButtons() {
-    function link(id, page) {
+    function Link(id, page) {
         document.getElementById(id).onclick = function() {
             window.location.href = page;
         }
     }
 
-    link("button_ver_ruas", "index.html");
-    link("button_ver_microareas", "microareas.html");
+    Link("button_ver_ruas", "index.html");
+    Link("button_ver_microareas", "microareas.html");
+    Link("button_ver_filtrar", "filtrar.html");
 }
