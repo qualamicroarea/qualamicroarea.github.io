@@ -145,11 +145,33 @@ class Rua {
      *      The values the needed value to conform.
      */
     conforms(rules) {
-        Object.keys(rules).forEach(function(key) {
-            if (this[key] !== rules[key]) {
-                return false;
+        function invalidKey(key) {
+            return rules[key] && rules[key] !== this[key]
+        }
+
+        if (rules.microarea && !IsInArray(rules.microarea)) {
+            return false;
+        }
+
+        if (invalidKey("agua_encanada") ||
+            invalidKey("luz_eletrica") ||
+            invalidKey("esgoto_encanado") ||
+            invalidKey("entulho") ||
+            invalidKey("lixo_na_rua") ||
+            invalidKey("animais_de_rua")) {
+            return false;
+        }
+
+        if (rules.caracteristicas) {
+            for (let i = 0; i < rules.caracteristicas.length; i++) {
+                const caracteristica = rules.caracteristicas[i];
+
+                if (!IsInArray(caracteristica, rules.caracteristica)) {
+                    return false;
+                }
             }
-        });
+        } 
+
         return true;
     }
 }
