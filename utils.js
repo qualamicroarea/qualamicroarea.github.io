@@ -278,3 +278,13 @@ function CreateOption(x) {
 
     return option;
 }
+
+
+/**
+ * Function to test if a value in in a given array or not. (For before ECMAScript 2016).
+ * @param {*} value any value to check. 
+ * @param {Array<*>} array the array to check.
+ */
+function IsInArray(value, array) {
+    return array.indexOf(value) > -1;
+}
