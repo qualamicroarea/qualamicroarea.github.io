@@ -248,3 +248,19 @@ function ReplaceWithDict(text, dict) {
 function DatabasePath(cidade, unidade) {
     return ["database/", cidade, "/", unidade, ".js"].join("");
 }
+
+
+
+/**
+ * Links the handle for all static buttons.
+ */
+function LinkStaticButtons() {
+    function link(id, page) {
+        document.getElementById(id).onclick = function() {
+            window.location.href = page;
+        }
+    }
+
+    link("button_ver_ruas", "index.html");
+    link("button_ver_microareas", "microareas.html");
+}

@@ -82,16 +82,8 @@ function VerificaMicroarea() {
 
 
 
-function LinkConstHandles() {
-    document.getElementById("button_ver_microareas").onclick = function() {
-        window.location.href = "microareas.html";
-    }
-}
-
-
-
 function OnWindowLoad() {
-    LinkConstHandles();
+    LinkStaticButtons();
 
     var currentFocus;
 

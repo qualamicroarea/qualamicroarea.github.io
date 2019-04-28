@@ -101,16 +101,8 @@ function PesquisaMicroarea(microarea) {
 
 
 
-function LinkConstHandles() {
-    document.getElementById("button_ver_ruas").onclick = function() {
-        window.location.href = "index.html";
-    }
-}
-
-
-
 function OnWindowLoad() {
-    LinkConstHandles();
+    LinkStaticButtons();
 
     CheckCidadeUnidade();
 
