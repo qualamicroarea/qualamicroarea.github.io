@@ -145,7 +145,7 @@ function GetURLParam(key) {
     for (let i = 0; i < params.length; i++) {
         var pair = params[i].split("=");
         if(pair[0] == key) {
-            return pair[1];
+            return decodeURIComponent(pair[1]);
         }
     }
     return null;

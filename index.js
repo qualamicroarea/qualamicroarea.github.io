@@ -25,7 +25,13 @@ function CheckCidadeUnidade() {
 
     if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
         const database_name = DatabasePath(cidade_sel, unidade_sel);
-        LoadScript(database_name, null);
+        LoadScript(database_name, function() {
+            const rua = GetURLParam("rua");
+            if (rua) {
+                document.getElementById("tf_nomedarua").value = rua;
+                VerificaMicroareaDaRua(rua);
+            }
+        });
     }
 }
 
@@ -84,6 +90,8 @@ function VerificaMicroarea() {
 
 function OnWindowLoad() {
     LinkStaticButtons();
+
+    CheckCidadeUnidade();
 
     var currentFocus;
 
