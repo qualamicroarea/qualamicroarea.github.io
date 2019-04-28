@@ -145,7 +145,7 @@ function GetURLParam(key) {
     for (let i = 0; i < params.length; i++) {
         var pair = params[i].split("=");
         if(pair[0] == key) {
-            return pair[1];
+            return decodeURIComponent(pair[1]);
         }
     }
     return null;
@@ -247,4 +247,44 @@ function ReplaceWithDict(text, dict) {
  */
 function DatabasePath(cidade, unidade) {
     return ["database/", cidade, "/", unidade, ".js"].join("");
+}
+
+
+
+/**
+ * Links the handle for all static buttons.
+ */
+function LinkStaticButtons() {
+    function Link(id, page) {
+        document.getElementById(id).onclick = function() {
+            window.location.href = page;
+        }
+    }
+
+    Link("button_ver_ruas", "index.html");
+    Link("button_ver_microareas", "microareas.html");
+    Link("button_ver_filtrar", "filtrar.html");
+}
+
+
+/**
+ * Creates a HTML tag with value and text set to the arg x.
+ * @param {string} x the value. 
+ */
+function CreateOption(x) {
+    var option = document.createElement("option");
+    option.value = x;
+    option.text = x;
+
+    return option;
+}
+
+
+/**
+ * Function to test if a value in in a given array or not. (For before ECMAScript 2016).
+ * @param {*} value any value to check. 
+ * @param {Array<*>} array the array to check.
+ */
+function IsInArray(value, array) {
+    return array.indexOf(value) > -1;
 }

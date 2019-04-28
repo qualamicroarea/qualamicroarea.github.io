@@ -1,5 +1,10 @@
 a { 
-    color: rgb(255, 100, 100);
+    color: rgb(0, 255, 255);
+}
+
+.clickable {
+    color: rgb(0, 255, 255);
+    text-decoration: underline;
 }
 
 .footer {
@@ -47,10 +52,6 @@ a {
 
 .header_color {
     background-color: rgb(90, 90, 90);
-}
-
-.header_color:hover {
-    background-color: rgb(110, 110, 110);
 }
 
 .content {
@@ -134,12 +135,18 @@ td {
 
 .redirect_button {
     display: table-cell;
-    color: rgb(255, 100, 100);
+    color: rgb(0, 0, 255);
 
     background: rgb(230, 230, 230);
-    border-radius: 30px;
+    border-radius: 10px;
 
     box-shadow: 5px 5px 3px rgb(150, 150, 150);
+
+    cursor: pointer;
+}
+
+.redirect_button:hover {
+    background: rgb(200, 200, 200);
 }
 
 .redirect_button * {

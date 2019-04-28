@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Qual a Microárea?</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Language" content="pt-br">
+	<link rel="stylesheet" href="shared.css">
+	<link rel="stylesheet" href="filtrar.css">
+	<script type="text/javascript" src="utils.js"></script>
+	<script type="text/javascript" src="rua.js"></script>
+	<script type="text/javascript" src="rua_collection.js"></script>
+  	<script type="text/javascript" src="filtrar.js"></script>
+</head>
+
+<body>
+	<div class="width_90 center">
+		<div class="dark_color center">
+			<div class="header header_color center">
+				Qual a Microárea?
+			</div>
+			<div class="pre_content center">
+				<div class="redirect_button" id="button_ver_microareas">
+					<span>Buscar Microáreas</span>
+				</div>
+				<div class="redirect_button" id="button_ver_ruas">
+					<span>Buscar Ruas</span>
+				</div>
+				<div class="redirect_button" id="button_ver_filtrar">
+					<span>Filtrar Ruas</span>
+				</div>
+			</div>
+			<div class="content">
+				<div class="post">
+					<div class="post_title">
+						Filtrar Ruas
+					</div>
+					<div class="post_body" id="filtrar_body">
+						<div class="input_section">
+							Cidade:
+							<select class="interactionbox paddedchoicebox selectfield" id="cb_cidade">
+								<option value="petropolis">Petrópolis</option>
+							</select>
+						</div>
+						<div class="input_section">
+							Unidade:
+							<select class="interactionbox paddedchoicebox selectfield" id="cb_unidade">
+								<option value="boavista">Boa Vista</option>
+							</select>
+						</div>
+
+						<table class="center">
+							<tr>
+								<td>Microárea:</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_microarea">
+									</select>
+								</td> 
+							</tr>
+							<tr>
+								<td>Água Encanada:</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_agua_encanada">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Luz Elétrica:</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_luz_eletrica">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Esgoto Encanado:</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_esgoto_encanado">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Entulho Na Rua:</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_entulho">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Lixeira:</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_lixeira">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Ponto de ônibus:</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_onibus">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Igreja</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_igreja">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Bar</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_bar">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Escola</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_escola">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Creche</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_creche">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Pequenos Comércios</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_pequenos_comercios">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Sem Saída</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_sem_saida">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Orelhão</td>
+								<td>
+									<select class="interactionbox selectfield" id="cb_orelhao">
+										<option value="-">-</option>
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+						<button id="button_filtrar">Filtrar</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer center">
+				<p>@2019</p>
+				<p>Projeto sem fins lucrativos feito pelos alunos da FMP / FASE.</p>
+				<p>Todos os direitos reservados.</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
