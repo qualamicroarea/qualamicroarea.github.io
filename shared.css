@@ -2,6 +2,10 @@ a {
     color: rgb(0, 255, 255);
 }
 
+.clickable {
+    color: rgb(0, 255, 255);
+}
+
 .footer {
     line-height: 1.0;
     width: 50%;
