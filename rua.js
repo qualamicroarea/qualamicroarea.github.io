@@ -136,4 +136,20 @@ class Rua {
             this.adjacentesHTML(),
         ].join("");
     }
+
+
+    /**
+     * Returns true if this Rua Object conforms to the given rules, false otherwise.
+     * @param {dict} rules the rules to be checked, a dict where:
+     *      The keys are the attributes to be checked;
+     *      The values the needed value to conform.
+     */
+    conforms(rules) {
+        Object.keys(rules).forEach(function(key) {
+            if (this[key] !== rules[key]) {
+                return false;
+            }
+        });
+        return true;
+    }
 }
