@@ -265,3 +265,16 @@ function LinkStaticButtons() {
     Link("button_ver_microareas", "microareas.html");
     Link("button_ver_filtrar", "filtrar.html");
 }
+
+
+/**
+ * Creates a HTML tag with value and text set to the arg x.
+ * @param {string} x the value. 
+ */
+function CreateOption(x) {
+    var option = document.createElement("option");
+    option.value = x;
+    option.text = x;
+
+    return option;
+}
