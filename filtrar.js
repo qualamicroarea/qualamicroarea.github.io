@@ -98,7 +98,7 @@ function Filtrar() {
 
     function cb_value(id) {
         const value = document.getElementById(id).value;
-    
+
         if (value === "-") {
             return null;
         }
@@ -108,7 +108,7 @@ function Filtrar() {
         if (value === "nao") {
             return false;
         }
-    
+
         return value;
     }
 
@@ -118,6 +118,21 @@ function Filtrar() {
     const luz_eletrica = cb_value("cb_luz_eletrica");
     const esgoto_encanado = cb_value("cb_esgoto_encanado");
     const entulho = cb_value("cb_entulho");
+
+    const caracteristicas = [
+        (cb_value("cb_bar") ? "Bar" : null),
+        (cb_value("cb_creche") ? "Creche" : null),
+        (cb_value("cb_escola") ? "Escola" : null),
+        (cb_value("cb_igreja") ? "Igreja" : null),
+        (cb_value("cb_lixeira") ? "Lixeira" : null),
+        (cb_value("cb_onibus") ? "Ônibus" : null),
+        (cb_value("cb_orelhao") ? "Orelhão" : null),
+        (cb_value("cb_pequenos_comercios") ? "Pequenos comércios" : null),
+        (cb_value("cb_sem_saida") ? "Sem Saída" : null),
+    ].filter(function(elem) {
+        return elem != null;
+    });
+
 
     var filter_dict = {};
 
@@ -137,6 +152,10 @@ function Filtrar() {
         filter_dict["entulho"] = entulho;
     }
 
+    if (caracteristicas.length > 0) {
+        filter_dict["caracteristicas"] = caracteristicas;
+    }
+
     const filtered = RuaCollectionFromDict(GetRuasDict()).filter(filter_dict);
 
     MostrarRuas(filtered);
@@ -146,7 +165,7 @@ function Filtrar() {
 
 function OnWindowLoad() {
     LinkStaticButtons();
-    
+
     CheckCidadeUnidade();
 
     document.getElementById("button_filtrar").onclick = Filtrar;

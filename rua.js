@@ -185,7 +185,7 @@ class Rua {
                 for (let i = 0; i < rules.caracteristicas.length; i++) {
                     const caracteristica = rules.caracteristicas[i];
 
-                    if (!IsInArray(caracteristica, rules.caracteristica)) {
+                    if (!IsInArray(caracteristica, this.caracteristicas)) {
                         return false;
                     }
                 }
