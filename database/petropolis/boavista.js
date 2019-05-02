@@ -4,36 +4,36 @@ DATABASE = {
 
     "microareas" : {
         "1" : {
-            "agua_encanada" : "-",
-            "luz_eletrica" : "-",
-            "esgoto_encanado" : "-",
-            "lazer" : "-",
-            "onibus_atende" : "-",
-            "animais_de_rua" : "-",
+            "agua_encanada" : "Parcial",
+            "luz_eletrica" : true,
+            "esgoto_encanado" : true,
+            "lazer" : true,
+            "onibus_atende" : true,
+            "animais_de_rua" : true,
 
-            "lixeira" : "-",
-            "lixo_na_rua" : "-",
+            "lixeira" : "5",
+            "lixo_na_rua" : true,
 
-            "igrejas" : "-",            
-            "bares" : "-",
+            "igrejas" : "5",            
+            "bares" : "3",
 
-            "observacoes" : "-"
+            "observacoes" : "A microárea 1 está sem agente comunitário há varios anos. O revelo da microárea é mais plano que nas demais. A associação de moradores fica na microárea 1."
         },
         "2" : {
-            "agua_encanada" : "-",
-            "luz_eletrica" : "-",
-            "esgoto_encanado" : "-",
-            "lazer" : "-",
-            "onibus_atende" : "-",
-            "animais_de_rua" : "-",
+            "agua_encanada" : true,
+            "luz_eletrica" : true,
+            "esgoto_encanado" : "Parcial",
+            "lazer" : "false",
+            "onibus_atende" : true,
+            "animais_de_rua" : true,
 
-            "lixeira" : "-",
-            "lixo_na_rua" : "-",
+            "lixeira" : "2",
+            "lixo_na_rua" : true,
 
-            "igrejas" : "-",            
-            "bares" : "-",
+            "igrejas" : "2",            
+            "bares" : "4",
 
-            "observacoes" : "-"
+            "observacoes" : "Relevo acentuado, boa adesão ao programa do posto. Muitos animais de rua."
         },
         "3" : {
             "agua_encanada" : true,
