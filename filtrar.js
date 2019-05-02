@@ -128,7 +128,7 @@ function Filtrar() {
         (cb_value("cb_onibus") ? "Ônibus" : null),
         (cb_value("cb_orelhao") ? "Orelhão" : null),
         (cb_value("cb_pequenos_comercios") ? "Pequenos comércios" : null),
-        (cb_value("cb_sem_saida") ? "Sem Saída" : null),
+        (cb_value("cb_sem_saida") ? "Rua Sem Saída" : null),
     ].filter(function(elem) {
         return elem != null;
     });
