@@ -86,6 +86,70 @@ DATABASE = {
     },
 
     "ruas" : {
+		"Rua Boa Vista" : {
+			"microarea" : [
+				"2",
+				"5",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : false,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Henrique João da Cruz",
+			],
+			"observacoes" : "Parte usa o nome Servidão Cornélio de Azevedo Ramos",
+		},
+		"Rua Caminho do Ladeira" : {
+			"microarea" : [
+				"4",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : true,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Bar",
+				"Igreja",
+				"Lixeira",
+				"Pequenos comércios",
+				"Ponto de ônibus",
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Henrique João da Cruz",
+			],
+			"observacoes" : "Alguns ratos.",
+		},
+		"Rua Cecília Milanês" : {
+			"microarea" : [
+				"2",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : false,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Igreja",
+				"Pequenos comércios",
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Valentin Osório da Silva",
+			],
+			"observacoes" : "",
+		},
 		"Rua Cândido Borsato" : {
 			"microarea" : [
 				"2",
@@ -107,152 +171,9 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Rua Boa Vista",
-				"Rua Valentim Osório da Silva",
+				"Rua Valentin Osório da Silva",
 			],
 			"observacoes" : "",
-		},
-		"Rua Luiz Pelegrini " : {
-			"microarea" : [
-				"5",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : true,
-			"entulho" : true,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-				"Igreja",
-				"Pequenos comércios",
-				"Rua Sem Saída",
-			],
-			"referencia" : "LBV - legião da boa vontade, pertence ao Machado Fagundes",
-			"adjacentes" : [
-				"Servidão Daniel Balbino",
-				"Rua Silvio Pimenta França",
-			],
-			"observacoes" : "",
-		},
-		"Servidão Vicente de Oliveira" : {
-			"microarea" : [
-				"5",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : true,
-			"entulho" : false,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-				"Rua Sem Saída",
-			],
-			"referencia" : "",
-			"adjacentes" : [
-				"Servidão João França",
-				"Servidão Pedro Lansoni",
-			],
-			"observacoes" : "",
-		},
-		"Servidão João França" : {
-			"microarea" : [
-				"5",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : true,
-			"entulho" : false,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-				"Rua Sem Saída",
-			],
-			"referencia" : "",
-			"adjacentes" : [
-				"Servidão Vicente de Oliveira",
-			],
-			"observacoes" : "Ratos na rua.",
-		},
-		"Rua Silvio Pimentel França" : {
-			"microarea" : [
-				"5",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : true,
-			"entulho" : false,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-				"Bar",
-				"Pequenos comércios",
-				"Ponto de ônibus",
-				"Rua Sem Saída",
-			],
-			"referencia" : "",
-			"adjacentes" : [
-				"Rua Pedro Lansoni",
-			],
-			"observacoes" : "",
-		},
-		"Servidão José da Silva" : {
-			"microarea" : [
-				"5",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : true,
-			"entulho" : false,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-				"Rua Sem Saída",
-			],
-			"referencia" : "",
-			"adjacentes" : [
-				"Rua Silvio Pimentel França",
-			],
-			"observacoes" : "",
-		},
-		"Servidão Cornélio de Azevedo Ramos" : {
-			"microarea" : [
-				"5",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : true,
-			"entulho" : true,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-				"Rua Sem Saída",
-			],
-			"referencia" : "",
-			"adjacentes" : [
-				"Rua Caminho do Ladeiro",
-			],
-			"observacoes" : "",
-		},
-		"Rua Boa Vista" : {
-			"microarea" : [
-				"2",
-				"5",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : true,
-			"entulho" : false,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-				"Bar",
-				"Pequenos comércios",
-				"Ponto de ônibus",
-			],
-			"referencia" : "",
-			"adjacentes" : [
-				"Rua Henrique João da Cruz",
-			],
-			"observacoes" : "Parte usa o nome Servidão Cornélio de Azevedo Ramos, possui 4 bares.",
 		},
 		"Rua Henrique João da Cruz" : {
 			"microarea" : [
@@ -277,6 +198,108 @@ DATABASE = {
 			],
 			"observacoes" : "",
 		},
+		"Rua Luiz Pelegrini " : {
+			"microarea" : [
+				"5",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : true,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Igreja",
+				"Pequenos comércios",
+				"Rua Sem Saída",
+			],
+			"referencia" : "LBV - legião da boa vontade, pertence ao Machado Fagundes",
+			"adjacentes" : [
+				"Rua Silvio Pimentel França",
+				"Servidão Daniel Balbino",
+			],
+			"observacoes" : "",
+		},
+		"Rua Silvio Pimentel França" : {
+			"microarea" : [
+				"5",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : false,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Bar",
+				"Pequenos comércios",
+				"Ponto de ônibus",
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Servidão Pedro Lanzoni",
+			],
+			"observacoes" : "",
+		},
+		"Rua Valentin Osório da Silva" : {
+			"microarea" : [
+				"2",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : false,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Pequenos comércios",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Cândido Borsato",
+				"Rua da Represa",
+			],
+			"observacoes" : "2 confecções de roupa",
+		},
+		"Rua da Represa" : {
+			"microarea" : [
+				"2",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : false,
+			"entulho" : true,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Estrada do Cascatinha",
+				"Rua Valentin Osório da Silva",
+			],
+			"observacoes" : "",
+		},
+		"Servidão Cornélio de Azevedo Ramos" : {
+			"microarea" : [
+				"5",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : true,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Caminho do Ladeira",
+			],
+			"observacoes" : "",
+		},
 		"Servidão José Cândido da Silva Maripá" : {
 			"microarea" : [
 				"2",
@@ -292,9 +315,47 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Rua Henrique João da Cruz",
-				"Rua Valentim Osório da Silva",
+				"Rua Valentin Osório da Silva",
 			],
 			"observacoes" : "Nenhuma Casa, só passagem.",
+		},
+		"Servidão José da Silva" : {
+			"microarea" : [
+				"5",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : false,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Silvio Pimentel França",
+			],
+			"observacoes" : "",
+		},
+		"Servidão João França" : {
+			"microarea" : [
+				"5",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : false,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Servidão Vicente de Oliveira",
+			],
+			"observacoes" : "Ratos na rua.",
 		},
 		"Servidão Maria Leocadia de Jesus Gonçalves" : {
 			"microarea" : [
@@ -316,9 +377,9 @@ DATABASE = {
 			],
 			"observacoes" : "",
 		},
-		"Rua Cecília Milanês" : {
+		"Servidão Vicente de Oliveira" : {
 			"microarea" : [
-				"2",
+				"5",
 			],
 			"agua_encanada" : true,
 			"luz_eletrica" : true,
@@ -327,54 +388,14 @@ DATABASE = {
 			"lixo_na_rua" : true,
 			"animais_de_rua" : true,
 			"caracteristicas" : [
-				"Igreja",
-				"Pequenos comércios",
 				"Rua Sem Saída",
 			],
 			"referencia" : "",
 			"adjacentes" : [
-				"Rua Valentim Osório da Silva",
+				"Servidão João França",
+				"Servidão Pedro Lanzoni",
 			],
 			"observacoes" : "",
-		},
-		"Rua da Represa" : {
-			"microarea" : [
-				"2",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : false,
-			"entulho" : true,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-			],
-			"referencia" : "",
-			"adjacentes" : [
-				"Estrada do Cascatinha",
-				"Rua Valentim Osório da Silva",
-			],
-			"observacoes" : "",
-		},
-		"Rua Valentim Osório da Silva" : {
-			"microarea" : [
-				"2",
-			],
-			"agua_encanada" : true,
-			"luz_eletrica" : true,
-			"esgoto_encanado" : true,
-			"entulho" : false,
-			"lixo_na_rua" : true,
-			"animais_de_rua" : true,
-			"caracteristicas" : [
-				"Pequenos comércios",
-			],
-			"referencia" : "",
-			"adjacentes" : [
-				"Rua Cândido Borsato",
-				"Rua da Represa",
-			],
-			"observacoes" : "2 confecções de roupa",
 		},
     }
 }
