@@ -65,11 +65,11 @@ function MostrarRuasHTML(rua_collection) {
     for (let i = 0; i < names.length; i++) {
         parts.push([
             "<tr>",
-            "<td>",
-            "<a href=\"index.html?rua=", names[i], "\">",
-                names[i],
-            "</a>",
-            "</td>",
+                "<td>",
+                    "<a href=\"index.html?rua=", names[i], "\">",
+                        names[i],
+                    "</a>",
+                "</td>",
             "</tr>",
         ].join(""));
     }
