@@ -54,22 +54,22 @@ function MostrarRuasHTML(rua_collection) {
     const names = rua_collection.names();
 
     if (names.length == 0) {
-        return "<i class=\"filtrar_nome\">Nenhuma Rua Encontrada</i>";
+        return "<i class=\"info_rua_nome\">Nenhuma Rua Encontrada</i>";
     }
 
     var parts = [
-        "<p class=\"filtrar_nome\">Ruas Encontradas:</p>",
-        "<table class=\"center\">",
+        "<p class=\"info_rua_nome\">Ruas Encontradas:</p>",
+        "<table class=\"center border_table\">",
     ];
 
     for (let i = 0; i < names.length; i++) {
         parts.push([
             "<tr>",
-            "<td>",
-            "<a href=\"index.html?rua=", names[i], "\">",
-                names[i],
-            "</a>",
-            "</td>",
+                "<td>",
+                    "<a href=\"index.html?rua=", names[i], "\">",
+                        names[i],
+                    "</a>",
+                "</td>",
             "</tr>",
         ].join(""));
     }

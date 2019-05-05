@@ -32,7 +32,7 @@ class Rua {
         if (this.adjacentes.length > 0) {
             var html_parts = [
                 "<p class=\"info_rua_adjacentes\">Ruas Adjacentes:</p>",
-                "<table class=\"info_rua_table\">",
+                "<table class=\"border_table\">",
             ]
 
             for (let i = 0; i < this.adjacentes.length; i++) {
@@ -62,7 +62,7 @@ class Rua {
         if (this.caracteristicas.length > 0) {
             var html_parts = [
                 "<p class=\"info_rua_caracteristicas\">Características da Rua:</p>",
-                "<table class=\"info_rua_table\">",
+                "<table class=\"border_table\">",
             ]
 
             for (let i = 0; i < this.caracteristicas.length; i++) {
@@ -112,7 +112,7 @@ class Rua {
      */
     tableHTML() {
         return [
-            "<table class=\"info_rua_table\">",
+            "<table class=\"border_table\">",
                 this.microareaHTML(),
                 MergeTableInfo(this, "Água Encanada", "agua_encanada"),
                 MergeTableInfo(this, "Luz Elétrica", "luz_eletrica"),
