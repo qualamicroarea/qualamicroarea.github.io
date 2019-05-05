@@ -47,7 +47,7 @@ function HTMLForMicroarea(microarea, microareainfo) {
     var html = [
         "<p class=\"info_microarea_nome\">Microárea ", microarea, "</p>",
         "<div", IfMobile("", " class=\"side_by_side_container\""), ">",
-            "<table class=\"info_microarea_table width_50\">",
+            "<table class=\"info_microarea_table width_50 border_table\">",
 
                 MergeTableInfo(microareainfo, "Água Encanada", "agua_encanada"),
                 MergeTableInfo(microareainfo, "Luz Elétrica", "luz_eletrica"),
