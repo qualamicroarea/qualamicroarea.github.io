@@ -48,20 +48,18 @@ function HTMLForMicroarea(microarea, microareainfo) {
         "<p class=\"info_microarea_nome\">Microárea ", microarea, "</p>",
         "<div", IfMobile("", " class=\"side_by_side_container\""), ">",
             "<table class=\"width_50 border_table\">",
+                MergeTableInfo(microareainfo, "Água Encanada", "agua_encanada", true),
+                MergeTableInfo(microareainfo, "Luz Elétrica", "luz_eletrica", true),
+                MergeTableInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado", true),
+                MergeTableInfo(microareainfo, "Pontos de Lazer", "lazer", true),
+                MergeTableInfo(microareainfo, "Pontos de Ônibus", "onibus_atende", true),
+                MergeTableInfo(microareainfo, "Animais de Rua", "animais_de_rua", false),
 
-                MergeTableInfo(microareainfo, "Água Encanada", "agua_encanada"),
-                MergeTableInfo(microareainfo, "Luz Elétrica", "luz_eletrica"),
-                MergeTableInfo(microareainfo, "Esgoto Encanado", "esgoto_encanado"),
-                MergeTableInfo(microareainfo, "Pontos de Lazer", "lazer"),
-                MergeTableInfo(microareainfo, "Pontos de Ônibus", "onibus_atende"),
-                MergeTableInfo(microareainfo, "Animais de Rua", "animais_de_rua"),
+                MergeTableInfo(microareainfo, "Lixeiras", "lixeira", true),
+                MergeTableInfo(microareainfo, "Lixo na Rua", "lixo_na_rua", false),
 
-                MergeTableInfo(microareainfo, "Lixeiras", "lixeira"),
-                MergeTableInfo(microareainfo, "Lixo na Rua", "lixo_na_rua"),
-
-                MergeTableInfo(microareainfo, "Igrejas", "igrejas"),
-                MergeTableInfo(microareainfo, "Bares", "bares"),
-
+                MergeTableInfo(microareainfo, "Igrejas", "igrejas", true),
+                MergeTableInfo(microareainfo, "Bares", "bares", true),
             "</table>",
 
             "<div", IfMobile("", " class=\"flex_item width_50\""), ">",
