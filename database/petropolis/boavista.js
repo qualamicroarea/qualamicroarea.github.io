@@ -23,7 +23,7 @@ DATABASE = {
             "agua_encanada" : true,
             "luz_eletrica" : true,
             "esgoto_encanado" : "Parcial",
-            "lazer" : "false",
+            "lazer" : false,
             "onibus_atende" : true,
             "animais_de_rua" : true,
 
