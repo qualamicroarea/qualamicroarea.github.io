@@ -114,12 +114,12 @@ class Rua {
         return [
             "<table class=\"border_table\">",
                 this.microareaHTML(),
-                MergeTableInfo(this, "Água Encanada", "agua_encanada"),
-                MergeTableInfo(this, "Luz Elétrica", "luz_eletrica"),
-                MergeTableInfo(this, "Esgoto Encanado", "esgoto_encanado"),
-                MergeTableInfo(this, "Entulho na Rua", "entulho"),
-                MergeTableInfo(this, "Lixo na Rua", "lixo_na_rua"),
-                MergeTableInfo(this, "Animais de Rua", "animais_de_rua"),
+                MergeTableInfo(this, "Água Encanada", "agua_encanada", true),
+                MergeTableInfo(this, "Luz Elétrica", "luz_eletrica", true),
+                MergeTableInfo(this, "Esgoto Encanado", "esgoto_encanado", true),
+                MergeTableInfo(this, "Entulho na Rua", "entulho", false),
+                MergeTableInfo(this, "Lixo na Rua", "lixo_na_rua", false),
+                MergeTableInfo(this, "Animais de Rua", "animais_de_rua", false),
             "</table>",
         ].join("");
     }

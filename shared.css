@@ -140,6 +140,14 @@ td {
     border: 1px solid gray;
 }
 
+.table_info_positive {
+    border: 2px solid green !important;
+}
+
+.table_info_negative {
+    border: 2px solid rgb(202, 26, 26) !important;
+}
+
 .side_by_side_container {
     display: flex;
 }

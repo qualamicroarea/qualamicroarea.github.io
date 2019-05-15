@@ -157,6 +157,31 @@ function GetURLParam(key) {
  * Builds a HTML table row with the given info.
  * @param {string} left string that will be on the left.
  * @param {string} right string that will be on the right.
+ * @param {string} tr_class string that will be the tr class.
+ * @param {string} td_class_left string that will be the td class on the left.
+ * @param {string} td_class_right string that will be the td class on the right.
+ */
+function MergeTableClass(left, right, tr_class, td_class_left, td_class_right) {
+    if (left !== null && right !== null && tr_class !== null && td_class_left !== null && td_class_right !== null) {
+        return [
+            "<tr class=\"", tr_class, "\">",
+                "<td class=\"", td_class_left, "\">",
+                    left,
+                "</td>",
+                "<td class=\"", td_class_right, "\">",
+                    right,
+                "</td>",
+            "</tr>"
+        ].join("");
+    }
+    return "";
+}
+
+
+/**
+ * Builds a HTML table row with the given info.
+ * @param {string} left string that will be on the left.
+ * @param {string} right string that will be on the right.
  */
 function MergeTable(left, right) {
     if (left !== null && right !== null) {
@@ -181,17 +206,27 @@ function MergeTable(left, right) {
  * @param {*} infos the dict with the info.
  * @param {*} pre the string to show.
  * @param {*} key the key to search on infos.
+ * @param {boolean} isPositive if this table is positive.
  */
-function MergeTableInfo(infos, pre, key) {
+function MergeTableInfo(infos, pre, key, isPositive) {
+    function TdClass(bool_value) {
+        if (bool_value) {
+            return isPositive ? "table_info_positive" : "table_info_negative";
+        }
+        return isPositive ? "table_info_negative" : "table_info_positive";
+    }
+
     var value = infos[key];
     if (value !== null) {
+        const td_class_right = TdClass(value);
+
         if (value === true) {
             value = Span("Sim", "#00ff00");
         } else if (value === false) {
             value = Span("Não", "#ff0000");
         }
 
-        return MergeTable(pre, value);
+        return MergeTableClass(pre, value, "", "", td_class_right);
     }
     return "";
 }
