@@ -88,6 +88,7 @@ DATABASE = {
     "ruas" : {
 		"Rua Boa Vista" : {
 			"microarea" : [
+				"1",
 				"2",
 				"5",
 			],
@@ -101,6 +102,7 @@ DATABASE = {
 			],
 			"referencia" : "",
 			"adjacentes" : [
+				"Rua Cândido Borsato",
 				"Rua Henrique João da Cruz",
 			],
 			"observacoes" : "Parte usa o nome Servidão Cornélio de Azevedo Ramos",
@@ -126,6 +128,7 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Rua Henrique João da Cruz",
+				"Servidão Cornélio de Azevedo Ramos",
 			],
 			"observacoes" : "Alguns ratos.",
 		},
@@ -147,6 +150,7 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Rua Valentin Osório da Silva",
+				"Servidão Maria Leocadia de Jesus Gonçalves",
 			],
 			"observacoes" : "",
 		},
@@ -177,6 +181,7 @@ DATABASE = {
 		},
 		"Rua Henrique João da Cruz" : {
 			"microarea" : [
+				"1",
 				"2",
 			],
 			"agua_encanada" : true,
@@ -194,7 +199,10 @@ DATABASE = {
 			"referencia" : "Localização do Posto de Saúde da Família, dispensa de carros batidos.",
 			"adjacentes" : [
 				"Rua Boa Vista",
+				"Rua Caminho do Ladeira",
+				"Rua Francisco Jacinto do Amaral",
 				"Servidão José Cândido da Silva Maripá",
+				"Servidão Maria Leocadia de Jesus Gonçalves",
 			],
 			"observacoes" : "",
 		},
@@ -238,6 +246,8 @@ DATABASE = {
 			],
 			"referencia" : "",
 			"adjacentes" : [
+				"Rua Luiz Pelegrini ",
+				"Servidão José da Silva",
 				"Servidão Pedro Lanzoni",
 			],
 			"observacoes" : "",
@@ -257,8 +267,10 @@ DATABASE = {
 			],
 			"referencia" : "",
 			"adjacentes" : [
+				"Rua Cecília Milanês",
 				"Rua Cândido Borsato",
 				"Rua da Represa",
+				"Servidão José Cândido da Silva Maripá",
 			],
 			"observacoes" : "2 confecções de roupa",
 		},
@@ -277,6 +289,7 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Estrada do Cascatinha",
+				"Rua Loio Gallucci",
 				"Rua Valentin Osório da Silva",
 			],
 			"observacoes" : "",
@@ -396,6 +409,138 @@ DATABASE = {
 				"Servidão Pedro Lanzoni",
 			],
 			"observacoes" : "",
+		},
+		"Estrada do Cascatinha" : {
+			"microarea" : [
+				"1",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : true,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Pequenos comércios",
+				"Ponto de ônibus",
+			],
+			"referencia" : "Depois da ponte da entrada do Carangola",
+			"adjacentes" : [
+				"Rua Ana Nery",
+				"Rua Loio Gallucci",
+				"Rua da Represa",
+			],
+			"observacoes" : "",
+		},
+		"Rua Ana Nery" : {
+			"microarea" : [
+				"1",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : false,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Bar",
+				"Lixeira",
+				"Orelhão",
+				"Ponto de ônibus",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Estrada do Cascatinha",
+				"Rua Bernardo Vasconcelos",
+				"Rua Guilherme Dalmas Nunes",
+			],
+			"observacoes" : "",
+		},
+		"Rua Francisco Jacinto do Amaral" : {
+			"microarea" : [
+				"1",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : true,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Bar",
+				"Igreja",
+				"Pequenos comércios",
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Henrique João da Cruz",
+			],
+			"observacoes" : "",
+		},
+		"Rua Guilherme Dalmas Nunes" : {
+			"microarea" : [
+				"1",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : true,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Bar",
+				"Igreja",
+				"Pequenos comércios",
+				"Ponto de ônibus",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Ana Nery",
+				"Rua Machado Fagundes",
+			],
+			"observacoes" : "",
+		},
+		"Rua Loio Gallucci" : {
+			"microarea" : [
+				"1",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : true,
+			"entulho" : true,
+			"lixo_na_rua" : true,
+			"animais_de_rua" : true,
+			"caracteristicas" : [
+				"Lixeira",
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Estrada do Cascatinha",
+				"Rua da Represa",
+			],
+			"observacoes" : "",
+		},
+		"Servidão Pedro Lanzoni" : {
+			"microarea" : [
+				"5",
+			],
+			"agua_encanada" : true,
+			"luz_eletrica" : true,
+			"esgoto_encanado" : false,
+			"entulho" : true,
+			"lixo_na_rua" : false,
+			"animais_de_rua" : false,
+			"caracteristicas" : [
+				"Rua Sem Saída",
+			],
+			"referencia" : "",
+			"adjacentes" : [
+				"Rua Silvio Pimentel França",
+				"Servidão Vicente de Oliveira",
+			],
+			"observacoes" : "Esgoto exposto",
 		},
     }
 }
