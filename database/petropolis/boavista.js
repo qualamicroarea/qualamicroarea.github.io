@@ -102,6 +102,7 @@ DATABASE = {
 			],
 			"referencia" : "",
 			"adjacentes" : [
+				"Rua Cândido Borsato",
 				"Rua Henrique João da Cruz",
 			],
 			"observacoes" : "Parte usa o nome Servidão Cornélio de Azevedo Ramos",
@@ -127,6 +128,7 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Rua Henrique João da Cruz",
+				"Servidão Cornélio de Azevedo Ramos",
 			],
 			"observacoes" : "Alguns ratos.",
 		},
@@ -148,6 +150,7 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Rua Valentin Osório da Silva",
+				"Servidão Maria Leocadia de Jesus Gonçalves",
 			],
 			"observacoes" : "",
 		},
@@ -196,7 +199,10 @@ DATABASE = {
 			"referencia" : "Localização do Posto de Saúde da Família, dispensa de carros batidos.",
 			"adjacentes" : [
 				"Rua Boa Vista",
+				"Rua Caminho do Ladeira",
+				"Rua Francisco Jacinto do Amaral",
 				"Servidão José Cândido da Silva Maripá",
+				"Servidão Maria Leocadia de Jesus Gonçalves",
 			],
 			"observacoes" : "",
 		},
@@ -240,6 +246,8 @@ DATABASE = {
 			],
 			"referencia" : "",
 			"adjacentes" : [
+				"Rua Luiz Pelegrini ",
+				"Servidão José da Silva",
 				"Servidão Pedro Lanzoni",
 			],
 			"observacoes" : "",
@@ -259,8 +267,10 @@ DATABASE = {
 			],
 			"referencia" : "",
 			"adjacentes" : [
+				"Rua Cecília Milanês",
 				"Rua Cândido Borsato",
 				"Rua da Represa",
+				"Servidão José Cândido da Silva Maripá",
 			],
 			"observacoes" : "2 confecções de roupa",
 		},
@@ -279,6 +289,7 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Estrada do Cascatinha",
+				"Rua Loio Gallucci",
 				"Rua Valentin Osório da Silva",
 			],
 			"observacoes" : "",
@@ -415,7 +426,9 @@ DATABASE = {
 			],
 			"referencia" : "Depois da ponte da entrada do Carangola",
 			"adjacentes" : [
+				"Rua Ana Nery",
 				"Rua Loio Gallucci",
+				"Rua da Represa",
 			],
 			"observacoes" : "",
 		},
@@ -525,6 +538,7 @@ DATABASE = {
 			"referencia" : "",
 			"adjacentes" : [
 				"Rua Silvio Pimentel França",
+				"Servidão Vicente de Oliveira",
 			],
 			"observacoes" : "Esgoto exposto",
 		},
