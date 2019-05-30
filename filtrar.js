@@ -1,8 +1,29 @@
-
+// The database var, always include.
 var DATABASE = null;
 
 
 
+/**
+ * Quick function to get the ruas dict from the database.
+ */
+function GetRuasDict() {
+    return KeyIfNotNull(DATABASE, "ruas");
+}
+
+
+
+/**
+ * Quick function to get the microares dict from the database.
+ */
+function GetMicroareasDict() {
+    return KeyIfNotNull(DATABASE, "microareas");
+}
+
+
+
+/**
+ * Quick function to get the ruas names from the database.
+ */
 function GetRuas() {
     const ruasDict = GetRuasDict();
     if (ruasDict) {
@@ -13,18 +34,10 @@ function GetRuas() {
 
 
 
-function GetRuasDict() {
-    return KeyIfNotNull(DATABASE, "ruas");
-}
-
-
-
-function GetMicroareasDict() {
-    return KeyIfNotNull(DATABASE, "microareas");
-}
-
-
-
+/**
+ * Function that checks the selected cidade and unidade, loading it if not loaded.
+ * When the database is loaded, creates the options for all microareas.
+ */
 function CheckCidadeUnidade() {
     const cidade_sel = document.getElementById("cb_cidade").value;
     const unidade_sel = document.getElementById("cb_unidade").value;
@@ -50,6 +63,10 @@ function CheckCidadeUnidade() {
 
 
 
+/**
+ * Function that displays all the matching ruas.
+ * @param {RuaCollection} rua_collection the RuaCollection object.
+ */
 function MostrarRuasHTML(rua_collection) {
     const names = rua_collection.names();
 
@@ -81,6 +98,10 @@ function MostrarRuasHTML(rua_collection) {
 
 
 
+/**
+ * Displays the matching ruas.
+ * @param {RuaCollection} rua_collection the RuaCollection object.
+ */
 function MostrarRuas(rua_collection) {
     RemoveIfExistsId("filtrar_result_div");
 
@@ -94,6 +115,9 @@ function MostrarRuas(rua_collection) {
 
 
 
+/**
+ * Function that checks everything selected, filtering ruas that match.
+ */
 function Filtrar() {
 
     function cb_value(id) {
@@ -163,6 +187,9 @@ function Filtrar() {
 
 
 
+/**
+ * Function called when the window is loaded, used to link all needed handlers.
+ */
 function OnWindowLoad() {
     LinkStaticButtons();
 
