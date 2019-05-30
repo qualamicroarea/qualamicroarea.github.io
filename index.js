@@ -39,7 +39,7 @@ function CheckCidadeUnidade() {
             const rua = GetURLParam("rua");
             if (rua) {
                 document.getElementById("tf_nomedarua").value = rua;
-                VerificaMicroareaDaRua(rua);
+                CheckRuaMicroarea(rua);
             }
         });
     }
@@ -60,7 +60,7 @@ function LinkRuaHandles() {
 
             var tf_nomedarua = document.getElementById("tf_nomedarua");
             tf_nomedarua.value = adjacente_name;
-            VerificaMicroareaDaRua(adjacente_name);
+            CheckRuaMicroarea(adjacente_name);
 
             tf_nomedarua.scrollIntoView();
         }
@@ -73,7 +73,7 @@ function LinkRuaHandles() {
  * Displays all info about the given rua object.
  * @param {Rua} rua the rua object.
  */
-function MostrarMicroarea(rua) {
+function DisplayMicroarea(rua) {
     var div = document.createElement("div");
     div.className = "microarea_result";
     div.id = "microarea_div";
@@ -90,13 +90,13 @@ function MostrarMicroarea(rua) {
  * Searches for a given rua name, displaying it, if existent.
  * @param {string} rua the rua name. 
  */
-function VerificaMicroareaDaRua(rua) {
+function CheckRuaMicroarea(rua) {
     RemoveIfExistsId("microarea_div");
 
     const ruas = GetRuasDict();
     if (ruas && rua in ruas) {
         const ruaObject = new Rua(rua, ruas[rua]);
-        MostrarMicroarea(ruaObject);
+        DisplayMicroarea(ruaObject);
     }
 }
 
@@ -105,9 +105,9 @@ function VerificaMicroareaDaRua(rua) {
 /**
  * Searches for the rua entered.
  */
-function VerificaMicroarea() {
+function CheckMicroarea() {
     const rua = document.getElementById("tf_nomedarua").value;
-    VerificaMicroareaDaRua(rua);
+    CheckRuaMicroarea(rua);
 }
 
 
@@ -172,14 +172,14 @@ function OnWindowLoad() {
                 sub_div.addEventListener("click", function(e) {
                     input.value = this.getElementsByTagName("input")[0].value;
                     CloseAllLists();
-                    VerificaMicroarea();
+                    CheckMicroarea();
                 });
 
                 parent_div.appendChild(sub_div);
             }
         }
 
-        VerificaMicroarea();
+        CheckMicroarea();
     });
 
     input.addEventListener("keydown", function(keys) {
