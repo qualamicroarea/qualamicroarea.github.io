@@ -1,4 +1,4 @@
-
+// The database var, always include.
 var DATABASE = null;
 
 

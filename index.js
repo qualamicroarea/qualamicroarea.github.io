@@ -1,8 +1,20 @@
-
+// The database var, always include.
 var DATABASE = null;
 
 
 
+/**
+ * Quick function to get the ruas dict from the database.
+ */
+function GetRuasDict() {
+    return KeyIfNotNull(DATABASE, "ruas");
+}
+
+
+
+/**
+ * Quick function to get all the ruas names from the database.
+ */
 function GetRuas() {
     const ruasDict = GetRuasDict();
     if (ruasDict) {
@@ -13,12 +25,10 @@ function GetRuas() {
 
 
 
-function GetRuasDict() {
-    return KeyIfNotNull(DATABASE, "ruas");
-}
-
-
-
+/**
+ * Function that checks the selected cidade and unidade, loading it if not loaded.
+ * Also checks the URL, searching for the given rua param, if existent.
+ */
 function CheckCidadeUnidade() {
     const cidade_sel = document.getElementById("cb_cidade").value;
     const unidade_sel = document.getElementById("cb_unidade").value;
@@ -37,6 +47,9 @@ function CheckCidadeUnidade() {
 
 
 
+/**
+ * Function that links all the needed handlers, E.g. clicking on clickable text.
+ */
 function LinkRuaHandles() {
     var adjacentes = document.getElementsByClassName("rua_adjacente");
 
@@ -56,6 +69,10 @@ function LinkRuaHandles() {
 
 
 
+/**
+ * Displays all info about the given rua object.
+ * @param {Rua} rua the rua object.
+ */
 function MostrarMicroarea(rua) {
     var div = document.createElement("div");
     div.className = "microarea_result";
@@ -69,6 +86,10 @@ function MostrarMicroarea(rua) {
 
 
 
+/**
+ * Searches for a given rua name, displaying it, if existent.
+ * @param {string} rua the rua name. 
+ */
 function VerificaMicroareaDaRua(rua) {
     RemoveIfExistsId("microarea_div");
 
@@ -81,6 +102,9 @@ function VerificaMicroareaDaRua(rua) {
 
 
 
+/**
+ * Searches for the rua entered.
+ */
 function VerificaMicroarea() {
     const rua = document.getElementById("tf_nomedarua").value;
     VerificaMicroareaDaRua(rua);
@@ -88,6 +112,10 @@ function VerificaMicroarea() {
 
 
 
+/**
+ * Function called when the window is loaded, used to link all needed handlers.
+ * All autocompletion is done here.
+ */
 function OnWindowLoad() {
     LinkStaticButtons();
 
