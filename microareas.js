@@ -42,7 +42,7 @@ function CheckCidadeUnidade() {
                 const microarea_get = GetURLParam("microarea");
                 if (microareas[microarea_get]) {
                     cb_microarea.value = microarea_get;
-                    PesquisaMicroarea(microarea_get);
+                    CheckMicroarea(microarea_get);
                 }
             }
         });
@@ -93,7 +93,7 @@ function HTMLForMicroarea(microarea, microareainfo) {
  * @param {string} microarea the microarea name.
  * @param {dict} microareainfo the microarea info.
  */
-function MostrarMicroarea(microarea, microareainfo) {
+function DisplayMicroarea(microarea, microareainfo) {
     if (microareainfo) {
         var div = document.createElement("div");
         div.className = "microarea_result";
@@ -110,12 +110,12 @@ function MostrarMicroarea(microarea, microareainfo) {
  * Function that searches the database for a microarea, displaying it, if existent.
  * @param {string} microarea the microarea name.
  */
-function PesquisaMicroarea(microarea) {
+function CheckMicroarea(microarea) {
     RemoveIfExistsId("microarea_div");
 
     const microareas = GetMicroareasDict();
     if (microareas && microarea in microareas) {
-        MostrarMicroarea(microarea, microareas[microarea]);
+        DisplayMicroarea(microarea, microareas[microarea]);
     }
 }
 
@@ -133,7 +133,7 @@ function OnWindowLoad() {
     document.getElementById("cb_unidade").onchange = CheckCidadeUnidade;
 
     document.getElementById("cb_microarea").onchange = function(keys) {
-        PesquisaMicroarea(keys.target.value);
+        CheckMicroarea(keys.target.value);
     };
 }
 
