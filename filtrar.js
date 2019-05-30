@@ -67,7 +67,7 @@ function CheckCidadeUnidade() {
  * Function that displays all the matching ruas.
  * @param {RuaCollection} rua_collection the RuaCollection object.
  */
-function MostrarRuasHTML(rua_collection) {
+function DisplayRuasHTML(rua_collection) {
     const names = rua_collection.names();
 
     if (names.length == 0) {
@@ -102,13 +102,13 @@ function MostrarRuasHTML(rua_collection) {
  * Displays the matching ruas.
  * @param {RuaCollection} rua_collection the RuaCollection object.
  */
-function MostrarRuas(rua_collection) {
+function DisplayRuas(rua_collection) {
     RemoveIfExistsId("filtrar_result_div");
 
     var div = document.createElement("div");
     div.className = "filtrar_result center";
     div.id = "filtrar_result_div";
-    div.innerHTML = MostrarRuasHTML(rua_collection);
+    div.innerHTML = DisplayRuasHTML(rua_collection);
 
     document.getElementById("filtrar_body").appendChild(div);
 }
@@ -118,7 +118,7 @@ function MostrarRuas(rua_collection) {
 /**
  * Function that checks everything selected, filtering ruas that match.
  */
-function Filtrar() {
+function Filter() {
 
     function cb_value(id) {
         const value = document.getElementById(id).value;
@@ -182,7 +182,7 @@ function Filtrar() {
 
     const filtered = RuaCollectionFromDict(GetRuasDict()).filter(filter_dict);
 
-    MostrarRuas(filtered);
+    DisplayRuas(filtered);
 }
 
 
@@ -195,7 +195,7 @@ function OnWindowLoad() {
 
     CheckCidadeUnidade();
 
-    document.getElementById("button_filtrar").onclick = Filtrar;
+    document.getElementById("button_filtrar").onclick = Filter;
 }
 
 
