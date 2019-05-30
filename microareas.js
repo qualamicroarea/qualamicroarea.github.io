@@ -3,12 +3,20 @@ var DATABASE = null;
 
 
 
+/**
+ * Quick function to get the microareas from the current loaded database.
+ */
 function GetMicroareasDict() {
     return KeyIfNotNull(DATABASE, "microareas");
 }
 
 
 
+/**
+ * Function that checks the selected cidade and unidade, loading it if not loaded.
+ * When the database is loaded, creates the options for all microareas.
+ * Also checks the URL, loading the microarea param, if existent.
+ */
 function CheckCidadeUnidade() {
     const cidade_sel = document.getElementById("cb_cidade").value;
     const unidade_sel = document.getElementById("cb_unidade").value;
@@ -43,6 +51,11 @@ function CheckCidadeUnidade() {
 
 
 
+/**
+ * Function that builds and returns a HTML string with all the info for a given microarea and microareainfo.
+ * @param {string} microarea the microarea name.
+ * @param {dict} microareainfo the microarea info.
+ */
 function HTMLForMicroarea(microarea, microareainfo) {
     var html = [
         "<p class=\"info_microarea_nome\">Microárea ", microarea, "</p>",
@@ -75,6 +88,11 @@ function HTMLForMicroarea(microarea, microareainfo) {
 
 
 
+/**
+ * Function that displays a microarea.
+ * @param {string} microarea the microarea name.
+ * @param {dict} microareainfo the microarea info.
+ */
 function MostrarMicroarea(microarea, microareainfo) {
     if (microareainfo) {
         var div = document.createElement("div");
@@ -88,6 +106,10 @@ function MostrarMicroarea(microarea, microareainfo) {
 
 
 
+/**
+ * Function that searches the database for a microarea, displaying it, if existent.
+ * @param {string} microarea the microarea name.
+ */
 function PesquisaMicroarea(microarea) {
     RemoveIfExistsId("microarea_div");
 
@@ -99,6 +121,9 @@ function PesquisaMicroarea(microarea) {
 
 
 
+/**
+ * Function called when the window is loaded, used to link all needed handlers.
+ */
 function OnWindowLoad() {
     LinkStaticButtons();
 
