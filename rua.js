@@ -138,6 +138,11 @@ class Rua {
     }
 
 
+    /**
+     * Given a attribute key and a rules, returns true if the value conforms to the rules.
+     * @param {rules} rules the rules to be checked, expected value.
+     * @param {key} key the attribute key which value should be the rule.
+     */
     comformsKey(rules, key) {
         if (rules) {
             if (rules[key] !== undefined) {

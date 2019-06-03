@@ -1,8 +1,29 @@
-
+// The database var, always include.
 var DATABASE = null;
 
 
 
+/**
+ * Quick function to get the ruas dict from the database.
+ */
+function GetRuasDict() {
+    return KeyIfNotNull(DATABASE, "ruas");
+}
+
+
+
+/**
+ * Quick function to get the microares dict from the database.
+ */
+function GetMicroareasDict() {
+    return KeyIfNotNull(DATABASE, "microareas");
+}
+
+
+
+/**
+ * Quick function to get the ruas names from the database.
+ */
 function GetRuas() {
     const ruasDict = GetRuasDict();
     if (ruasDict) {
@@ -13,18 +34,10 @@ function GetRuas() {
 
 
 
-function GetRuasDict() {
-    return KeyIfNotNull(DATABASE, "ruas");
-}
-
-
-
-function GetMicroareasDict() {
-    return KeyIfNotNull(DATABASE, "microareas");
-}
-
-
-
+/**
+ * Function that checks the selected cidade and unidade, loading it if not loaded.
+ * When the database is loaded, creates the options for all microareas.
+ */
 function CheckCidadeUnidade() {
     const cidade_sel = document.getElementById("cb_cidade").value;
     const unidade_sel = document.getElementById("cb_unidade").value;
@@ -50,7 +63,11 @@ function CheckCidadeUnidade() {
 
 
 
-function MostrarRuasHTML(rua_collection) {
+/**
+ * Function that displays all the matching ruas.
+ * @param {RuaCollection} rua_collection the RuaCollection object.
+ */
+function DisplayRuasHTML(rua_collection) {
     const names = rua_collection.names();
 
     if (names.length == 0) {
@@ -81,20 +98,27 @@ function MostrarRuasHTML(rua_collection) {
 
 
 
-function MostrarRuas(rua_collection) {
+/**
+ * Displays the matching ruas.
+ * @param {RuaCollection} rua_collection the RuaCollection object.
+ */
+function DisplayRuas(rua_collection) {
     RemoveIfExistsId("filtrar_result_div");
 
     var div = document.createElement("div");
     div.className = "filtrar_result center";
     div.id = "filtrar_result_div";
-    div.innerHTML = MostrarRuasHTML(rua_collection);
+    div.innerHTML = DisplayRuasHTML(rua_collection);
 
     document.getElementById("filtrar_body").appendChild(div);
 }
 
 
 
-function Filtrar() {
+/**
+ * Function that checks everything selected, filtering ruas that match.
+ */
+function Filter() {
 
     function cb_value(id) {
         const value = document.getElementById(id).value;
@@ -158,17 +182,20 @@ function Filtrar() {
 
     const filtered = RuaCollectionFromDict(GetRuasDict()).filter(filter_dict);
 
-    MostrarRuas(filtered);
+    DisplayRuas(filtered);
 }
 
 
 
+/**
+ * Function called when the window is loaded, used to link all needed handlers.
+ */
 function OnWindowLoad() {
     LinkStaticButtons();
 
     CheckCidadeUnidade();
 
-    document.getElementById("button_filtrar").onclick = Filtrar;
+    document.getElementById("button_filtrar").onclick = Filter;
 }
 
 

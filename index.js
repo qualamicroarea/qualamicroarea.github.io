@@ -1,8 +1,20 @@
-
+// The database var, always include.
 var DATABASE = null;
 
 
 
+/**
+ * Quick function to get the ruas dict from the database.
+ */
+function GetRuasDict() {
+    return KeyIfNotNull(DATABASE, "ruas");
+}
+
+
+
+/**
+ * Quick function to get all the ruas names from the database.
+ */
 function GetRuas() {
     const ruasDict = GetRuasDict();
     if (ruasDict) {
@@ -13,12 +25,10 @@ function GetRuas() {
 
 
 
-function GetRuasDict() {
-    return KeyIfNotNull(DATABASE, "ruas");
-}
-
-
-
+/**
+ * Function that checks the selected cidade and unidade, loading it if not loaded.
+ * Also checks the URL, searching for the given rua param, if existent.
+ */
 function CheckCidadeUnidade() {
     const cidade_sel = document.getElementById("cb_cidade").value;
     const unidade_sel = document.getElementById("cb_unidade").value;
@@ -29,7 +39,7 @@ function CheckCidadeUnidade() {
             const rua = GetURLParam("rua");
             if (rua) {
                 document.getElementById("tf_nomedarua").value = rua;
-                VerificaMicroareaDaRua(rua);
+                CheckRuaMicroarea(rua);
             }
         });
     }
@@ -37,6 +47,9 @@ function CheckCidadeUnidade() {
 
 
 
+/**
+ * Function that links all the needed handlers, E.g. clicking on clickable text.
+ */
 function LinkRuaHandles() {
     var adjacentes = document.getElementsByClassName("rua_adjacente");
 
@@ -47,7 +60,7 @@ function LinkRuaHandles() {
 
             var tf_nomedarua = document.getElementById("tf_nomedarua");
             tf_nomedarua.value = adjacente_name;
-            VerificaMicroareaDaRua(adjacente_name);
+            CheckRuaMicroarea(adjacente_name);
 
             tf_nomedarua.scrollIntoView();
         }
@@ -56,7 +69,11 @@ function LinkRuaHandles() {
 
 
 
-function MostrarMicroarea(rua) {
+/**
+ * Displays all info about the given rua object.
+ * @param {Rua} rua the rua object.
+ */
+function DisplayMicroarea(rua) {
     var div = document.createElement("div");
     div.className = "microarea_result";
     div.id = "microarea_div";
@@ -69,25 +86,36 @@ function MostrarMicroarea(rua) {
 
 
 
-function VerificaMicroareaDaRua(rua) {
+/**
+ * Searches for a given rua name, displaying it, if existent.
+ * @param {string} rua the rua name. 
+ */
+function CheckRuaMicroarea(rua) {
     RemoveIfExistsId("microarea_div");
 
     const ruas = GetRuasDict();
     if (ruas && rua in ruas) {
         const ruaObject = new Rua(rua, ruas[rua]);
-        MostrarMicroarea(ruaObject);
+        DisplayMicroarea(ruaObject);
     }
 }
 
 
 
-function VerificaMicroarea() {
+/**
+ * Searches for the rua entered.
+ */
+function CheckMicroarea() {
     const rua = document.getElementById("tf_nomedarua").value;
-    VerificaMicroareaDaRua(rua);
+    CheckRuaMicroarea(rua);
 }
 
 
 
+/**
+ * Function called when the window is loaded, used to link all needed handlers.
+ * All autocompletion is done here.
+ */
 function OnWindowLoad() {
     LinkStaticButtons();
 
@@ -144,14 +172,14 @@ function OnWindowLoad() {
                 sub_div.addEventListener("click", function(e) {
                     input.value = this.getElementsByTagName("input")[0].value;
                     CloseAllLists();
-                    VerificaMicroarea();
+                    CheckMicroarea();
                 });
 
                 parent_div.appendChild(sub_div);
             }
         }
 
-        VerificaMicroarea();
+        CheckMicroarea();
     });
 
     input.addEventListener("keydown", function(keys) {
