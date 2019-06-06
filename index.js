@@ -7,7 +7,7 @@ var DATABASE = null;
  * Quick function to get the ruas dict from the database.
  */
 function GetRuasDict() {
-    return KeyIfNotNull(DATABASE, "ruas");
+    return KINN(DATABASE, "ruas");
 }
 
 

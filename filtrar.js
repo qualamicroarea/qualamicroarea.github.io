@@ -7,7 +7,7 @@ var DATABASE = null;
  * Quick function to get the ruas dict from the database.
  */
 function GetRuasDict() {
-    return KeyIfNotNull(DATABASE, "ruas");
+    return KINN(DATABASE, "ruas");
 }
 
 
@@ -16,7 +16,7 @@ function GetRuasDict() {
  * Quick function to get the microares dict from the database.
  */
 function GetMicroareasDict() {
-    return KeyIfNotNull(DATABASE, "microareas");
+    return KINN(DATABASE, "microareas");
 }
 
 

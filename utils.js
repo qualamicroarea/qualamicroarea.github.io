@@ -51,9 +51,26 @@ function RemoveChildren(elem) {
  * @param {*} dict the dict, can be null.
  * @param {*} key the key.
  */
-function KeyIfNotNull(dict, key) {
+function KINN(dict, key) {
     if (dict) {
         return dict[key];
+    }
+    return null;
+}
+
+
+/**
+ * Function that returns a key if the dict is not null, but checks all keys in key_array, following their order.
+ * @param {*} dict the dict, can be null.
+ * @param {*} key the key array, the order will be respect.
+ */
+function KINNL(dict, key_array) {
+    if (dict) {
+        var parsed = dict;
+        for (let i = 0; i < key_array.length; i++) {
+            parsed = KINN(parsed, key_array[i]);
+        }
+        return parsed;
     }
     return null;
 }

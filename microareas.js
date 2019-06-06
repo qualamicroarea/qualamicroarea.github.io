@@ -7,7 +7,7 @@ var DATABASE = null;
  * Quick function to get the microareas from the current loaded database.
  */
 function GetMicroareasDict() {
-    return KeyIfNotNull(DATABASE, "microareas");
+    return KINN(DATABASE, "microareas");
 }
 
 
