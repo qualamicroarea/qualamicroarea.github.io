@@ -47,6 +47,16 @@ class DatabaseForm {
         return unidadeCB ? unidadeCB.value : null;
     }
 
+    getDatabaseManager() {
+        const cidade = this.getSelectedCidade();
+        const unidade = this.getSelectedUnidade();
+
+        if (cidade && unidade) {
+            return new DatabaseManager(this.root_database, cidade, unidade);
+        }
+        return null;
+    }
+
     setupForm(parent_div) {
         this.createForm(parent_div);
         this.setupCidadesCB();

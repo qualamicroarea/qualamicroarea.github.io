@@ -1,50 +1,5 @@
-// The database var, always include.
-var DATABASE = null;
-
-
-
-/**
- * Quick function to get the ruas dict from the database.
- */
-function GetRuasDict() {
-    return KINN(DATABASE, "ruas");
-}
-
-
-
-/**
- * Quick function to get all the ruas names from the database.
- */
-function GetRuas() {
-    const ruasDict = GetRuasDict();
-    if (ruasDict) {
-        return Object.keys(ruasDict);
-    }
-    return null;
-}
-
-
-
-/**
- * Function that checks the selected cidade and unidade, loading it if not loaded.
- * Also checks the URL, searching for the given rua param, if existent.
- */
-function CheckCidadeUnidade() {
-    const cidade_sel = document.getElementById("cb_cidade").value;
-    const unidade_sel = document.getElementById("cb_unidade").value;
-
-    if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
-        const database_name = DatabasePath(cidade_sel, unidade_sel);
-        LoadScript(database_name, function() {
-            const rua = GetURLParam("rua");
-            if (rua) {
-                document.getElementById("tf_nomedarua").value = rua;
-                CheckRuaMicroarea(rua);
-            }
-        });
-    }
-}
-
+var DATABASE_FORM = null;
+var DATABASE_MANAGER = null;
 
 
 /**
@@ -112,15 +67,7 @@ function CheckMicroarea() {
 
 
 
-/**
- * Function called when the window is loaded, used to link all needed handlers.
- * All autocompletion is done here.
- */
-function OnWindowLoad() {
-    LinkStaticButtons();
-
-    CheckCidadeUnidade();
-
+function SetupAutocompletion() {
     var currentFocus;
 
     const input = document.getElementById("tf_nomedarua");
@@ -235,6 +182,26 @@ function OnWindowLoad() {
     document.addEventListener("click", function() {
         CloseAllLists();
     });
+}
+
+
+
+/**
+ * Function called when the window is loaded, used to link all needed handlers.
+ * All autocompletion is done here.
+ */
+function OnWindowLoad() {
+    DATABASE_FORM = new DatabaseForm(DATABASE);
+    DATABASE_FORM.setupForm(document.getElementById("databaseform_container"));
+
+    LinkStaticButtons();
+    SetupAutocompletion();
+
+    const rua = GetURLParam("rua");
+    if (rua) {
+        document.getElementById("tf_nomedarua").value = rua;
+        CheckRuaMicroarea(rua);
+    }
 }
 
 
