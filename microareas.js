@@ -1,53 +1,5 @@
-// The database var, always include.
-var DATABASE = null;
-
-
-
-/**
- * Quick function to get the microareas from the current loaded database.
- */
-function GetMicroareasDict() {
-    return KINN(DATABASE, "microareas");
-}
-
-
-
-/**
- * Function that checks the selected cidade and unidade, loading it if not loaded.
- * When the database is loaded, creates the options for all microareas.
- * Also checks the URL, loading the microarea param, if existent.
- */
-function CheckCidadeUnidade() {
-    const cidade_sel = document.getElementById("cb_cidade").value;
-    const unidade_sel = document.getElementById("cb_unidade").value;
-
-    if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
-        const cb_microarea = document.getElementById("cb_microarea");
-        RemoveChildren(cb_microarea);
-
-        const database_name = DatabasePath(cidade_sel, unidade_sel);
-
-        LoadScript(database_name, function() {
-            var microareas = GetMicroareasDict();
-            if (microareas) {
-                microareas["0"] = null;
-                Object.keys(microareas).forEach(function(microarea) {
-                    var option = document.createElement("option");
-                    option.value = microarea;
-                    option.text = microarea;
-
-                    cb_microarea.appendChild(option);
-                });
-
-                const microarea_get = GetURLParam("microarea");
-                if (microareas[microarea_get]) {
-                    cb_microarea.value = microarea_get;
-                    CheckMicroarea(microarea_get);
-                }
-            }
-        });
-    }
-}
+var DATABASE_FORM = null;
+var DATABASE_MANAGER = null;
 
 
 
@@ -113,7 +65,7 @@ function DisplayMicroarea(microarea, microareainfo) {
 function CheckMicroarea(microarea) {
     RemoveIfExistsId("microarea_div");
 
-    const microareas = GetMicroareasDict();
+    const microareas = DATABASE_MANAGER.getMicroareasDict();
     if (microareas && microarea in microareas) {
         DisplayMicroarea(microarea, microareas[microarea]);
     }
@@ -125,16 +77,38 @@ function CheckMicroarea(microarea) {
  * Function called when the window is loaded, used to link all needed handlers.
  */
 function OnWindowLoad() {
-    LinkStaticButtons();
+    DATABASE_FORM = new DatabaseForm(DATABASE);
+    DATABASE_FORM.on_change_handle = function(cidade, unidade) {
+        DATABASE_MANAGER = DATABASE_FORM.getDatabaseManager();
 
-    CheckCidadeUnidade();
+        const cb_microarea = document.getElementById("cb_microarea");
+        RemoveChildren(cb_microarea);
 
-    document.getElementById("cb_cidade").onchange = CheckCidadeUnidade;
-    document.getElementById("cb_unidade").onchange = CheckCidadeUnidade;
+        cb_microarea.onchange = function(keys) {
+            CheckMicroarea(keys.target.value);
+        };
 
-    document.getElementById("cb_microarea").onchange = function(keys) {
-        CheckMicroarea(keys.target.value);
+        var microareas = DATABASE_MANAGER.getMicroareasDict();
+        if (microareas) {
+            microareas["0"] = null;
+            Object.keys(microareas).forEach(function(microarea) {
+                var option = document.createElement("option");
+                option.value = microarea;
+                option.text = microarea;
+
+                cb_microarea.appendChild(option);
+            });
+
+            const microarea_get = GetURLParam("microarea");
+            if (microareas[microarea_get]) {
+                cb_microarea.value = microarea_get;
+                CheckMicroarea(microarea_get);
+            }
+        }
     };
+    DATABASE_FORM.setupForm(document.getElementById("databaseform_container"));
+
+    LinkStaticButtons();
 }
 
 
