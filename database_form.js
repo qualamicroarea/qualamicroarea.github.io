@@ -10,6 +10,8 @@ class DatabaseForm {
         this.root_div_id = "databaseform_div";
         this.cidade_cb_id = "databaseform_cb_cidade";
         this.unidade_cb_id = "databaseform_cb_unidade";
+
+        this.on_change_handle = null;
     }
 
     getCidadesNames() {
@@ -60,7 +62,6 @@ class DatabaseForm {
     setupForm(parent_div) {
         this.createForm(parent_div);
         this.setupCidadesCB();
-        this.setupUnidadesCB();
     }
 
     createForm(parent_div) {
@@ -86,8 +87,15 @@ class DatabaseForm {
         const cidadesNames = this.getCidadesNames();
 
         if (cidadeCB && cidadesNames) {
+            cidadeCB.onchange = this.setupUnidadesCB.bind(this);
+
             for (let i = 0; i < cidadesNames.length; i++) {
                 cidadeCB.appendChild(CreateOption(cidadesNames[i]));
+            }
+
+            const onchange = cidadeCB.onchange;
+            if (onchange) {
+                onchange();
             }
         }
     }
@@ -97,13 +105,27 @@ class DatabaseForm {
         const selectedCidade = this.getSelectedCidade();
 
         if (unidadeCB && selectedCidade) {
+            unidadeCB.onchange = this.inform_on_change_handle.bind(this);
+
+            RemoveChildren(unidadeCB);
+
             const unidadesNames = this.getUnidadesNames(selectedCidade);
             if (unidadesNames) {
                 for (let i = 0; i < unidadesNames.length; i++) {
                     unidadeCB.appendChild(CreateOption(unidadesNames[i]));
                 }
             }
+
+            const onchange = unidadeCB.onchange;
+            if (onchange) {
+                onchange();
+            }
         }
     }
 
+    inform_on_change_handle() {
+        if (this.on_change_handle) {
+            this.on_change_handle(this.getSelectedCidade(), this.getSelectedUnidade());
+        }
+    }
 }

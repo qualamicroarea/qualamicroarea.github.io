@@ -192,6 +192,10 @@ function SetupAutocompletion() {
  */
 function OnWindowLoad() {
     DATABASE_FORM = new DatabaseForm(DATABASE);
+    DATABASE_FORM.on_change_handle = function(cidade, unidade) {
+        console.log(cidade, unidade);
+        DATABASE_MANAGER = DATABASE_FORM.getDatabaseManager();
+    };
     DATABASE_FORM.setupForm(document.getElementById("databaseform_container"));
 
     LinkStaticButtons();
