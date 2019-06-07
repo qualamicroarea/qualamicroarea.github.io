@@ -37,14 +37,14 @@ class IndexPage extends BasePage {
         for (let i = 0; i < adjacentes.length; i++) {
             const adjacente = adjacentes[i];
             adjacente.onclick = function(keys) {
-                const adjacente_name = this.textContent;
+                const adjacente_name = keys.target.textContent;
 
                 var tf_nomedarua = document.getElementById("tf_nomedarua");
                 tf_nomedarua.value = adjacente_name;
                 this.checkRua(adjacente_name);
 
                 tf_nomedarua.scrollIntoView();
-            }
+            }.bind(this);
         }
     }
 
