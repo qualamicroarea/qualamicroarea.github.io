@@ -48,7 +48,7 @@ function DisplayMicroarea(rua) {
 function CheckRuaMicroarea(rua) {
     RemoveIfExistsId("microarea_div");
 
-    const ruas = GetRuasDict();
+    const ruas = DATABASE_MANAGER.getRuasDict();
     if (ruas && rua in ruas) {
         const ruaObject = new Rua(rua, ruas[rua]);
         DisplayMicroarea(ruaObject);
@@ -73,9 +73,7 @@ function SetupAutocompletion() {
     const input = document.getElementById("tf_nomedarua");
 
     input.addEventListener("input", function(e) {
-        CheckCidadeUnidade();
-
-        const ruas = GetRuas();
+        const ruas = DATABASE_MANAGER.getRuasNames();
         const text = this.value;
 
         CloseAllLists();
@@ -193,7 +191,6 @@ function SetupAutocompletion() {
 function OnWindowLoad() {
     DATABASE_FORM = new DatabaseForm(DATABASE);
     DATABASE_FORM.on_change_handle = function(cidade, unidade) {
-        console.log(cidade, unidade);
         DATABASE_MANAGER = DATABASE_FORM.getDatabaseManager();
     };
     DATABASE_FORM.setupForm(document.getElementById("databaseform_container"));
