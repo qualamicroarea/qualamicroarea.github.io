@@ -1,65 +1,5 @@
-// The database var, always include.
-var DATABASE = null;
-
-
-
-/**
- * Quick function to get the ruas dict from the database.
- */
-function GetRuasDict() {
-    return KINN(DATABASE, "ruas");
-}
-
-
-
-/**
- * Quick function to get the microares dict from the database.
- */
-function GetMicroareasDict() {
-    return KINN(DATABASE, "microareas");
-}
-
-
-
-/**
- * Quick function to get the ruas names from the database.
- */
-function GetRuas() {
-    const ruasDict = GetRuasDict();
-    if (ruasDict) {
-        return Object.keys(ruasDict);
-    }
-    return null;
-}
-
-
-
-/**
- * Function that checks the selected cidade and unidade, loading it if not loaded.
- * When the database is loaded, creates the options for all microareas.
- */
-function CheckCidadeUnidade() {
-    const cidade_sel = document.getElementById("cb_cidade").value;
-    const unidade_sel = document.getElementById("cb_unidade").value;
-
-    if (!IsCorrectDatabaseLoaded(DATABASE, cidade_sel, unidade_sel)) {
-        const cb_microarea = document.getElementById("cb_microarea");
-        RemoveChildren(cb_microarea);
-
-        const database_name = DatabasePath(cidade_sel, unidade_sel);
-
-        LoadScript(database_name, function() {
-            var microareas = GetMicroareasDict();
-            if (microareas) {
-                cb_microarea.appendChild(CreateOption("-"));
-
-                Object.keys(microareas).forEach(function(microarea) {
-                    cb_microarea.appendChild(CreateOption(microarea));
-                });
-            }
-        });
-    }
-}
+var DATABASE_FORM = null;
+var DATABASE_MANAGER = null;
 
 
 
@@ -180,7 +120,7 @@ function Filter() {
         filter_dict["caracteristicas"] = caracteristicas;
     }
 
-    const filtered = RuaCollectionFromDict(GetRuasDict()).filter(filter_dict);
+    const filtered = DATABASE_MANAGER.getRuaCollection().filter(filter_dict);
 
     DisplayRuas(filtered);
 }
@@ -191,9 +131,22 @@ function Filter() {
  * Function called when the window is loaded, used to link all needed handlers.
  */
 function OnWindowLoad() {
+    DATABASE_FORM = new DatabaseForm(DATABASE);
+    DATABASE_FORM.on_change_handle = function(cidade, unidade) {
+        DATABASE_MANAGER = DATABASE_FORM.getDatabaseManager();
+    };
+    DATABASE_FORM.setupForm(document.getElementById("databaseform_container"));
+
     LinkStaticButtons();
 
-    CheckCidadeUnidade();
+    var microareas = DATABASE_MANAGER.getMicroareasDict();
+    if (microareas) {
+        cb_microarea.appendChild(CreateOption("-"));
+
+        Object.keys(microareas).forEach(function(microarea) {
+            cb_microarea.appendChild(CreateOption(microarea));
+        });
+    }
 
     document.getElementById("button_filtrar").onclick = Filter;
 }
