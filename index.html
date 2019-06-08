@@ -8,8 +8,13 @@
 	<meta http-equiv="Content-Language" content="pt-br">
 	<link rel="stylesheet" href="shared.css">
 	<link rel="stylesheet" href="index.css">
+	<script type="text/javascript" src="database.js"></script>
 	<script type="text/javascript" src="utils.js"></script>
 	<script type="text/javascript" src="rua.js"></script>
+	<script type="text/javascript" src="rua_collection.js"></script>
+	<script type="text/javascript" src="database_manager.js"></script>
+	<script type="text/javascript" src="database_form.js"></script>
+	<script type="text/javascript" src="base_page.js"></script>
   	<script type="text/javascript" src="index.js"></script>
 </head>
 
@@ -21,13 +26,13 @@
 			</div>
 			<div class="pre_content center">
 				<div class="redirect_button" id="button_ver_microareas">
-					<span>Buscar Microáreas</span>
+					<a href="microareas.html">Bucar Microáreas</a>
 				</div>
 				<div class="redirect_button" id="button_ver_ruas">
-					<span>Buscar Ruas</span>
+					<a href="index.html">Buscar Ruas</a>
 				</div>
 				<div class="redirect_button" id="button_ver_filtrar">
-					<span>Filtrar Ruas</span>
+					<a href="filtrar.html">Filtrar Ruas</a>
 				</div>
 			</div>
 			<div class="content">
@@ -36,15 +41,8 @@
 						Buscar Rua
 					</div>
 					<div class="post_body" id="microarea_body">
-						Cidade:
-						<select class="interactionbox paddedchoicebox selectfield" id="cb_cidade">
-							<option value="petropolis">Petrópolis</option>
-						</select>
-						<br>
-						Unidade:
-						<select class="interactionbox paddedchoicebox selectfield" id="cb_unidade">
-							<option value="boavista">Boa Vista</option>
-						</select>
+						<div id="databaseform_container">
+						</div>
 						<div class="input_section search_div">
 							Digite uma rua:
 							<br>
