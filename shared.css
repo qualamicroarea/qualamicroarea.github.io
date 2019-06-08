@@ -221,6 +221,8 @@ td {
 
 .redirect_button * {
     padding: 15px;
+    color:#3a8a9e;
+    text-decoration: none;
 }
 
 @media (max-width: 600px) {

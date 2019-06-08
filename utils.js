@@ -302,23 +302,6 @@ function DatabasePath(cidade, unidade) {
 }
 
 
-
-/**
- * Links the handle for all static buttons.
- */
-function LinkStaticButtons() {
-    function Link(id, page) {
-        document.getElementById(id).onclick = function() {
-            window.location.href = page;
-        }
-    }
-
-    Link("button_ver_ruas", "index.html");
-    Link("button_ver_microareas", "microareas.html");
-    Link("button_ver_filtrar", "filtrar.html");
-}
-
-
 /**
  * Creates a HTML tag with value and text set to the arg x.
  * @param {string} x the value. 
