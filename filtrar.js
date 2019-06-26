@@ -94,7 +94,7 @@ class FiltrarPage extends BasePage {
             (cb_value("cb_escola") ? "Escola" : null),
             (cb_value("cb_igreja") ? "Igreja" : null),
             (cb_value("cb_lixeira") ? "Lixeira" : null),
-            (cb_value("cb_onibus") ? "Ônibus" : null),
+            (cb_value("cb_onibus") ? "Ponto de ônibus" : null),
             (cb_value("cb_orelhao") ? "Orelhão" : null),
             (cb_value("cb_pequenos_comercios") ? "Pequenos comércios" : null),
             (cb_value("cb_sem_saida") ? "Rua Sem Saída" : null),
