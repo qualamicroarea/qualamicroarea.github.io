@@ -21,7 +21,7 @@ class IndexPage extends BasePage {
         var div = document.createElement("div");
         div.className = "microarea_result";
         div.id = "microarea_div";
-        div.innerHTML = rua.HTML();
+        div.innerHTML = rua.HTML(this.selected_cidade, this.selected_unidade);
 
         document.getElementById("microarea_body").appendChild(div);
 

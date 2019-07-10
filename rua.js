@@ -86,14 +86,18 @@ class Rua {
     /**
      * Returns a HTML string with the microarea of this Rua.
      */
-    microareaHTML() {
+    microareaHTML(cidade, unidade) {
         var parts = [];
 
         const length = this.microarea.length;
 
         for (let i = 0; i < length; i++) {
             parts.push([
-                "<a href=\"microareas.html?microarea=", this.microarea[i], "\">",
+                "<a href=\"microareas.html",
+                    "?microarea=", this.microarea[i],
+                    "&cidade=", cidade,
+                    "&unidade=", unidade,
+                    "\">",
                     this.microarea[i],
                 "</a>"
             ].join(""));
@@ -110,10 +114,10 @@ class Rua {
     /**
      * Returns a HTML string with a table containing the main info about this Rua.
      */
-    tableHTML() {
+    tableHTML(cidade, unidade) {
         return [
             "<table class=\"border_table\">",
-                this.microareaHTML(),
+                this.microareaHTML(cidade, unidade),
                 MergeTableInfo(this, "Água Encanada", "agua_encanada", true),
                 MergeTableInfo(this, "Luz Elétrica", "luz_eletrica", true),
                 MergeTableInfo(this, "Esgoto Encanado", "esgoto_encanado", true),
@@ -128,10 +132,10 @@ class Rua {
     /**
      * Returns a HTML string with the all the info of this Rua.
      */
-    HTML() {
+    HTML(cidade, unidade) {
         return [
             "<p class=\"info_rua_nome\">", this.nome, "</p>",
-            this.tableHTML(),
+            this.tableHTML(cidade, unidade),
             this.caracteristicasHTML(),
             this.adjacentesHTML(),
         ].join("");

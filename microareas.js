@@ -80,17 +80,6 @@ class MicroareasPage extends BasePage {
     }
 
     /**
-     * Implementation of method called after page loaded, use to check params.
-     */
-    checkGetParams() {
-        const rua = GetURLParam("rua");
-        if (rua) {
-            document.getElementById("tf_nomedarua").value = rua;
-            this.checkRua(rua);
-        }
-    }
-
-    /**
      * Overriding BasePage method.
      * @param {*} cidade 
      * @param {*} unidade 
@@ -118,11 +107,18 @@ class MicroareasPage extends BasePage {
      * Implementation of check get params, called after page load.
      */
     checkGetParams() {
-        const microareas = this.database_manager.getMicroareasDict();
+        const cidade = GetURLParam("cidade");
+        const unidade = GetURLParam("unidade");
         const microarea_get = GetURLParam("microarea");
-        if (microareas[microarea_get]) {
-            document.getElementById("cb_microarea").value = microarea_get;
-            this.checkMicroarea(microarea_get);
+
+        if (cidade && unidade && microarea_get) {
+            this.database_form.setCidadeUnidade(cidade, unidade);
+
+            const microareas = this.database_manager.getMicroareasDict();
+            if (microareas[microarea_get]) {
+                document.getElementById("cb_microarea").value = microarea_get;
+                this.checkMicroarea(microarea_get);
+            }
         }
     }
 }
