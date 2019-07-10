@@ -33,7 +33,11 @@ class FiltrarPage extends BasePage {
             parts.push([
                 "<tr>",
                     "<td>",
-                        "<a href=\"index.html?rua=", names[i], "\">",
+                        "<a href=\"index.html",
+                                "?rua=", names[i],
+                                "&cidade=", this.selected_cidade,
+                                "&unidade=", this.selected_unidade,
+                            "\">",
                             names[i],
                         "</a>",
                     "</td>",

@@ -74,8 +74,12 @@ class IndexPage extends BasePage {
      * Implementation of method called after page loaded, use to check params.
      */
     checkGetParams() {
+        const cidade = GetURLParam("cidade");
+        const unidade = GetURLParam("unidade");
         const rua = GetURLParam("rua");
-        if (rua) {
+
+        if (cidade && unidade && rua) {
+            this.database_form.setCidadeUnidade(cidade, unidade);
             document.getElementById("tf_nomedarua").value = rua;
             this.checkRua(rua);
         }
