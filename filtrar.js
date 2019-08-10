@@ -18,9 +18,7 @@ class FiltrarPage extends BasePage {
      * @param {RuaCollection} rua_collection the RuaCollection object.
      */
     ruasHTML(rua_collection) {
-        const names = rua_collection.names();
-
-        if (names.length == 0) {
+        if (rua_collection.empty()) {
             return "<i class=\"info_rua_nome\">Nenhuma Rua Encontrada</i>";
         }
 
@@ -29,16 +27,15 @@ class FiltrarPage extends BasePage {
             "<table class=\"center border_table\">",
         ];
 
-        for (let i = 0; i < names.length; i++) {
+        let ruas = rua_collection.ruas;
+        for (let i = 0; i < ruas.length; i++) {
             parts.push([
                 "<tr>",
                     "<td>",
-                        "<a href=\"index.html",
-                                "?rua=", names[i],
-                                "&cidade=", this.selected_cidade,
-                                "&unidade=", this.selected_unidade,
+                        "<a href=",
+                                ruas[i].href(),
                             "\">",
-                            names[i],
+                            ruas[i].nome,
                         "</a>",
                     "</td>",
                 "</tr>",

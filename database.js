@@ -10,6 +10,8 @@ const DATABASE = {
 
                     "microareas" : {
                         "1" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "agua_encanada" : "Parcial",
                             "luz_eletrica" : true,
                             "esgoto_encanado" : true,
@@ -26,6 +28,8 @@ const DATABASE = {
                             "observacoes" : "A microárea 1 está sem agente comunitário há varios anos. O revelo da microárea é mais plano que nas demais. A associação de moradores fica na microárea 1."
                         },
                         "2" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
                             "esgoto_encanado" : "Parcial",
@@ -42,6 +46,8 @@ const DATABASE = {
                             "observacoes" : "Relevo acentuado, boa adesão ao programa do posto. Muitos animais de rua."
                         },
                         "3" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
                             "esgoto_encanado" : true,
@@ -58,6 +64,8 @@ const DATABASE = {
                             "observacoes" : "A microárea 3 sofre com o manancial contaminado por metais pesados e coliformes fecais, poucas lixeiras na região."
                         },
                         "4" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
                             "esgoto_encanado" : true,
@@ -74,6 +82,8 @@ const DATABASE = {
                             "observacoes" : "A microárea 4 possui um relevo acentuado e alguns pequenos comércios. Diversos moradores deixam os cachorros soltos na rua, que reviram o lixo e sujam as ruas."
                         },
                         "5" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
                             "esgoto_encanado" : true,
@@ -93,6 +103,8 @@ const DATABASE = {
 
                     "ruas" : {
                         "Rua Boa Vista" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "1",
                                 "2",
@@ -114,6 +126,8 @@ const DATABASE = {
                             "observacoes" : "Parte usa o nome Servidão Cornélio de Azevedo Ramos",
                         },
                         "Rua Caminho do Ladeira" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "4",
                             ],
@@ -139,6 +153,8 @@ const DATABASE = {
                             "observacoes" : "Alguns ratos.",
                         },
                         "Rua Cecília Milanês" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "2",
                             ],
@@ -161,6 +177,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Cândido Borsato" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "2",
                                 "3",
@@ -186,6 +204,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Henrique João da Cruz" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "1",
                                 "2",
@@ -213,6 +233,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Luiz Pelegrini " : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "5",
                             ],
@@ -235,6 +257,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Silvio Pimentel França" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "5",
                             ],
@@ -259,6 +283,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Valentin Osório da Silva" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "2",
                             ],
@@ -281,6 +307,8 @@ const DATABASE = {
                             "observacoes" : "2 confecções de roupa",
                         },
                         "Rua da Represa" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "2",
                             ],
@@ -301,6 +329,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Servidão Cornélio de Azevedo Ramos" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "5",
                             ],
@@ -320,6 +350,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Servidão José Cândido da Silva Maripá" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "2",
                             ],
@@ -339,6 +371,8 @@ const DATABASE = {
                             "observacoes" : "Nenhuma Casa, só passagem.",
                         },
                         "Servidão José da Silva" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "5",
                             ],
@@ -358,6 +392,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Servidão João França" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "5",
                             ],
@@ -377,6 +413,8 @@ const DATABASE = {
                             "observacoes" : "Ratos na rua.",
                         },
                         "Servidão Maria Leocadia de Jesus Gonçalves" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "2",
                             ],
@@ -397,6 +435,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Servidão Vicente de Oliveira" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "5",
                             ],
@@ -417,6 +457,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Estrada do Cascatinha" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "1",
                             ],
@@ -439,6 +481,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Ana Nery" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "1",
                             ],
@@ -463,6 +507,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Francisco Jacinto do Amaral" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "1",
                             ],
@@ -485,6 +531,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Guilherme Dalmas Nunes" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "1",
                             ],
@@ -508,6 +556,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Rua Loio Gallucci" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "1",
                             ],
@@ -529,6 +579,8 @@ const DATABASE = {
                             "observacoes" : "",
                         },
                         "Servidão Pedro Lanzoni" : {
+                            "cidade" : "Petrópolis",
+                            "unidade" : "Boa Vista",
                             "microarea" : [
                                 "5",
                             ],

@@ -11,6 +11,8 @@ class Rua {
      */
     constructor(nome, info) {
         this.nome = nome;
+        this.cidade = info.cidade;
+        this.unidade = info.unidade;
         this.microarea = info.microarea;
         this.agua_encanada = info.agua_encanada;
         this.luz_eletrica = info.luz_eletrica;
@@ -86,7 +88,7 @@ class Rua {
     /**
      * Returns a HTML string with the microarea of this Rua.
      */
-    microareaHTML(cidade, unidade) {
+    microareaHTML() {
         var parts = [];
 
         const length = this.microarea.length;
@@ -95,8 +97,8 @@ class Rua {
             parts.push([
                 "<a href=\"microareas.html",
                     "?microarea=", this.microarea[i],
-                    "&cidade=", cidade,
-                    "&unidade=", unidade,
+                    "&cidade=", this.cidade,
+                    "&unidade=", this.unidade,
                     "\">",
                     this.microarea[i],
                 "</a>"
@@ -114,10 +116,10 @@ class Rua {
     /**
      * Returns a HTML string with a table containing the main info about this Rua.
      */
-    tableHTML(cidade, unidade) {
+    tableHTML() {
         return [
             "<table class=\"border_table\">",
-                this.microareaHTML(cidade, unidade),
+                this.microareaHTML(),
                 MergeTableInfo(this, "Água Encanada", "agua_encanada", true),
                 MergeTableInfo(this, "Luz Elétrica", "luz_eletrica", true),
                 MergeTableInfo(this, "Esgoto Encanado", "esgoto_encanado", true),
@@ -132,10 +134,10 @@ class Rua {
     /**
      * Returns a HTML string with the all the info of this Rua.
      */
-    HTML(cidade, unidade) {
+    HTML() {
         return [
             "<p class=\"info_rua_nome\">", this.nome, "</p>",
-            this.tableHTML(cidade, unidade),
+            this.tableHTML(),
             this.caracteristicasHTML(),
             this.adjacentesHTML(),
         ].join("");
@@ -201,5 +203,24 @@ class Rua {
             }
         }
         return true;
+    }
+
+    href() {
+        return [
+            "index.html",
+            "?rua=", this.name,
+            "&cidade=", this.cidade,
+            "&unidade=", this.unidade
+        ].join("");
+    }
+
+    asNode() {
+        return {
+            data: {
+                id: NormalizedText(this.nome),
+                name: this.nome,
+                href: this.href()
+            }
+        };
     }
 }
