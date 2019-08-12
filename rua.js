@@ -206,21 +206,11 @@ class Rua {
     }
 
     href() {
-        return [
+        return encodeURI([
             "index.html",
-            "?rua=", this.name,
+            "?rua=", this.nome,
             "&cidade=", this.cidade,
             "&unidade=", this.unidade
-        ].join("");
-    }
-
-    asNode() {
-        return {
-            data: {
-                id: NormalizedText(this.nome),
-                name: this.nome,
-                href: this.href()
-            }
-        };
+        ].join(""));
     }
 }
