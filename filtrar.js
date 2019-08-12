@@ -32,7 +32,7 @@ class FiltrarPage extends BasePage {
             parts.push([
                 "<tr>",
                     "<td>",
-                        "<a href=",
+                        "<a href=\"",
                                 ruas[i].href(),
                             "\">",
                             ruas[i].nome,
