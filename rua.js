@@ -11,6 +11,8 @@ class Rua {
      */
     constructor(nome, info) {
         this.nome = nome;
+        this.cidade = info.cidade;
+        this.unidade = info.unidade;
         this.microarea = info.microarea;
         this.agua_encanada = info.agua_encanada;
         this.luz_eletrica = info.luz_eletrica;
@@ -93,7 +95,11 @@ class Rua {
 
         for (let i = 0; i < length; i++) {
             parts.push([
-                "<a href=\"microareas.html?microarea=", this.microarea[i], "\">",
+                "<a href=\"microareas.html",
+                    "?microarea=", this.microarea[i],
+                    "&cidade=", this.cidade,
+                    "&unidade=", this.unidade,
+                    "\">",
                     this.microarea[i],
                 "</a>"
             ].join(""));
@@ -197,5 +203,14 @@ class Rua {
             }
         }
         return true;
+    }
+
+    href() {
+        return encodeURI([
+            "index.html",
+            "?rua=", this.nome,
+            "&cidade=", this.cidade,
+            "&unidade=", this.unidade
+        ].join(""));
     }
 }

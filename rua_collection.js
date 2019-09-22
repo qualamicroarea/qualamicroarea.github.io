@@ -97,4 +97,20 @@ class RuaCollection {
             return rua.nome;
         });
     }
+
+
+    /**
+     * Returns the size / length of this rua collection.
+     */
+    size() {
+        return this.ruas.length
+    }
+
+
+    /**
+     * Returns if this rua collection is empty.
+     */
+    empty() {
+        return this.size == 0;
+    }
 }

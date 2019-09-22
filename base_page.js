@@ -13,6 +13,8 @@ class BasePage {
     }
 
     onFormChangeHandle(cidade, unidade) {
+        this.selected_cidade = cidade;
+        this.selected_unidade = unidade;
         this.database_manager = this.database_form.getDatabaseManager();
     }
 

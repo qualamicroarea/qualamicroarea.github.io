@@ -59,6 +59,11 @@ class DatabaseForm {
         return null;
     }
 
+    setCidadeUnidade(cidade, unidade) {
+        this.getCidadeCB().value = cidade;
+        this.getUnidadeCB().value = unidade;
+    }
+
     setupForm(parent_div) {
         this.createForm(parent_div);
         this.setupCidadesCB();
