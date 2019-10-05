@@ -1,4 +1,4 @@
-/*
+/**
  * Classe base para todas as páginas.
  * Terceiriza funções como carregar base de dados e criação das caixas de seleção base.
  * Páginas que façam uso da base de dados herdam de BasePage.
