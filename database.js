@@ -1,3 +1,58 @@
+/**
+ * A DATABASE - um global, que deve ser sempre o primeiro arquivo js carregado.
+ * É inteligente usar uma variável com um dictionary para simular uma database read-only?
+ * Não, mas é uma solução para quando não existe um backend.
+ * Assim, essa database é carregada e todo o parsing e processamento é feito por
+ * javascript direto no navegador.
+ * Uma solução bizarra, estranha e nada perfeita, mas que funciona.
+ * 
+ * Agora, a explicação:
+ * DATABASE é um dictionary que segue as seguintes regras / padrões:
+ * | A única key deste dicionário é "cidades", que está associada com um dicionário.
+ * || Nesse, as chaves são nomes de cidades, cada um associado com um dicionário.
+ * ||| Nesse, a única key é "unidades", que está associada com um dicionário.
+ * |||| Nesse, cada key é o nome de uma unidade (PSF), associado com um dicionário.
+ * ||||| Nesse, há duas chaves:
+ * |||||| "microareas", associada com um dicionário.
+ * ||||||| Nesse, cada key é o nome de uma microárea, associada com um dicionário em que há as seguintes keys:
+ * ||||||||| "cidade" [string] com o nome da cidade;
+ * ||||||||| "unidade" [string] com o nome da unidade;
+ * ||||||||| "agua_encanada" [string];
+ * ||||||||| "luz_eletrica" [boolean];
+ * ||||||||| "esgoto_encanado" [boolean];
+ * ||||||||| "lazer" [boolean];
+ * ||||||||| "onibus_atende" [boolean];
+ * ||||||||| "animais_de_rua" [boolean];
+ * ||||||||| "lixeira" [string] (mas normalmente contendo um número);
+ * ||||||||| "lixo_na_rua" [boolean];
+ * ||||||||| "igrejas" [string] (mas normalmente contendo um número);
+ * ||||||||| "bares" [string] (mas normalmente contendo um número);
+ * ||||||||| "observacoes" [string];
+ * |||||| "ruas", associada com um dicionário.
+ * ||||||| Nesse, cada key é o nome de uma rua, associada com um dicionário em que há as seguintes keys:
+ * ||||||||| "cidade" [string] com o nome da cidade;
+ * ||||||||| "unidade" [string] com o nome da unidade;
+ * ||||||||| "microarea" [array<string>] em que cada item é o nome de uma microárea.
+ * ||||||||| "agua_encanada" [boolean];
+ * ||||||||| "luz_eletrica" [boolean];
+ * ||||||||| "esgoto_encanado" [boolean];
+ * ||||||||| "entulho" [boolean];
+ * ||||||||| "lixo_na_rua" [boolean];
+ * ||||||||| "animais_de_rua" [boolean];
+ * ||||||||| "caracteristicas" [array<string>] em que cada item é uma característica da rua. As mais comuns são:
+ * |||||||||| "Bar";
+ * |||||||||| "Creche";
+ * |||||||||| "Escola";
+ * |||||||||| "Igreja";
+ * |||||||||| "Lixeira";
+ * |||||||||| "Ponto de ônibus";
+ * |||||||||| "Orelhão";
+ * |||||||||| "Pequenos comércios";
+ * |||||||||| "Rua Sem Saída";
+ * ||||||||| "referencia" [string];
+ * ||||||||| "adjacentes" [array<string>] em que cada item é o nome de uma rua.
+ * ||||||||| "observacoes" [string];
+ */
 const DATABASE = {
 
     "cidades" : {
