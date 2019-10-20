@@ -1,13 +1,14 @@
-
 /**
- * Abstraction for a Rua.
+ * Abstração de uma rua.
+ * Classe importantíssima que está no coração de tudo.
  */
 class Rua {
 
     /**
-     * Constructor for a Rua object. Check args before calling.
-     * @param {string} nome the rua name.
-     * @param {dict} info the json info.
+     * Contrutor.
+     * Argumentos passados devem ser válidos.
+     * @param {string} nome o nome da rua
+     * @param {dict} info um dicionário com as informações
      */
     constructor(nome, info) {
         this.nome = nome;
@@ -26,9 +27,8 @@ class Rua {
         this.observacoes = info.observacoes;
     }
 
-
     /**
-     * Returns a HTML string with the adjacentes of this Rua.
+     * Retorna uma string HTML com as ruas adjacentes.
      */
     adjacentesHTML() {
         if (this.adjacentes.length > 0) {
@@ -56,9 +56,8 @@ class Rua {
         return "";
     }
 
-
     /**
-     * Returns a HTML string with the caracteristicas of this Rua.
+     * Retorna uma string HTML com as características dessa rua.
      */
     caracteristicasHTML() {
         if (this.caracteristicas.length > 0) {
@@ -84,9 +83,9 @@ class Rua {
         return "";
     }
 
-
     /**
-     * Returns a HTML string with the microarea of this Rua.
+     * Retorna uma string HTML com a(s) microárea(s) dessa rua.
+     * São hrefs, levando para a página de buscar microáreas.
      */
     microareaHTML() {
         var parts = [];
@@ -112,9 +111,9 @@ class Rua {
         return MergeTable("Microárea", parts.join(""));
     }
 
-
     /**
-     * Returns a HTML string with a table containing the main info about this Rua.
+     * Retorna uma string HTML de uma table contendo as
+     * principais informações dessa Rua.
      */
     tableHTML() {
         return [
@@ -130,9 +129,8 @@ class Rua {
         ].join("");
     }
 
-
     /**
-     * Returns a HTML string with the all the info of this Rua.
+     * Retorna uma string HTML com toda a informação dessa Rua.
      */
     HTML() {
         return [
@@ -143,11 +141,13 @@ class Rua {
         ].join("");
     }
 
-
     /**
-     * Given a attribute key and a rules, returns true if the value conforms to the rules.
-     * @param {rules} rules the rules to be checked, expected value.
-     * @param {key} key the attribute key which value should be the rule.
+     * Dada uma regra e o nome de um atributo,
+     * retorna True somente se o valor do atributo corresponder à regra.
+     * rules[key] deve ser um valor válido.
+     * Se rules[key] for inválido, retorna True.
+     * @param {dict} rules as regras
+     * @param {key} key o nome do atributo
      */
     comformsKey(rules, key) {
         if (rules) {
@@ -160,12 +160,11 @@ class Rua {
         return true;
     }
 
-
     /**
-     * Returns true if this Rua Object conforms to the given rules, false otherwise.
-     * @param {dict} rules the rules to be checked, a dict where:
-     *      The keys are the attributes to be checked;
-     *      The values the needed value to conform.
+     * Retorna True somente se essa Rua conformar com dadas regras.
+     * @param {dict} rules um dicionário em que:
+     *      As keys são os atributos a serem verificados;
+     *      Os values são os valores que cada atributo deve ter para ser aceito.
      */
     conforms(rules) {
         if (rules) {
@@ -205,6 +204,10 @@ class Rua {
         return true;
     }
 
+    /**
+     * Retorna uma string contendo uma URI que, se acessada,
+     * levará para index.js e exibirá as informações dessa rua.
+     */
     href() {
         return encodeURI([
             "index.html",
