@@ -1,11 +1,12 @@
-
 /**
- * Subclass of BasePage, contains all logic for the Filtar page.
+ * Classe responsável pela página filtrar.html
+ * É uma subclasse de BasePage.
+ * Possui toda a lógica de filtar e mostrar essas informações.
  */
 class FiltrarPage extends BasePage {
 
     /**
-     * Simple constructor that fills important stuff.
+     * Construtor que chama super e conecta o botão filtar.
      */
     constructor() {
         super(DATABASE, document.getElementById("databaseform_container"));
@@ -14,8 +15,9 @@ class FiltrarPage extends BasePage {
     }
 
     /**
-     * Builds the HTML for all the matching ruas.
-     * @param {RuaCollection} rua_collection the RuaCollection object.
+     * Retorna uma string html com base na rua_collection passada.
+     * Caso rua_collection não seja vazia, é uma tabela com os nomes das ruas.
+     * @param {RuaCollection} rua_collection as ruas
      */
     ruasHTML(rua_collection) {
         if (rua_collection.empty()) {
@@ -48,8 +50,9 @@ class FiltrarPage extends BasePage {
     }
 
     /**
-     * Displays the matching ruas.
-     * @param {RuaCollection} rua_collection the RuaCollection object.
+     * Dado uma rua_collection, mostra os nomes dessas ruas
+     * no local correto da página, se existirem.
+     * @param {RuaCollection} rua_collection as ruas
      */
     displayRuas(rua_collection) {
         RemoveIfExistsId("filtrar_result_div");
@@ -63,9 +66,14 @@ class FiltrarPage extends BasePage {
     }
 
     /**
-     * Function that checks everything selected, filtering ruas that match.
+     * Método que verifica as opções selecionadas pelo usuário e,
+     * baseado nessas, mostra as ruas que possuem tais características.
      */
     filter() {
+        /**
+         * Função que retorna o valor padronizado de uma choicebox.
+         * @param {string} id o id da choicebox.
+         */
         function cb_value(id) {
             const value = document.getElementById(id).value;
 
@@ -131,15 +139,17 @@ class FiltrarPage extends BasePage {
     }
 
     /**
-     * Implementation of method called after page loaded, use to check params.
+     * Implementação do método da superclasse, usada para verificar parametros.
      */
     checkGetParams() {
+        // Filtrar não recebe parametros, nada é feito.
     }
 
     /**
-     * Overriding BasePage method.
-     * @param {*} cidade 
-     * @param {*} unidade 
+     * Veja BasePage.
+     * Quando chamado, atualiza a choicebox com as microáreas possíveis.
+     * @param {string} cidade o nome da cidade
+     * @param {string} unidade o nome da unidade
      */
     onFormChangeHandle(cidade, unidade) {
         super.onFormChangeHandle(cidade, unidade);
