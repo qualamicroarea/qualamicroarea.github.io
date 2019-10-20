@@ -1,11 +1,12 @@
-
 /**
- * Subclass of BasePage, contains all logic for the index page.
+ * Classe responsável pela página index.html
+ * É uma subclasse de BasePage.
+ * Possui toda a lógica de autocompletar, buscar e exibir uma rua.
  */
 class IndexPage extends BasePage {
 
     /**
-     * Simple constructor that fills important stuff.
+     * Construtor que chama super e conecta o autocompletar.
      */
     constructor() {
         super(DATABASE, document.getElementById("databaseform_container"));
@@ -14,10 +15,10 @@ class IndexPage extends BasePage {
     }
 
     /**
-     * Displays all info about the given rua object.
-     * @param {Rua} rua the rua object.
+     * Exibe informações sobre uma rua.
+     * @param {Rua} rua a rua (objeto).
      */
-    displayMicroarea(rua) {
+    displayRua(rua) {
         var div = document.createElement("div");
         div.className = "microarea_result";
         div.id = "microarea_div";
@@ -29,7 +30,7 @@ class IndexPage extends BasePage {
     }
 
     /**
-     * Links all the needed handlers, E.g. clicking on clickable text.
+     * Conecta todas as partes que precisam de ações (ruas adjacentes). 
      */
     linkRuaHandles() {
         var adjacentes = document.getElementsByClassName("rua_adjacente");
@@ -49,8 +50,8 @@ class IndexPage extends BasePage {
     }
 
     /**
-     * Searches for a given rua name, displaying it, if existent.
-     * @param {string} rua the rua name.
+     * Pesquisa por uma rua (por nome) e exibe as informações caso ela exista.
+     * @param {string} rua o nome da rua.
      */
     checkRua(rua) {
         RemoveIfExistsId("microarea_div");
@@ -58,12 +59,12 @@ class IndexPage extends BasePage {
         const ruas = this.database_manager.getRuasDict();
         if (ruas && rua in ruas) {
             const ruaObject = new Rua(rua, ruas[rua]);
-            this.displayMicroarea(ruaObject);
+            this.displayRua(ruaObject);
         }
     }
 
     /**
-     * Searches for the rua entered.
+     * Pesquisa pela rua digitada.
      */
     check() {
         const rua = document.getElementById("tf_nomedarua").value;
@@ -71,7 +72,9 @@ class IndexPage extends BasePage {
     }
 
     /**
-     * Implementation of method called after page loaded, use to check params.
+     * Implementação do método da superclasse. Veja BasePage.
+     * Verifica os parametros Get e age de acordo.
+     * Exibe uma rua se os parametros assim mandarem.
      */
     checkGetParams() {
         const cidade = GetURLParam("cidade");
@@ -86,8 +89,9 @@ class IndexPage extends BasePage {
     }
 
     /**
-     * Responsable for all the autocompletion.
-     * @param {IndexPage} instance that will receive the callbacks.
+     * Responsável pelo autocompletar.
+     * Esse método é uma bagunça, mas uma bangunça necessária.
+     * @param {IndexPage} instance objeto que receberá o callback.
      */
     setupAutocompletion(instance) {
         var currentFocus;
