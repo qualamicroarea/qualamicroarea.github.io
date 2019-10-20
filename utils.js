@@ -1,11 +1,12 @@
 /**
- * File that holds utils JS code, should be included first.
+ * Arquivo feito de funções úteis.
+ * Deve ser incluido antes dos demais arquivos de código,
+ * uma vez que vários dependem desse (database.js é a exceção).
  */
 
-
 /**
- * Function that removes an element.
- * @param {Node} elem the element to be removed.
+ * Remove um elemento.
+ * @param {Node} elem o elemento
  */
 function RemoveIfExists(elem) {
     if (elem) {
@@ -13,19 +14,17 @@ function RemoveIfExists(elem) {
     }
 }
 
-
 /**
- * Function that removes an element with given id.
- * @param {string} id the id of the element to be removed.
+ * Remove um elemento com o id fornecido.
+ * @param {string} id o id
  */
 function RemoveIfExistsId(id) {
     RemoveIfExists(document.getElementById(id));
 }
 
-
 /**
- * Function that removes ALL element with given class.
- * @param {string} class_name the class of the elements to be removed.
+ * Remove TODOS os elementos com uma dada classe.
+ * @param {string} class_name o nome da classe
  */
 function RemoveIfExistsClass(class_name) {
     var elems = document.getElementsByClassName(class_name);
@@ -34,10 +33,9 @@ function RemoveIfExistsClass(class_name) {
     }
 }
 
-
 /**
- * Function that removes all children from a given node.
- * @param {Node} elem the node to remove all children from.
+ * Remove todas as childrens de um elemento.
+ * @param {Node} elem o elemento
  */
 function RemoveChildren(elem) {
     while (elem.firstChild) {
@@ -45,11 +43,12 @@ function RemoveChildren(elem) {
     }
 }
 
-
 /**
- * Function that returns a key if the dict is not null.
- * @param {*} dict the dict, can be null.
- * @param {*} key the key.
+ * Dado um dicionário e uma key, retorna o valor 
+ * de dicionário[key] caso o dicionário seja válido.
+ * No demais, retorna null.
+ * @param {dict} dict o dicionário, pode ser null
+ * @param {string} key a key
  */
 function KINN(dict, key) {
     if (dict) {
@@ -58,11 +57,12 @@ function KINN(dict, key) {
     return null;
 }
 
-
 /**
- * Function that returns a key if the dict is not null, but checks all keys in key_array, following their order.
- * @param {*} dict the dict, can be null.
- * @param {*} key the key array, the order will be respect.
+ * Dado um dicionário e um array de keys (denominadas [k1, k2, ..., kn]),
+ * retorna o valor de dict[k1][k2][...][kn],
+ * respeitando a ordem das chaves.
+ * @param {dict} dict o dicionário, pode ser null
+ * @param {Array} key o array de chaves, a ordem é respeitada
  */
 function KINNL(dict, key_array) {
     if (dict) {
@@ -75,11 +75,16 @@ function KINNL(dict, key_array) {
     return null;
 }
 
-
 /**
- * Function that loads a new JS script. After loading, calls the callback.
- * @param {string} url the url of the script to load.
- * @param {Function} callback the callback that will be called after loading.
+ * -[DEPRECATED / DEPRECIADA]-
+ * 
+ * Uso deve ser evitado.
+ * Atualmente, não é usado em nenhum lugar.
+ * 
+ * Carrega um novo arquivo js.
+ * Após carregar, chama o callback.
+ * @param {string} url url do script a ser carregado
+ * @param {Function} callback o callback que deve ser chamado
  */
 function LoadScript(url, callback) {
     const script_id = "_LoadScript_ID_" + url;
@@ -99,21 +104,8 @@ function LoadScript(url, callback) {
     document.head.appendChild(script_tag);
 }
 
-
-
 /**
- * Returns if the correct database is loaded.
- * @param {JSON} database the loaded database.
- * @param {string} cidade the cidade selected.
- * @param {string} unidade the unidade selected.
- */
-function IsCorrectDatabaseLoaded(database, cidade, unidade) {
-    return database && database["cidade"] === cidade && database["unidade"] === unidade;
-}
-
-
-/**
- * Returns if the useragent is mobile or not.
+ * Retorna se o useragente é compatível com mobile ou não.
  */
 function IsMobile() {
     const agent = navigator.userAgent;
@@ -127,21 +119,20 @@ function IsMobile() {
         )
 }
 
-
 /**
- * Returns yes if is mobile, no otherwise.
- * @param {string} yes if yes.
- * @param {string} no if no.
+ * Se for mobile, retorna o valor passado como yes,
+ * caso contrário, o valor passado como no.
+ * @param {string} yes se sim
+ * @param {string} no se não
  */
 function IfMobile(yes, no) {
     return IsMobile() ? yes : no;
 }
 
-
 /**
- * Returns a string of a Span tag with given text and color.
- * @param {string} text the text.
- * @param {string} color the color.
+ * Retorna uma string HTML de um <span> com dado texto e cor.
+ * @param {string} text o texto
+ * @param {string} color a cor, como string
  */
 function Span(text, color) {
     return [
@@ -151,10 +142,9 @@ function Span(text, color) {
     ].join("");
 }
 
-
 /**
- * Returns the URL GET Param for the given key.
- * @param {string} key the key.
+ * Retorna o parâmetro GET de uma dada key, se existente.
+ * @param {string} key a key
  */
 function GetURLParam(key) {
     var url_params = window.location.search.substring(1);
@@ -168,15 +158,13 @@ function GetURLParam(key) {
     return null;
 }
 
-
-
 /**
- * Builds a HTML table row with the given info.
- * @param {string} left string that will be on the left.
- * @param {string} right string that will be on the right.
- * @param {string} tr_class string that will be the tr class.
- * @param {string} td_class_left string that will be the td class on the left.
- * @param {string} td_class_right string that will be the td class on the right.
+ * Retorna uma string HTML com uma <tr> de dois <td> dada informações.
+ * @param {string} left string que ficará à esquerda
+ * @param {string} right string que ficará à direita
+ * @param {string} tr_class classe que será aplicada ao <tr>
+ * @param {string} td_class_left classe que será aplicada ao <td> da esquerda
+ * @param {string} td_class_right classe que será aplicada ao <td> da direita
  */
 function MergeTableClass(left, right, tr_class, td_class_left, td_class_right) {
     if (left !== null && right !== null && tr_class !== null && td_class_left !== null && td_class_right !== null) {
@@ -194,11 +182,10 @@ function MergeTableClass(left, right, tr_class, td_class_left, td_class_right) {
     return "";
 }
 
-
 /**
- * Builds a HTML table row with the given info.
- * @param {string} left string that will be on the left.
- * @param {string} right string that will be on the right.
+ * Retorna uma string HTML com uma <tr> de dois <td> dada informações.
+ * @param {string} left string que ficará à esquerda
+ * @param {string} right string que ficará à direita
  */
 function MergeTable(left, right) {
     if (left !== null && right !== null) {
@@ -216,14 +203,12 @@ function MergeTable(left, right) {
     return "";
 }
 
-
-
 /**
- * Builds a HTML table row with the given info.
- * @param {*} infos the dict with the info.
- * @param {*} pre the string to show.
- * @param {*} key the key to search on infos.
- * @param {boolean} isPositive if this table is positive.
+ * Retorna uma string HTML (uma row de uma table) dada informações.
+ * @param {dict} infos as informações
+ * @param {string} pre a string a ser usada à esquerda
+ * @param {string} key a key que será pesquisada em infos
+ * @param {boolean} isPositive se a row é positiva (algo bom)
  */
 function MergeTableInfo(infos, pre, key, isPositive) {
     function TdClass(bool_value) {
@@ -248,11 +233,11 @@ function MergeTableInfo(infos, pre, key, isPositive) {
     return "";
 }
 
-
-
 /**
- * Normalizes the given text, to compare.
- * @param {string} text the text to be normalized.
+ * Retorna um dado texto de foram normalizada.
+ * Ou seja, o texto minúsculo e sem caracteres não ASCII.
+ * Normalmente usado antes de comparar.
+ * @param {string} text o texto
  */
 function NormalizedText(text) {
     return text.toLowerCase()
@@ -264,47 +249,9 @@ function NormalizedText(text) {
         .replace(new RegExp('[Ç]','gi'), 'c');
 }
 
-
-
 /**
- * Given a string and a dict, replaces all occurrences of {{key}} with the value from the dict.
- * @param {string} text the replace base.
- * @param {dictionary} dict the replace dictionary.
- */
-function ReplaceWithDict(text, dict) {
-    var replaced_text = text;
-
-    const keys = Object.keys(dict);
-    for (let i = 0; i < keys.length; i++) {
-        const key = keys[i];
-        replaced_text = replaced_text.replace(
-            [
-                "{{",
-                key,
-                "}}"
-            ].join(""),
-            dict[key]
-        );
-    }
-
-    return replaced_text;
-}
-
-
-
-/**
- * Returns the database path, given info.
- * @param {string} cidade the cidade.
- * @param {string} unidade the unidade.
- */
-function DatabasePath(cidade, unidade) {
-    return ["database/", cidade, "/", unidade, ".js"].join("");
-}
-
-
-/**
- * Creates a HTML tag with value and text set to the arg x.
- * @param {string} x the value. 
+ * Cria e retorna um elemento <option> com o valor e texto iguais a x.
+ * @param {string} x valor desejado
  */
 function CreateOption(x) {
     var option = document.createElement("option");
@@ -314,11 +261,10 @@ function CreateOption(x) {
     return option;
 }
 
-
 /**
- * Function to test if a value in in a given array or not. (For before ECMAScript 2016).
- * @param {*} value any value to check. 
- * @param {Array<*>} array the array to check.
+ * Retorna se um valor está em um array ou não. (Antes de ECMAScript 2016).
+ * @param {*} value o valor a ser verificado
+ * @param {Array<*>} array o array
  */
 function IsInArray(value, array) {
     return array.indexOf(value) > -1;
