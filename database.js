@@ -287,7 +287,7 @@ const DATABASE = {
                             ],
                             "observacoes" : ""
                         },
-                        "Rua Luiz Pelegrini " : {
+                        "Rua Luiz Pelegrini" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
@@ -331,7 +331,7 @@ const DATABASE = {
                             ],
                             "referencia" : "",
                             "adjacentes" : [
-                                "Rua Luiz Pelegrini ",
+                                "Rua Luiz Pelegrini",
                                 "Servidão José da Silva",
                                 "Servidão Pedro Lanzoni",
                                 "Servidão Daniel Balbino"
