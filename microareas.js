@@ -1,11 +1,12 @@
-
 /**
- * Subclass of BasePage, contains all logic for the microareas page.
+ * Classe responsável pela página microareas.html
+ * É uma subclasse de BasePage.
+ * Possui toda a lógica de pesquisar e exibir informações sobre uma microárea.
  */
 class MicroareasPage extends BasePage {
 
     /**
-     * Simple constructor that fills important stuff.
+     * Construtor que chama super e conecta a choicebox.
      */
     constructor() {
         super(DATABASE, document.getElementById("databaseform_container"));
@@ -16,9 +17,9 @@ class MicroareasPage extends BasePage {
     }
 
     /**
-     * Builds and returns a HTML string with all the info for a given microarea and microareainfo.
-     * @param {string} microarea the microarea name.
-     * @param {dict} microareainfo the microarea info.
+     * Constrói e retorna uma string HTML com toda a informação de uma microárea.
+     * @param {string} microarea o nome da microárea.
+     * @param {dict} microareainfo o dicionário com as informações.
      */
     HTMLForMicroarea(microarea, microareainfo) {
         var html = [
@@ -51,9 +52,9 @@ class MicroareasPage extends BasePage {
     }
 
     /**
-     * Displays a microarea.
-     * @param {string} microarea the microarea name.
-     * @param {dict} microareainfo the microarea info.
+     * Exibe informações sobre a microárea.
+     * @param {string} microarea o nome da microárea.
+     * @param {dict} microareainfo o dicionário com as informações.
      */
     displayMicroarea(microarea, microareainfo) {
         if (microareainfo) {
@@ -67,8 +68,8 @@ class MicroareasPage extends BasePage {
     }
 
     /**
-     * Searches the database for a microarea, displaying it, if existent.
-     * @param {string} microarea the microarea name.
+     * Pesquisa por uma microarea, exibindo as informações, se existente.
+     * @param {string} microarea o nome da microárea.
      */
     checkMicroarea(microarea) {
         RemoveIfExistsId("microarea_div");
@@ -80,9 +81,10 @@ class MicroareasPage extends BasePage {
     }
 
     /**
-     * Overriding BasePage method.
-     * @param {*} cidade 
-     * @param {*} unidade 
+     * Sobrescrevendo método de BagePage.
+     * É usado para atualizar a choicebox com as microáreas existentes.
+     * @param {string} cidade o nome da cidade selecionada
+     * @param {string} unidade o nome da unidade selecionada
      */
     onFormChangeHandle(cidade, unidade) {
         super.onFormChangeHandle(cidade, unidade);
@@ -104,7 +106,9 @@ class MicroareasPage extends BasePage {
     }
 
     /**
-     * Implementation of check get params, called after page load.
+     * Implementação do método da superclasse. Veja BasePage.
+     * Verifica os parametros Get e age de acordo.
+     * Exibe uma microárea se os parametros assim mandarem.
      */
     checkGetParams() {
         const cidade = GetURLParam("cidade");
