@@ -1,9 +1,9 @@
-
-
 /**
- * Given a ruas_dict where each key is a rua name and it's value the rua info,
- * craetes a list of Rua objects. Order is random.
- * @param {dict} ruas_dict the ruas_dict.
+ * Dado um dicionário onde cada key é o nome de uma rua e seu 
+ * valor correspondente as informações da rua (como dicionário),
+ * cria uma lista de Rua (objetos).
+ * Ordem não garantida.
+ * @param {dict} ruas_dict o dicionário
  */
 function RuaListFromDict(ruas_dict) {
     var ruas = [];
@@ -15,10 +15,9 @@ function RuaListFromDict(ruas_dict) {
     return ruas;
 }
 
-
 /**
- * Given a list of Rua Objects, returns it sorted.
- * @param {Array<Rua>} rua_list the list of Rua Objects.
+ * Dada uma lista de Rua (objeto), retorna ela em ordem alfabética.
+ * @param {Array<Rua>} rua_list a lista de Ruas
  */
 function SortedRuaList(rua_list) {
     function compare(a, b) {
@@ -34,47 +33,47 @@ function SortedRuaList(rua_list) {
     return rua_list.sort(compare);
 }
 
-
 /**
- * Given a ruas_dict where each key is a rua name and it's value the rua info,
- * craetes an ordered list of Rua objects.
- * @param {dict} ruas_dict the ruas_dict.
+ * Dado um dicionário onde cada key é o nome de uma rua e seu 
+ * valor correspondente as informações da rua (como dicionário),
+ * cria uma lista de Rua (objetos) em ordem alfabética.
+ * @param {dict} ruas_dict o dicionário
  */
 function SortedRuaListFromDict(ruas_dict) {
     return SortedRuaList(RuaListFromDict(ruas_dict));
 }
 
-
 /**
- * Creates a Rua Collection object from a ruas_dict.
- * @param {dict} ruas_dict a dict where each key (a rua name) has a value (rua info).
- * Check args before calling.
+ * Cria uma RuaCollection a partir de um dicionário onde cada key é o nome 
+ * de uma rua e seu valor correspondente as informações da rua (como dicionário),
+ * @param {dict} ruas_dict o dicionário
  */
 function RuaCollectionFromDict(ruas_dict) {
     return new RuaCollection(SortedRuaListFromDict(ruas_dict));
 }
 
-
 /**
- * Abstraction for a Rua Collection.
+ * Coleção de ruas, uma abstração para trabalhar de forma mais fácil
+ * com um conjunto de Ruas.
+ * Ver rua.js
  */
 class RuaCollection {
 
     /**
-     * Constructor for a Rua Collection object.
-     * @param {Array<Rua>} ruas_dict a array of Rua Objects.
+     * Construtor
+     * @param {Array<Rua>} ruas_dict um array de Ruas
      */
     constructor(ruas) {
         this.ruas = ruas;
     }
 
-
     /**
-     * Returns a copy of this RuaCollection,
-     * removing all ruas that do not conform to the rules passed.
-     * @param {dict} rules the rules to be checked, a dict where:
-     *      The keys are the attributes to be checked;
-     *      The values the needed value to conform.
+     * Retorna uma cópia dessa RuaCollection,
+     * mas sem todas as ruas que não conformarem com
+     * as regras passadas.
+     * @param {dict} rules as regras, um dicionário em que:
+     *      As keys são os atributos a serem verificados;
+     *      Os values são os valores que cada atributo deve ter para ser aceito.
      */
     filter(rules) {
         var conforming = [];
@@ -88,9 +87,8 @@ class RuaCollection {
         return new RuaCollection(conforming);
     }
 
-
     /**
-     * Returns an array with all ruas names.
+     * Retorna um array com o nome de todas as ruas.
      */
     names() {
         return this.ruas.map(function(rua) {
@@ -98,17 +96,15 @@ class RuaCollection {
         });
     }
 
-
     /**
-     * Returns the size / length of this rua collection.
+     * Retorna o tamanho (size / length) dessa coleção.
      */
     size() {
         return this.ruas.length
     }
 
-
     /**
-     * Returns if this rua collection is empty.
+     * Retorna um bool informando se esta coleção está vazia.
      */
     empty() {
         return this.size == 0;
