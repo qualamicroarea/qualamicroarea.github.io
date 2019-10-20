@@ -163,7 +163,7 @@ const DATABASE = {
                             "microarea" : [
                                 "1",
                                 "2",
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -176,15 +176,15 @@ const DATABASE = {
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Cândido Borsato",
-                                "Rua Henrique João da Cruz",
+                                "Rua Henrique João da Cruz"
                             ],
-                            "observacoes" : "Parte usa o nome Servidão Cornélio de Azevedo Ramos",
+                            "observacoes" : "Parte usa o nome Servidão Cornélio de Azevedo Ramos"
                         },
                         "Rua Caminho do Ladeira" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "4",
+                                "4"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -198,20 +198,20 @@ const DATABASE = {
                                 "Lixeira",
                                 "Pequenos comércios",
                                 "Ponto de ônibus",
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Henrique João da Cruz",
-                                "Servidão Cornélio de Azevedo Ramos",
+                                "Servidão Cornélio de Azevedo Ramos"
                             ],
-                            "observacoes" : "Alguns ratos.",
+                            "observacoes" : "Alguns ratos."
                         },
                         "Rua Cecília Milanês" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "2",
+                                "2"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -222,21 +222,21 @@ const DATABASE = {
                             "caracteristicas" : [
                                 "Igreja",
                                 "Pequenos comércios",
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Valentin Osório da Silva",
-                                "Servidão Maria Leocadia de Jesus Gonçalves",
+                                "Servidão Maria Leocadia de Jesus Gonçalves"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Cândido Borsato" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
                                 "2",
-                                "3",
+                                "3"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -249,21 +249,21 @@ const DATABASE = {
                                 "Igreja",
                                 "Lixeira",
                                 "Pequenos comércios",
-                                "Ponto de ônibus",
+                                "Ponto de ônibus"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Boa Vista",
-                                "Rua Valentin Osório da Silva",
+                                "Rua Valentin Osório da Silva"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Henrique João da Cruz" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
                                 "1",
-                                "2",
+                                "2"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -275,7 +275,7 @@ const DATABASE = {
                                 "Igreja",
                                 "Lixeira",
                                 "Pequenos comércios",
-                                "Ponto de ônibus",
+                                "Ponto de ônibus"
                             ],
                             "referencia" : "Localização do Posto de Saúde da Família, dispensa de carros batidos.",
                             "adjacentes" : [
@@ -283,15 +283,15 @@ const DATABASE = {
                                 "Rua Caminho do Ladeira",
                                 "Rua Francisco Jacinto do Amaral",
                                 "Servidão José Cândido da Silva Maripá",
-                                "Servidão Maria Leocadia de Jesus Gonçalves",
+                                "Servidão Maria Leocadia de Jesus Gonçalves"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Luiz Pelegrini " : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -302,20 +302,20 @@ const DATABASE = {
                             "caracteristicas" : [
                                 "Igreja",
                                 "Pequenos comércios",
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "LBV - legião da boa vontade, pertence ao Machado Fagundes",
                             "adjacentes" : [
                                 "Rua Silvio Pimentel França",
-                                "Servidão Daniel Balbino",
+                                "Servidão Daniel Balbino"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Silvio Pimentel França" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -327,22 +327,22 @@ const DATABASE = {
                                 "Bar",
                                 "Pequenos comércios",
                                 "Ponto de ônibus",
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Luiz Pelegrini ",
                                 "Servidão José da Silva",
                                 "Servidão Pedro Lanzoni",
-                                "Servidão Daniel Balbino",
+                                "Servidão Daniel Balbino"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Valentin Osório da Silva" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "2",
+                                "2"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -351,22 +351,22 @@ const DATABASE = {
                             "lixo_na_rua" : true,
                             "animais_de_rua" : true,
                             "caracteristicas" : [
-                                "Pequenos comércios",
+                                "Pequenos comércios"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Cecília Milanês",
                                 "Rua Cândido Borsato",
                                 "Rua da Represa",
-                                "Servidão José Cândido da Silva Maripá",
+                                "Servidão José Cândido da Silva Maripá"
                             ],
-                            "observacoes" : "2 confecções de roupa",
+                            "observacoes" : "2 confecções de roupa"
                         },
                         "Rua da Represa" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "2",
+                                "2"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -380,15 +380,15 @@ const DATABASE = {
                             "adjacentes" : [
                                 "Estrada do Cascatinha",
                                 "Rua Loio Gallucci",
-                                "Rua Valentin Osório da Silva",
+                                "Rua Valentin Osório da Silva"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Servidão Cornélio de Azevedo Ramos" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -397,19 +397,19 @@ const DATABASE = {
                             "lixo_na_rua" : true,
                             "animais_de_rua" : true,
                             "caracteristicas" : [
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
-                                "Rua Caminho do Ladeira",
+                                "Rua Caminho do Ladeira"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Servidão José Cândido da Silva Maripá" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "2",
+                                "2"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -422,15 +422,15 @@ const DATABASE = {
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Henrique João da Cruz",
-                                "Rua Valentin Osório da Silva",
+                                "Rua Valentin Osório da Silva"
                             ],
-                            "observacoes" : "Nenhuma Casa, só passagem.",
+                            "observacoes" : "Nenhuma Casa, só passagem."
                         },
                         "Servidão José da Silva" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -439,19 +439,19 @@ const DATABASE = {
                             "lixo_na_rua" : true,
                             "animais_de_rua" : true,
                             "caracteristicas" : [
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
-                                "Rua Silvio Pimentel França",
+                                "Rua Silvio Pimentel França"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Servidão João França" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -460,19 +460,19 @@ const DATABASE = {
                             "lixo_na_rua" : true,
                             "animais_de_rua" : true,
                             "caracteristicas" : [
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
-                                "Servidão Vicente de Oliveira",
+                                "Servidão Vicente de Oliveira"
                             ],
-                            "observacoes" : "Ratos na rua.",
+                            "observacoes" : "Ratos na rua."
                         },
                         "Servidão Maria Leocadia de Jesus Gonçalves" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "2",
+                                "2"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -481,20 +481,20 @@ const DATABASE = {
                             "lixo_na_rua" : true,
                             "animais_de_rua" : true,
                             "caracteristicas" : [
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Cecília Milanês",
-                                "Rua Henrique João da Cruz",
+                                "Rua Henrique João da Cruz"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Servidão Vicente de Oliveira" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -503,20 +503,20 @@ const DATABASE = {
                             "lixo_na_rua" : true,
                             "animais_de_rua" : true,
                             "caracteristicas" : [
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Servidão João França",
-                                "Servidão Pedro Lanzoni",
+                                "Servidão Pedro Lanzoni"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Estrada do Cascatinha" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "1",
+                                "1"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -526,21 +526,21 @@ const DATABASE = {
                             "animais_de_rua" : true,
                             "caracteristicas" : [
                                 "Pequenos comércios",
-                                "Ponto de ônibus",
+                                "Ponto de ônibus"
                             ],
                             "referencia" : "Depois da ponte da entrada do Carangola",
                             "adjacentes" : [
                                 "Rua Ana Nery",
                                 "Rua Loio Gallucci",
-                                "Rua da Represa",
+                                "Rua da Represa"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Ana Nery" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "1",
+                                "1"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -552,21 +552,21 @@ const DATABASE = {
                                 "Bar",
                                 "Lixeira",
                                 "Orelhão",
-                                "Ponto de ônibus",
+                                "Ponto de ônibus"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Estrada do Cascatinha",
                                 "Rua Bernardo Vasconcelos",
-                                "Rua Guilherme Dalmas Nunes",
+                                "Rua Guilherme Dalmas Nunes"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Francisco Jacinto do Amaral" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "1",
+                                "1"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -578,19 +578,19 @@ const DATABASE = {
                                 "Bar",
                                 "Igreja",
                                 "Pequenos comércios",
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
-                                "Rua Henrique João da Cruz",
+                                "Rua Henrique João da Cruz"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Guilherme Dalmas Nunes" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "1",
+                                "1"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -602,20 +602,20 @@ const DATABASE = {
                                 "Bar",
                                 "Igreja",
                                 "Pequenos comércios",
-                                "Ponto de ônibus",
+                                "Ponto de ônibus"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Ana Nery",
-                                "Rua Machado Fagundes",
+                                "Rua Machado Fagundes"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Rua Loio Gallucci" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "1",
+                                "1"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -625,20 +625,20 @@ const DATABASE = {
                             "animais_de_rua" : true,
                             "caracteristicas" : [
                                 "Lixeira",
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Estrada do Cascatinha",
-                                "Rua da Represa",
+                                "Rua da Represa"
                             ],
-                            "observacoes" : "",
+                            "observacoes" : ""
                         },
                         "Servidão Pedro Lanzoni" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -647,20 +647,20 @@ const DATABASE = {
                             "lixo_na_rua" : false,
                             "animais_de_rua" : false,
                             "caracteristicas" : [
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Silvio Pimentel França",
-                                "Servidão Vicente de Oliveira",
+                                "Servidão Vicente de Oliveira"
                             ],
-                            "observacoes" : "Esgoto exposto",
+                            "observacoes" : "Esgoto exposto"
                         },
                         "Servidão Daniel Balbino" : {
                             "cidade" : "Petrópolis",
                             "unidade" : "Boa Vista",
                             "microarea" : [
-                                "5",
+                                "5"
                             ],
                             "agua_encanada" : true,
                             "luz_eletrica" : true,
@@ -669,18 +669,18 @@ const DATABASE = {
                             "lixo_na_rua" : true,
                             "animais_de_rua" : false,
                             "caracteristicas" : [
-                                "Rua Sem Saída",
+                                "Rua Sem Saída"
                             ],
                             "referencia" : "",
                             "adjacentes" : [
                                 "Rua Luiz Pelegrini",
-                                "Rua Silvio Pimentel França",
+                                "Rua Silvio Pimentel França"
                             ],
-                            "observacoes" : "",
-                        },
-                    },
-                },
-            },
-        },
-    },
+                            "observacoes" : ""
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
